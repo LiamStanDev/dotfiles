@@ -8,7 +8,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # eval "$(oh-my-posh --init --shell zsh --config $HOME/.config/oh-my-posh/liam.omp.json)"
 
 # dotnet sdk path
-export DOTNET_ROOT=$HOME/.dotnet
+export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$DOTNET_ROOT:$PATH
 
 # dotnet tool

@@ -5,7 +5,7 @@ alias fgrep='fgrep --color=auto'
 
 # logo-ls
 alias ll='logo-ls -l'
-
+alias la='logo-ls -la'
 # lunar vim
 alias vim='lvim'
 
