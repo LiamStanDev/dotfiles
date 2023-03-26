@@ -1,0 +1,21 @@
+# XDG PAtgs
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share/
+export XDG_RUNTIME_DIR=$HOME/tmp/
+
+# cancel caps lock
+setxkbmap -option caps:none
+# map caps to Numlock
+xmodmap -e "keycode 66 = Num_Lock"
+
+# zsh config dir
+export ZDOTDIR=$HOME/.config/zsh
+export BROWSER=firefox
+export EDITOR=nvim
+# input source config
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export SDL_IM_MODULE=fcitx
+export GLFW_IM_MODULE=ibus
