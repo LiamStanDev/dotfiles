@@ -1,0 +1,5 @@
+require("mason").setup()
+require("plugins.lsp.lspconfig")
+require("plugins.lsp.handlers").setup()
+require("plugins.lsp.null-ls")
+require("plugins.lsp.dap")
