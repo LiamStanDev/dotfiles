@@ -1,15 +1,13 @@
-# neofetch 
-neofetch
-
 # find zap, then use zap. repo: zap-zsh
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
-
-# history
-HISTFILE=~/.zsh_history
 
 # source
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/aliases.zsh"
+plug "$HOME/.config/zsh/keymap.zsh"
+
+# history
+HISTFILE=~/.zsh_history
 
 # plugins
 plug "conda-incubator/conda-zsh-completion"
@@ -57,3 +55,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 conda deactivate
 
+
+# auto show
+# neofetch 
+neofetch

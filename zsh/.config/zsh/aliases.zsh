@@ -7,7 +7,8 @@ alias fgrep='fgrep --color=auto'
 alias ll='logo-ls -l'
 alias la='logo-ls -la'
 # lunar vim
-alias vim='lvim'
+alias vim='nvim'
+alias v="nvim"
 
 # dotnet CLI
 alias dotnet-w="dotnet watch --no-hot-reload --project" 

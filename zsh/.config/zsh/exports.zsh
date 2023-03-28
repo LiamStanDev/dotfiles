@@ -1,9 +1,6 @@
 # for the system varaible
 export PATH="/usr/bin:/usr/sbin:/usr/local/bin:$PATH"
 
-# home brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 # oh-my-posh
 # eval "$(oh-my-posh --init --shell zsh --config $HOME/.config/oh-my-posh/liam.omp.json)"
 
