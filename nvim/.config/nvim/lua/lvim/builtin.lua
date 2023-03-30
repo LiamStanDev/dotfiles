@@ -102,6 +102,7 @@ M.plugins = {
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
+	"Hoffs/omnisharp-extended-lsp.nvim", -- for decompile csharp
 	-- treesitter
 	{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
 	"windwp/nvim-ts-autotag",

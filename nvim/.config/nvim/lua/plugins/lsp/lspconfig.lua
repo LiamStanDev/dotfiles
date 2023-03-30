@@ -5,7 +5,8 @@ local servers = {
 	"jsonls",
 	"lua_ls",
 	"cssls",
-	"pyright",
+	-- "pyright",
+	"pylsp",
 }
 
 require("mason-lspconfig").setup({
