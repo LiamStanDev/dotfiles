@@ -3,6 +3,9 @@ export PATH="/usr/bin:/usr/sbin:/usr/local/bin:$PATH"
 
 # oh-my-posh
 # eval "$(oh-my-posh --init --shell zsh --config $HOME/.config/oh-my-posh/liam.omp.json)"
+# srarship prop
+export STARSHIP_CONFIG=~/.config/starship.toml
+eval "$(starship init zsh)"
 
 # dotnet sdk path
 export DOTNET_ROOT=/usr/share/dotnet

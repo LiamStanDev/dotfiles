@@ -14,7 +14,7 @@ plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
-plug "zap-zsh/zap-prompt"
+# plug "zap-zsh/zap-prompt"
 
 # setting local binary path
 export PATH="$HOME/.local/bin":$PATH
