@@ -10,7 +10,7 @@ dashboard.section.header.val = require("plugins.style.header").LiamVimVer3
 
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find File", "<CMD>Telescope find_files<CR>"),
-	dashboard.button("n", "  New File", ":e: "),
+	dashboard.button("n", "  New File", ":e "),
 	dashboard.button("p", "  Projects ", "<CMD>Telescope projects<CR>"),
 	dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "󰇉  Find Text", "<CMD>Telescope live_grep<CR>"),

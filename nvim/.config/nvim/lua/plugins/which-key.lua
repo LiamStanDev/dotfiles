@@ -83,13 +83,7 @@ local opts = {
 }
 local mappings = {
 	[";"] = { "<cmd>Alpha<CR>", "Dashboard" },
-	["w"] = {
-		function()
-			pcall(vim.api.nvim_command, "Format")
-			vim.api.nvim_command("w!")
-		end,
-		"Save",
-	}, -- Format command is from lsp/handler
+	["w"] = { "<cmd>w!<CR>", "Save" }, -- Format command is from lsp/handler
 	["q"] = { "<cmd>confirm q<CR>", "Quit" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
