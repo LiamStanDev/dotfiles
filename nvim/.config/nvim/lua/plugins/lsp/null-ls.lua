@@ -26,7 +26,7 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
 		formatting.csharpier,
-		diagnostics.flake8,
+		-- diagnostics.flake8,
 		diagnostics.eslint,
 		code_actions.cspell,
 	},
