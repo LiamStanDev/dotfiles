@@ -15,4 +15,4 @@ alias dotnet-w="dotnet watch --no-hot-reload --project"
 alias dotnet-r='dotnet run --project'
 alias dotnet-b='dotnet build'
 # logoff
-alias logoff="gnome-session-quit" # need to change by the user name 
+# alias logoff="gnome-session-quit" # need to change by the user name 

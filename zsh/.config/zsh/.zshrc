@@ -1,13 +1,12 @@
+# history
+HISTFILE=~/.zsh_history
 # find zap, then use zap. repo: zap-zsh
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # source
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/aliases.zsh"
-plug "$HOME/.config/zsh/keymap.zsh"
 
-# history
-HISTFILE=~/.zsh_history
 
 # plugins
 plug "conda-incubator/conda-zsh-completion"
