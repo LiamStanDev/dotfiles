@@ -15,6 +15,7 @@ require("indent_blankline").setup({
 		"NvimTree",
 		"Trouble",
 		"text",
+		"alpha",
 	},
 	use_treesitter = true,
 	show_current_context = true,
