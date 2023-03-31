@@ -64,7 +64,7 @@ nvim_tree.setup({
 		root_folder_label = ":t",
 		indent_width = 2,
 		indent_markers = {
-			enable = false,
+			enable = true,
 			inline_arrows = true,
 			icons = {
 				corner = "└",
