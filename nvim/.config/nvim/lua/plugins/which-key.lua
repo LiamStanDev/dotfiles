@@ -101,27 +101,7 @@ local mappings = {
 		name = "Buffers",
 		j = { "<cmd>BufferLinePick<cr>", "Jump" },
 		f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-		b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-		n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-		W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
-		-- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
-		e = {
-			"<cmd>BufferLinePickClose<cr>",
-			"Pick which buffer to close",
-		},
 		h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-		l = {
-			"<cmd>BufferLineCloseRight<cr>",
-			"Close all to the right",
-		},
-		D = {
-			"<cmd>BufferLineSortByDirectory<cr>",
-			"Sort by directory",
-		},
-		L = {
-			"<cmd>BufferLineSortByExtension<cr>",
-			"Sort by language",
-		},
 	},
 	d = {
 		name = "Debug",
@@ -153,7 +133,6 @@ local mappings = {
 		l = { "<cmd>Lazy log<cr>", "Log" },
 		d = { "<cmd>Lazy debug<cr>", "Debug" },
 	},
-
 	g = {
 		name = "Git",
 		g = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<CR>", "Lazygit Chooser" },
@@ -182,30 +161,42 @@ local mappings = {
 	},
 	l = {
 		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
-		w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-		R = { "<cmd>LspRestart<cr>", "Format" },
-		i = { "<cmd>LspInfo<cr>", "Info" },
-		I = { "<cmd>Mason<cr>", "Mason Info" },
+		f = { "<cmd>Lspsaga Lspsaga lsp_finder<CR>", "Finder" },
+		a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+		p = { "<cmd>Lspsaga peek_definition<CR>", "Peek Definition" },
+		b = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "Buffer Diagnostics" },
+		w = { "<cmd>Lspsaga show_workspace_diagnostics<cr>", "Workspace Diagnostics" },
+		R = { "<cmd>LspRestart<cr>", "Restart LSP" },
 		j = {
-			"<cmd>lua vim.diagnostic.goto_next()<cr>",
+			"<cmd>Lspsaga diagnostic_jump_next<cr>",
 			"Next Diagnostic",
 		},
 		k = {
-			"<cmd>lua vim.diagnostic.goto_prev()<cr>",
+			"<cmd>Lspsaga diagnostic_jump_prev<cr>",
 			"Prev Diagnostic",
 		},
-		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-		S = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-			"Workspace Symbols",
+		J = {
+			function()
+				require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+			end,
+			"Next Error",
 		},
+		K = {
+			function()
+				require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+			end,
+			"Prev Error",
+		},
+		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		-- q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+		r = { "<cmd>Lspsaga rename ++project<cr>", "Rename" },
+		-- s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+		-- S = {
+		-- 	"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+		-- 	"Workspace Symbols",
+		-- },
 		e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
-		o = { "<cmd>SymbolsOutline<CR>", "Outline" },
+		o = { "<cmd>Lspsaga outline<CR>", "Outline" },
 	},
 	s = {
 		name = "Search",
