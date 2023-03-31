@@ -8,12 +8,6 @@ if not snip_status_ok then
 	return
 end
 
-local snippet_loader = require("luasnip.loaders.from_vscode")
--- snipet from friendly-snippet
-snippet_loader.lazy_load()
--- my custom snippet(I don't know why the following not working)
-snippet_loader.lazy_load({ paths = { "./lua/plugins/snippets" } }) -- csharp snippets
-
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
