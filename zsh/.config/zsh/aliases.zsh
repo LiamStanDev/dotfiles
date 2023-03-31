@@ -6,13 +6,18 @@ alias fgrep='fgrep --color=auto'
 # logo-ls
 alias ll='logo-ls -l'
 alias la='logo-ls -la'
-# lunar vim
+
+# neovim
 alias vim='nvim'
 alias v="nvim"
 
+# lazygit
+alias g="lazygit"
+alias lg="lazygit"
+
 # dotnet CLI
-alias dotnet-w="dotnet watch --no-hot-reload --project" 
+alias dotnet-w="dotnet watch --no-hot-reload --project"
 alias dotnet-r='dotnet run --project'
 alias dotnet-b='dotnet build'
 # logoff
-# alias logoff="gnome-session-quit" # need to change by the user name 
+# alias logoff="gnome-session-quit" # need to change by the user name

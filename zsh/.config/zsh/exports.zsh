@@ -1,6 +1,6 @@
 # macOS
-if [[ $OSYTPE =~ ^darwin ]]; then
-    expor PATH="/opt/homebrew/bin:$PATH"
+if [[ $OSTYPE =~ ^darwin ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
 fi
 
 # for the system varaible
