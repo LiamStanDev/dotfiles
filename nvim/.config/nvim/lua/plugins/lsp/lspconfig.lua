@@ -7,6 +7,7 @@ local servers = {
 	"cssls",
 	-- "pyright",
 	"pylsp",
+	"bashls",
 }
 
 require("mason-lspconfig").setup({
