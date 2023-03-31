@@ -1,3 +1,8 @@
+# macOS
+if [[ $OSYTPE =~ ^darwin ]]; then
+    expor PATH="/opt/homebrew/bin:$PATH"
+fi
+
 # for the system varaible
 export PATH="/usr/bin:/usr/sbin:/usr/local/bin:$PATH"
 
@@ -16,5 +21,5 @@ export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # yarn path
-# npm config set prefix "$HOME/.npm-global" # set the npm for the system first time 
+# npm config set prefix "$HOME/.npm-global" # set the npm for the system first time
 export PATH="$HOME/.npm-global/bin:$PATH"

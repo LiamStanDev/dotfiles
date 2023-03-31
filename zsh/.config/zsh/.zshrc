@@ -21,40 +21,42 @@ export PATH="$HOME/.local/bin":$PATH
 
 
 # zsh parameter completion for the dotnet CLI
-_dotnet_zsh_complete() 
+_dotnet_zsh_complete()
 {
-  local completions=("$(dotnet complete "$words")")
+    local completions=("$(dotnet complete "$words")")
 
-  # If the completion list is empty, just continue with filename selection
-  if [ -z "$completions" ]
-  then
-    _arguments '*::arguments: _normal'
-    return
-  fi
+    # If the completion list is empty, just continue with filename selection
+    if [ -z "$completions" ]
+    then
+        _arguments '*::arguments: _normal'
+        return
+    fi
 
-  # This is not a variable assignment, don't remove spaces!
-  _values = "${(ps:\n:)completions}"
+    # This is not a variable assignment, don't remove spaces!
+    _values = "${(ps:\n:)completions}"
 }
 
 compdef _dotnet_zsh_complete dotnet
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-        . "/usr/etc/profile.d/conda.sh"
+if [[ $OSTYPE =~ ^linux ]]; then
+    __conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="/usr/bin:$PATH"
+        if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+            . "/usr/etc/profile.d/conda.sh"
+        else
+            export PATH="/usr/bin:$PATH"
+        fi
     fi
+    unset __conda_setup
 fi
-unset __conda_setup
 # <<< conda initialize <<<
 conda deactivate
 
 
 # auto show
-# neofetch 
+# neofetch
 neofetch
