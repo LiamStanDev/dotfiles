@@ -21,16 +21,22 @@ local M = {
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename", component.python_env },
+		lualine_b = { "branch", component.python_env },
+		lualine_c = { "diff" },
 		lualine_x = {
+			"diagnostics",
 			component.lsp,
 			"encoding",
 			"fileformat",
 			"filetype",
 		},
 		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		lualine_z = {
+			function()
+				return " " .. os.date("%R")
+			end,
+		},
+		-- lualine_z = { "location" },
 	},
 	inactive_sections = {
 		lualine_a = {},
