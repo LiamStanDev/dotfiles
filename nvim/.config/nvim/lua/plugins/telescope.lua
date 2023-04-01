@@ -74,10 +74,7 @@ telescope.setup({
 	},
 	extensions = {
 		media_files = {
-			-- filetypes whitelist
-			-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
 			filetypes = { "png", "webp", "jpg", "jpeg" },
-			-- find command (defaults to `fd`)
 			find_cmd = "rg",
 		},
 		fzf = {
@@ -85,7 +82,6 @@ telescope.setup({
 			override_generic_sorter = true, -- override the generic sorter
 			override_file_sorter = true, -- override the file sorter
 			case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			-- the default case_mode is "smart_case"
 		},
 	},
 })
@@ -99,6 +95,3 @@ vim.cmd([[
     autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()
 ]])
 telescope.load_extension("lazygit")
-
--- setup actions-preview
--- source: https://github.com/aznhe21/actions-preview.nvim
