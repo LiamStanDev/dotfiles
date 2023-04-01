@@ -74,7 +74,7 @@ telescope.setup({
 	},
 	extensions = {
 		media_files = {
-			filetypes = { "png", "webp", "jpg", "jpeg" },
+			filetypes = { "png", "webp", "jpg", "jpeg", "svg" },
 			find_cmd = "rg",
 		},
 		fzf = {
