@@ -18,6 +18,7 @@ require("mason-lspconfig").setup({
 local lspconfig = require("lspconfig")
 local handlers = require("plugins.lsp.handlers")
 local opts = {}
+-- auto register lsp service
 for _, server in pairs(servers) do
 	opts = {
 		on_attach = handlers.on_attach,
