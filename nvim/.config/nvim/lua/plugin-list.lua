@@ -15,9 +15,9 @@ M.plugins = {
 
 	-- indnet line
 	{ "lukas-reineke/indent-blankline.nvim", event = { "BufReadPost", "BufNewFile" } },
-	{ "folke/which-key.nvim", event = "VeryLazy" },
 
 	-- ui
+	{ "folke/which-key.nvim", event = "VeryLazy" },
 	{ "nvim-lua/popup.nvim", event = "VeryLazy" },
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
 	{ "nvim-tree/nvim-tree.lua", event = "VeryLazy" },
@@ -67,7 +67,7 @@ M.plugins = {
 		dependencies = "neovim/nvim-lspconfig",
 	},
 	-- "simrat39/symbols-outline.nvim",
-	"xiyaowong/transparent.nvim",
+	-- "xiyaowong/transparent.nvim",
 	{
 		"ggandor/leap.nvim",
 		config = function()
