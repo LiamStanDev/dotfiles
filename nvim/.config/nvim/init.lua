@@ -17,5 +17,6 @@ require("plugins.bufferline")
 require("plugins.toggleterm")
 require("plugins.nvim-tree")
 require("plugins.alpha")
+require("plugins.comment")
 -- require("plugins.symbols-outline") -- class outline
 require("plugins.navic")
