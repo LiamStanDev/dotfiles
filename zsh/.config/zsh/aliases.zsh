@@ -8,11 +8,12 @@ alias ll='logo-ls -l'
 alias la='logo-ls -la'
 
 # neovim
+alias n="nvim"
+alias nv="nvim"
 alias vim='nvim'
 alias v="nvim"
 
 # lazygit
-alias g="lazygit"
 alias lg="lazygit"
 
 # dotnet CLI
