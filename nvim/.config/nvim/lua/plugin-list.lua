@@ -4,6 +4,13 @@ M.plugins = {
 	-- colorscheme
 	{ "olimorris/onedarkpro.nvim", opts = { options = { transparency = true } } },
 
+	--color show
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
 	-- comment
 	{ "numToStr/Comment.nvim", event = "VeryLazy" },
 
@@ -134,6 +141,7 @@ M.plugins = {
 		config = function()
 			require("lspsaga").setup({})
 			local keymap = vim.keymap.set
+			-- C-t: go back
 			keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
 			keymap("n", "gD", "<cmd>Lspsaga goto_definition<CR>")
 			-- Go to definition
@@ -146,7 +154,8 @@ M.plugins = {
 			-- Use <C-t> to jump back
 			keymap("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>")
 			keymap("n", "gT", "<cmd>Lspsaga goto_type_definition<CR>")
-			keymap("n", "gl", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+			keymap("n", "gl", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
+			keymap("n", "gb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 			keymap("n", "gk", "<cmd>Lspsaga hover_doc ++keep<CR>")
 			-- Go to type definition
 			-- keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
