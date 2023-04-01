@@ -85,7 +85,7 @@ local mappings = {
 	[";"] = { "<cmd>Alpha<CR>", "Dashboard" },
 	["w"] = { "<cmd>w!<CR>", "Save" }, -- Format command is from lsp/handler
 	["q"] = { "<cmd>confirm q<CR>", "Quit" },
-	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
+	-- ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["f"] = {
 		function()
@@ -245,7 +245,7 @@ local vopts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 local vmappings = {
-	["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
+	-- ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
 }
 
 which_key.register(mappings, opts)
