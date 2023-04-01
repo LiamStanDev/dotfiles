@@ -212,6 +212,7 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 		l = { "<cmd>Telescope resume<cr>", "Resume last search" },
+		m = { "<cmd>Telescope media_files<CR>", "Media" },
 		p = {
 			"<cmd>Telescope projects<cr>",
 			"Projects",
@@ -225,13 +226,13 @@ local mappings = {
 		name = "Toggle Term",
 		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazy git" },
 		g = { "<cmd>LazyGit<CR>", "Lazygit" },
-		p = { "<cmd>lua _PYTHON_TOGGLE()<CR>", "python console" },
-		h = { "<cmd>lua _HTOP_TOGGLE()<CR>", "Htop" },
+		-- p = { "<cmd>lua _PYTHON_TOGGLE()<CR>", "python console" },
+		h = { "<cmd>lua _BTOP_TOGGLE()<CR>", "Btop" },
 		n = { "<cmd>lua _NODE_TOGGLE()<CR>", "node" },
-		q = { "<cmd>1 ToggleTerm<CR>", "terminal 1" },
-		w = { "<cmd>2 ToggleTerm<CR>", "terminal 2" },
-		e = { "<cmd>3 ToggleTerm<CR>", "terminal 3" },
-		r = { "<cmd>4 ToggleTerm<CR>", "terminal 4" },
+		-- q = { "<cmd>1 ToggleTerm<CR>", "terminal 1" },
+		-- w = { "<cmd>2 ToggleTerm<CR>", "terminal 2" },
+		-- e = { "<cmd>3 ToggleTerm<CR>", "terminal 3" },
+		-- r = { "<cmd>4 ToggleTerm<CR>", "terminal 4" },
 	},
 }
 
