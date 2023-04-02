@@ -64,7 +64,3 @@ local python = Terminal:new({ cmd = "python3", hidden = true })
 function _PYTHON_TOGGLE()
 	python:toggle()
 end
-
-function _GITUI_TOGGLE()
-	gitui:toggle()
-end

@@ -38,7 +38,7 @@ nvim_tree.setup({
 			custom_only = false,
 			list = {
 				{ key = "v", action = "vsplit" },
-				{ key = { "l", "<CR>", "o" }, action = "edit", mode = "n" },
+				{ key = { "l", "<CR>" }, action = "edit", mode = "n" },
 				{ key = "h", action = "close_node" },
 			},
 		},
@@ -217,34 +217,6 @@ nvim_tree.setup({
 		args = {},
 	},
 })
-
--- open nvim-tree for neovim setup
-local function open_nvim_tree_better(data)
-	-- buffer is a real file on the disk
-	local real_file = vim.fn.filereadable(data.file) == 1
-	-- buffer is a [No Name]
-	local no_name = data.data.file == "" and vim.bo[data.buf].buftype == ""
-
-	if not real_file and not no_name then
-		return
-	end
-	require("nvim-tree.api").tree.open({ focus = false, find_file = true })
-end
-
--- open nvim-tree for neovim setup
-local function open_nvim_tree()
-	require("nvim-tree.api").tree.open({ focus = false, find_file = true })
-end
-
--- set auto cmd to the VimEnter event
--- Version 1:
--- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
--- Version 2:
--- vim.api.nvim_create_autocmd({ "VimEnter" }, {
--- 	callback = function(data)
--- 		open_nvim_tree_better(data)
--- 	end,
--- })
 
 -- Automatically open file upen createtion
 local api = require("nvim-tree.api")
