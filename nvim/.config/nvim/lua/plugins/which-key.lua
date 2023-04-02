@@ -187,7 +187,8 @@ local mappings = {
 			end,
 			"Prev Error",
 		},
-		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		l = { "<cmd>Telescope diagnostic" },
+		-- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		-- q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 		r = { "<cmd>Lspsaga rename ++project<cr>", "Rename" },
 		-- s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
@@ -218,22 +219,22 @@ local mappings = {
 			"Projects",
 		},
 	},
-	T = {
-		name = "Treesitter",
-		i = { ":TSConfigInfo<cr>", "Info" },
-	},
-	t = {
-		name = "Toggle Term",
-		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazy git" },
-		g = { "<cmd>LazyGit<CR>", "Lazygit" },
-		-- p = { "<cmd>lua _PYTHON_TOGGLE()<CR>", "python console" },
-		h = { "<cmd>lua _BTOP_TOGGLE()<CR>", "Btop" },
-		n = { "<cmd>lua _NODE_TOGGLE()<CR>", "node" },
-		-- q = { "<cmd>1 ToggleTerm<CR>", "terminal 1" },
-		-- w = { "<cmd>2 ToggleTerm<CR>", "terminal 2" },
-		-- e = { "<cmd>3 ToggleTerm<CR>", "terminal 3" },
-		-- r = { "<cmd>4 ToggleTerm<CR>", "terminal 4" },
-	},
+	-- T = {
+	-- 	name = "Treesitter",
+	-- 	i = { ":TSConfigInfo<cr>", "Info" },
+	-- },
+	-- t = {
+	-- 	name = "Toggle Term",
+	-- 	-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazy git" },
+	-- 	g = { "<cmd>LazyGit<CR>", "Lazygit" },
+	-- 	-- p = { "<cmd>lua _PYTHON_TOGGLE()<CR>", "python console" },
+	-- 	b = { "<cmd>lua _BTOP_TOGGLE()<CR>", "Btop" },
+	-- 	n = { "<cmd>lua _NODE_TOGGLE()<CR>", "node" },
+	-- 	q = { "<cmd>1 ToggleTerm<CR>", "terminal 1" },
+	-- 	w = { "<cmd>2 ToggleTerm<CR>", "terminal 2" },
+	-- 	e = { "<cmd>3 ToggleTerm<CR>", "terminal 3" },
+	-- 	r = { "<cmd>4 ToggleTerm<CR>", "terminal 4" },
+	-- },
 }
 
 -- visual mode

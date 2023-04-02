@@ -3,7 +3,12 @@ local M = {}
 M.plugins = {
 	-- colorscheme
 	{ "olimorris/onedarkpro.nvim", opts = { options = { transparency = true } } },
-
+	{ "folke/tokyonight.nvim" },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		opts = { transparent_background = true, no_italic = true },
+	},
 	--color show
 	{
 		"norcalli/nvim-colorizer.lua",
@@ -154,9 +159,9 @@ M.plugins = {
 			-- Use <C-t> to jump back
 			keymap("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>")
 			keymap("n", "gT", "<cmd>Lspsaga goto_type_definition<CR>")
-			keymap("n", "gl", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
+			--keymap("n", "gl", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
 			keymap("n", "gb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
-			keymap("n", "gk", "<cmd>Lspsaga hover_doc ++keep<CR>")
+			keymap("n", "gh", "<cmd>Lspsaga hover_doc ++keep<CR>")
 			-- Go to type definition
 			-- keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 		end,

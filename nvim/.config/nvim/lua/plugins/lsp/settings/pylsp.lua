@@ -3,11 +3,12 @@ return {
 		pylsp = {
 			plugins = {
 				pycodestyle = {
-					ignore = { "E402", "E266", "W503", "E501" },
+					enabled = false,
 					maxLineLength = 100,
 				},
 				flake8 = {
-					enabled = false,
+					enabled = true,
+					ignore = { "E402", "E266", "W503", "E501", "F403", "F405" },
 				},
 				pyflakes = {
 					enabled = false,

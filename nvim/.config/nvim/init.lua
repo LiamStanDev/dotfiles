@@ -20,3 +20,4 @@ require("plugins.alpha")
 require("plugins.comment")
 -- require("plugins.symbols-outline") -- class outline
 require("plugins.navic")
+require("core.autocmd")
