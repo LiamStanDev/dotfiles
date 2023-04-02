@@ -43,6 +43,12 @@ local function on_attach(client, bufnr)
 	if client.name == "tsserver" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
+	if client.name == "pyright" then
+		client.server_capabilities.documentFormattingProvider = false
+	end
+	if client.name == "pylsp" then
+		client.server_capabilities.documentFormattingProvider = false
+	end
 end
 
 -- capabilities

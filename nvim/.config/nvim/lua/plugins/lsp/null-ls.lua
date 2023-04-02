@@ -13,7 +13,7 @@ local servers = {
 	"eslint",
 	--"cspell", -- so annoying
 	--"flake8",
-	"mypy",
+	--"mypy",
 }
 
 require("mason-null-ls").setup({
