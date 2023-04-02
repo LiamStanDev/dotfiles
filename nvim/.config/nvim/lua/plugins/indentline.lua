@@ -13,6 +13,7 @@ require("indent_blankline").setup({
 		"lazy",
 		"neogitstatus",
 		"NvimTree",
+		"neo-tree",
 		"Trouble",
 		"text",
 		"alpha",

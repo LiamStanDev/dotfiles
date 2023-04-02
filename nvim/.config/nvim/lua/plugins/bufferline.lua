@@ -59,8 +59,8 @@ bufferline.setup({
 		-- end,
 		offsets = { --{ filetype = "NvimTree", text = "", padding = 1 }
 			{
-				filetype = "NvimTree",
-				text = "NvimTree",
+				filetype = "neo-tree",
+				text = "Neo-tree",
 				highlight = "Directory",
 				text_align = "left",
 			},

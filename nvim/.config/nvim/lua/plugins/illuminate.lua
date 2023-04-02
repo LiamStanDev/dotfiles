@@ -24,6 +24,7 @@ illuminate.setup({
 		"fugitive",
 		"alpha",
 		"NvimTree",
+		"neo-tree",
 		"lazy",
 		"neogitstatus",
 		"Trouble",
