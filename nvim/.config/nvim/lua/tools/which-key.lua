@@ -198,6 +198,7 @@ local mappings = {
 		-- },
 		e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
 		o = { "<cmd>Lspsaga outline<CR>", "Outline" },
+		-- o = { "<cmd>SymbolsOutline<CR>", "Outline" },
 	},
 	s = {
 		name = "Search",

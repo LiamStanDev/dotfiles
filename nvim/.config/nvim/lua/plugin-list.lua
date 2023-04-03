@@ -91,7 +91,7 @@ M.plugins = {
 		"SmiteshP/nvim-navic", -- for top nav bar
 		dependencies = "neovim/nvim-lspconfig",
 	},
-	-- "simrat39/symbols-outline.nvim",
+	-- { "simrat39/symbols-outline.nvim" },
 	-- "xiyaowong/transparent.nvim",
 	{
 		"ggandor/leap.nvim",

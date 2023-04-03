@@ -1,4 +1,37 @@
-require("lspsaga").setup({})
+require("lspsaga").setup({
+	outline = {
+		win_position = "right",
+		win_with = "",
+		win_width = 30,
+		preview_width = 0.4,
+		show_detail = true,
+		auto_preview = true,
+		auto_refresh = true,
+		auto_close = true,
+		custom_sort = nil,
+		keys = {
+			expand_or_jump = "<CR>",
+			quit = "q",
+		},
+	},
+	code_action = {
+		num_shortcut = true,
+		show_server_name = true,
+		extend_gitsigns = true,
+		keys = {
+			-- string | table type
+			quit = "q",
+			exec = "<CR>",
+		},
+	},
+	rename = {
+		quit = "<Esc>",
+		exec = "<CR>",
+		mark = "x",
+		confirm = "<CR>",
+		in_select = true,
+	},
+})
 local keymap = vim.keymap.set
 -- C-t: go back
 keymap("n", "gD", "<cmd>Lspsaga peek_definition<CR>")
