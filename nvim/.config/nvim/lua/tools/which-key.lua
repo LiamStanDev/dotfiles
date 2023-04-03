@@ -215,7 +215,7 @@ local mappings = {
 		l = { "<cmd>Telescope resume<cr>", "Resume last search" },
 		m = { "<cmd>Telescope media_files<CR>", "Media" },
 		p = {
-			"<cmd>Telescope projects<cr>",
+			"<cmd>Telescope project<cr>",
 			"Projects",
 		},
 	},
