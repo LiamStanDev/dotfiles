@@ -27,6 +27,38 @@ M.plugins = {
 
 	-- indnet line
 	{ "lukas-reineke/indent-blankline.nvim", event = { "BufReadPost", "BufNewFile" } },
+	-- need set here
+	{
+		"echasnovski/mini.indentscope",
+		version = false, -- wait till new 0.7.0 release to put it back on semver
+		event = { "BufReadPre", "BufNewFile" },
+		opts = {
+			-- symbol = "▏",
+			symbol = "│",
+			options = { try_as_border = true },
+
+			mappings = {
+				-- Textobjects
+				object_scope = "",
+				object_scope_with_border = "",
+
+				-- Motions (jump to respective border line; if not present - body line)
+				goto_top = "[[",
+				goto_bottom = "]]",
+			},
+		},
+		init = function()
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+				callback = function()
+					vim.b.miniindentscope_disable = true
+				end,
+			})
+		end,
+		config = function(_, opts)
+			require("mini.indentscope").setup(opts)
+		end,
+	},
 
 	-- ui
 	{ "folke/which-key.nvim", event = "VeryLazy" },
@@ -44,29 +76,6 @@ M.plugins = {
 			"s1n7ax/nvim-window-picker",
 		},
 	},
-
-	-- {
-	-- 	-- only needed if you want to use the commands with "_with_window_picker" suffix
-	-- 	"s1n7ax/nvim-window-picker",
-	-- 	version = "v1.*",
-	-- 	config = function()
-	-- 		require("window-picker").setup({
-	-- 			autoselect_one = true,
-	-- 			include_current = false,
-	-- 			filter_rules = {
-	-- 				-- filter using buffer options
-	-- 				bo = {
-	-- 					-- if the file type is one of following, the window will be ignored
-	-- 					filetype = { "neo-tree", "neo-tree-popup", "notify" },
-	--
-	-- 					-- if the buffer type is one of following, the window will be ignored
-	-- 					buftype = { "terminal", "quickfix" },
-	-- 				},
-	-- 			},
-	-- 			other_win_hl_color = "#e35e4f",
-	-- 		})
-	-- 	end,
-	-- },
 	{
 		"s1n7ax/nvim-window-picker",
 		version = "v1.*",
@@ -177,14 +186,5 @@ M.plugins = {
 
 	-- alpha
 	{ "goolord/alpha-nvim" },
-	-- {
-	-- 	"glepnir/dashboard-nvim",
-	-- 	event = "VimEnter",
-	-- 	config = function()
-	-- 		require("dashboard").setup({
-	-- 			theme = "hyper",
-	-- 		})
-	-- 	end,
-	-- },
 }
 return M

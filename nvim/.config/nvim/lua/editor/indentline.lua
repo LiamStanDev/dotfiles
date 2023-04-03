@@ -5,7 +5,7 @@ if not status_indent_blankline then
 end
 indent_blankline.setup({
 	enabled = true,
-	buftype_exclude = { "terminal", "nofile" },
+	buftype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
 	filetype_exclude = {
 		"help",
 		"startify",
@@ -19,5 +19,5 @@ indent_blankline.setup({
 		"alpha",
 	},
 	use_treesitter = true,
-	show_current_context = true,
+	show_current_context = false,
 })
