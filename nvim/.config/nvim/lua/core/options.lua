@@ -44,6 +44,7 @@ local options = {
 	magic = true,
 	virtualedit = "block",
 	wildignorecase = true,
+
 	-- swap need to set false, true lead to dead lock
 	swapfile = false,
 	directory = cache_dir .. "swap/",
@@ -51,6 +52,7 @@ local options = {
 	backupdir = cache_dir .. "backup/",
 	viewdir = cache_dir .. "view/",
 	spellfile = cache_dir .. "spell/en.uft-8.add",
+
 	-- other setting
 	history = 2000,
 	timeout = true,
