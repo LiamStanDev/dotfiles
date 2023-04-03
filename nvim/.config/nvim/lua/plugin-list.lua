@@ -9,6 +9,19 @@ M.plugins = {
 		name = "catppuccin",
 		opts = { transparent_background = true, no_italic = true },
 	},
+	{
+		"sainnhe/everforest",
+		config = function()
+			vim.g.everforest_transparent_background = 1
+		end,
+	},
+	{
+		"sainnhe/gruvbox-material",
+		config = function()
+			vim.g.gruvbox_material_disable_italic_comment = 1
+			vim.g.gruvbox_material_transparent_background = 1
+		end,
+	},
 	--color show
 	{
 		"norcalli/nvim-colorizer.lua",
