@@ -82,7 +82,7 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 local mappings = {
-	[";"] = { "<cmd>Alpha<CR>", "Dashboard" },
+	-- [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
 	["w"] = { "<cmd>w!<CR>", "Save" }, -- Format command is from lsp/handler
 	["q"] = { "<cmd>confirm q<CR>", "Quit" },
 	-- ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
@@ -97,6 +97,7 @@ local mappings = {
 	},
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["e"] = { "<cmd>Neotree toggle<CR>", "Explorer" },
+	[";"] = { ":e $MYVIMRC<CR>", "configuration" },
 	b = {
 		name = "Buffers",
 		j = { "<cmd>BufferLinePick<cr>", "Jump" },
