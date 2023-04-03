@@ -11,6 +11,13 @@ This is my configuaration in linux and macOS for daily usage.
 * File Manager: Thunar
 * Editor: Neovim, Vscode 
 
+## Screenshot
+![Alt text](./.assets/Screenshot-dashboard.png?raw=true "Neovim")
+![Alt text](./.assets/Screenshot-coding.png.png?raw=true)
+![Alt text](./.assets/Screenshot-terminal.png?raw=true)
+![Alt text](./.assets/Screenshot-toggleterm.png?raw=true)
+![Alt text](./.assets/Screenshot-btop.png?raw=true "Btop")
+
 ## Requirements
 * paru : AUR for archlinux.
 * Homebrew : package manager for macOS.

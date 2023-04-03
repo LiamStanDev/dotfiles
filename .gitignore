@@ -4,3 +4,4 @@ zsh/.config/zsh/.zsh_history
 zsh/.config/zsh/.zsh_history
 zsh/.config/zsh/.zcompdump
 nvim/.config/nvim/lazy-lock.json
+.DS_Store
