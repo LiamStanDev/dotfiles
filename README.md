@@ -1,15 +1,14 @@
 # My Dotfiles
 This is my configuaration in linux and macOS for daily usage.
-* Operating System: Archlinux, MacOS
-* Window Manager: Hyprland
-* Shell: Zsh with Zap and Starship
-* Terminal: kitty 
-* Git GUI: lazygit
-* Topbar: Waybar
-* Notify Daemon: Dunst
-* App Launcher: Wofi
-* File Manager: Thunar
-* Editor: Neovim, Vscode 
+* **Operating System**: Archlinux, MacOS
+* **Window Manager**: Hyprland
+* **Shell**: Zsh with Zap and Starship
+* **Terminal**: kitty 
+* **Git GUI**: lazygit
+* **Topbar**: Waybar
+* **App Launcher**: Wofi
+* **File Manager**: Thunar
+* **Editor**: Neovim, Vscode 
 
 ## Screenshot
 ![Alt text](./.assets/Screenshot-dashboard.png?raw=true "Neovim")
