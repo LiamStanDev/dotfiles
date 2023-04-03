@@ -130,13 +130,12 @@ require("neo-tree").setup({
 			hide_dotfiles = false,
 			hide_gitignored = false,
 			hide_hidden = false, -- only works on Windows for hidden files/directories
-			hide_by_name = {},
-			hide_by_pattern = { -- uses glob style patterns
+			hide_by_name = { ".git", "__pycache__", "mypy_cache", "obj", ".DS_Store" },
+			hide_by_pattern = {
 				"node_modules",
 				"\\.cache",
-				"^.git$",
-				"obj",
-				".DS_Store",
+				"*/__pycache__",
+				"*/.DS_Store",
 			},
 			always_show = {},
 			never_show = {},

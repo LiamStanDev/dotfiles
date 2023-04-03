@@ -1,0 +1,8 @@
+require("ui.colorscheme")
+require("ui.lualine")
+require("ui.neotree")
+require("ui.bufferline")
+require("ui.toggleterm")
+require("ui.alpha")
+require("ui.navic")
+require("ui.noice")

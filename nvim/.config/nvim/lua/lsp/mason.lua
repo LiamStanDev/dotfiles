@@ -1,4 +1,3 @@
--- lsp, linter, formatter installer
 require("mason").setup({
 	-- - "prepend" (default, Mason's bin location is put first in PATH)
 	-- - "append" (Mason's bin location is put at the end of PATH)
@@ -9,7 +8,3 @@ require("mason").setup({
 		upgrade_pip = false,
 	},
 })
-
-require("plugins.lsp.lspconfig")
-require("plugins.lsp.null-ls")
-require("plugins.lsp.dap")

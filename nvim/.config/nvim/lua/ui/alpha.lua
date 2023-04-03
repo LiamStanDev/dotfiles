@@ -6,7 +6,7 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 -- change the dashboard here !!!
-dashboard.section.header.val = require("plugins.style.header").LiamVimVer3
+dashboard.section.header.val = require("ui.style.header").LiamVimVer3
 
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find File", "<CMD>Telescope find_files<CR>"),

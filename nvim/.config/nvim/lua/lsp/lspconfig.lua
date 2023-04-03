@@ -63,7 +63,7 @@ for _, server in pairs(servers) do
 		on_attach = on_attach,
 	}
 	-- find ./setting
-	local require_ok, conf_opts = pcall(require, "plugins.lsp.settings." .. server) -- for the settings folder
+	local require_ok, conf_opts = pcall(require, "lsp.settings." .. server) -- for the settings folder
 	if require_ok then
 		opts = vim.tbl_deep_extend("force", conf_opts, opts) -- merge two table with force mode.
 	end

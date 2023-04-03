@@ -1,4 +1,4 @@
-local component = require("plugins.lualine.component")
+local component = require("ui.lualine.component")
 
 local M = {
 	options = {

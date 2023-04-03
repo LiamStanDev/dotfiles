@@ -1,11 +1,10 @@
-local status_illuminate, illuminate
-pcall(require, "illuminate")
+local status_illuminate, illuminate = pcall(require, "illuminate")
 if not status_illuminate then
 	print("illuminate not found")
 	return
 end
 
-illuminate.setup({
+illuminate.configure({
 	-- providers: provider used to get references in the buffer, ordered by priority
 	providers = {
 		"lsp",
