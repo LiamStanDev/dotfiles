@@ -12,7 +12,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find File", "<CMD>Telescope find_files<CR>"),
 	dashboard.button("n", "  New File", ":e "),
 	dashboard.button("e", "󰙅  Explorer", "<cmd>ene<CR><cmd>Neotree toggle<CR>"),
-	dashboard.button("p", "  Projects ", "<CMD>Telescope projects<CR>"),
+	dashboard.button("p", "  Projects ", "<CMD>Telescope project<CR>"),
 	dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "󰇉  Find Text", "<CMD>Telescope live_grep<CR>"),
 	dashboard.button("c", "  Configuration", ":e $MYVIMRC<CR>"),

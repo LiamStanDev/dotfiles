@@ -1,3 +1,21 @@
+-- enhance neovim with neo-tree
+-- need to set here, can't put in separate file
+require("window-picker").setup({
+	autoselect_one = true,
+	include_current = false,
+	filter_rules = {
+		-- filter using buffer options
+		bo = {
+			-- if the file type is one of following, the window will be ignored
+			filetype = { "neo-tree", "neo-tree-popup", "notify" },
+
+			-- if the buffer type is one of following, the window will be ignored
+			buftype = { "terminal", "quickfix" },
+		},
+	},
+	other_win_hl_color = "#e35e4f",
+})
+
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
@@ -81,8 +99,8 @@ require("neo-tree").setup({
 			["<esc>"] = "revert_preview",
 			["P"] = { "toggle_preview", config = { use_float = true } },
 			-- ["l"] = "focus_preview",
-			-- ["s"] = "open_split",
-			-- ["v"] = "open_vsplit",
+			--["s"] = "open_split",
+			--["v"] = "open_vsplit",
 			["s"] = "split_with_window_picker",
 			["v"] = "vsplit_with_window_picker",
 			["t"] = "open_tabnew",

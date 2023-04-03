@@ -37,13 +37,40 @@ M.plugins = {
 		"nvim-neo-tree/neo-tree.nvim",
 		event = "VeryLazy",
 		branch = "v2.x",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
+			"s1n7ax/nvim-window-picker",
 		},
 	},
-	{ "s1n7ax/nvim-window-picker" },
+
+	-- {
+	-- 	-- only needed if you want to use the commands with "_with_window_picker" suffix
+	-- 	"s1n7ax/nvim-window-picker",
+	-- 	version = "v1.*",
+	-- 	config = function()
+	-- 		require("window-picker").setup({
+	-- 			autoselect_one = true,
+	-- 			include_current = false,
+	-- 			filter_rules = {
+	-- 				-- filter using buffer options
+	-- 				bo = {
+	-- 					-- if the file type is one of following, the window will be ignored
+	-- 					filetype = { "neo-tree", "neo-tree-popup", "notify" },
+	--
+	-- 					-- if the buffer type is one of following, the window will be ignored
+	-- 					buftype = { "terminal", "quickfix" },
+	-- 				},
+	-- 			},
+	-- 			other_win_hl_color = "#e35e4f",
+	-- 		})
+	-- 	end,
+	-- },
+	{
+		"s1n7ax/nvim-window-picker",
+		version = "v1.*",
+	},
 	{ "nvim-lualine/lualine.nvim", event = "VeryLazy" },
 	{ "akinsho/bufferline.nvim", event = "VeryLazy" },
 	{ "moll/vim-bbye" }, -- can delete buffers (close files)
@@ -78,8 +105,8 @@ M.plugins = {
 	{ "nvim-telescope/telescope.nvim" },
 	{ "nvim-telescope/telescope-media-files.nvim" },
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	"ahmedkhalf/project.nvim", -- project
-	"nvim-telescope/telescope-dap.nvim",
+	{ "nvim-telescope/telescope-project.nvim" }, -- project
+	{ "nvim-telescope/telescope-dap.nvim" },
 
 	-- cmp
 	{
@@ -108,12 +135,13 @@ M.plugins = {
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
-		dependcy = {
+		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"Hoffs/omnisharp-extended-lsp.nvim", -- for decompile csharp
 		},
 	},
+	{ "Hoffs/omnisharp-extended-lsp.nvim" }, -- for decompile csharp
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{

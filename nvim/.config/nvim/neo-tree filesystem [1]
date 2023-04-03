@@ -1,0 +1,25 @@
+  ~/dotfiles/nvim/.config/nvim 
+   lua 
+     core 
+     editor 
+     lsp 
+     tools 
+     ui 
+   │   lualine 
+   │   style 
+   │ │  alpha.lua                                                                                                                             
+   │ │  bufferline.lua 
+   │ │  colorscheme.lua 
+   │ │  init.lua 
+   │ │  navic.lua 
+   │ │  neotree.lua                                                                                                                           
+   │ │  noice.lua 
+   │ │  notify.lua 
+   │ │  nvim-tree.lua 
+   │ │  symbols-outline.lua 
+   │ └  toggleterm.lua 
+   │  plugin-list.lua                                                                                                                         
+   └  plugins-setup.lua 
+     (1 hidden item) 
+    init.lua                                                                                                                                  
+    lazy-lock.json                                                                                                                            
