@@ -4,6 +4,7 @@ This is my configuaration in linux and macOS for daily usage.
 * Window Manager: Hyprland
 * Shell: Zsh with Zap and Starship
 * Terminal: kitty 
+* Git GUI: lazygit
 * Topbar: Waybar
 * Notify Daemon: Dunst
 * App Launcher: Wofi
@@ -41,5 +42,5 @@ stow --ignore=".git" */ # Everything except .gitignore, .git folder, adn etc.
 git clone https://github.com/Liam-Lin0107/dotfiles.git ~/
 cd ~/dotfiles
 rm -rf .git # remove my git you can use yours.
-stow --ignore=".git" nvim # Everything except .gitignore, .git folder, adn etc.
+stow nvim # Everything except .gitignore, .git folder, adn etc.
 ```
