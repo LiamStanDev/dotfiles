@@ -35,10 +35,8 @@ local normal_mode = {
 	-- Buffer Navigate
 	["<S-l>"] = ":bnext<CR>",
 	["<S-h>"] = ":bprevious<CR>",
-	-- -- QuickFix
-	-- ["]q"] = ":cnext<CR>",
-	-- ["[q"] = ":cprev<CR>",
-	-- ["<C-q>"] = ":call QuickFixToggle()<CR>",
+
+	-- black hole
 	["x"] = '"_x',
 }
 
