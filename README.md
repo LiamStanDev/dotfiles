@@ -48,5 +48,5 @@ stow --ignore=".git" */ # Everything except .gitignore, .git folder, adn etc.
 git clone https://github.com/Liam-Lin0107/dotfiles.git ~/
 cd ~/dotfiles
 rm -rf .git # remove my git you can use yours.
-stow nvim # Everything except .gitignore, .git folder, adn etc.
+stow nvim # only nvim. 
 ```
