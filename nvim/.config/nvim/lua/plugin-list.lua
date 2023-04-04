@@ -29,48 +29,29 @@ M.plugins = {
 			require("colorizer").setup()
 		end,
 	},
+
 	-- comment
-	{ "numToStr/Comment.nvim", event = "VeryLazy" },
+	{ "numToStr/Comment.nvim", event = "VeryLazy", config = require("editor.comment") },
 
 	-- auto autopairs
-	{ "windwp/nvim-autopairs", event = "VeryLazy" },
-
+	{ "windwp/nvim-autopairs", event = "VeryLazy", config = require("editor.autopairs") },
+	{ "m4xshen/autoclose.nvim", event = "VeryLazy", config = require("editor.autoclose") },
 	-- for text highlight
-	{ "RRethy/vim-illuminate" },
+	{ "RRethy/vim-illuminate", event = "VeryLazy", config = require("editor.illuminate") },
 
 	-- indnet line
-	{ "lukas-reineke/indent-blankline.nvim", event = { "BufReadPost", "BufNewFile" } },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		event = { "BufReadPost", "BufNewFile" },
+		config = require("editor.indentline"),
+	},
 	-- need set here
 	{
 		"echasnovski/mini.indentscope",
 		version = false, -- wait till new 0.7.0 release to put it back on semver
 		event = { "BufReadPre", "BufNewFile" },
-		opts = {
-			-- symbol = "▏",
-			symbol = "│",
-			options = { try_as_border = true },
-
-			mappings = {
-				-- Textobjects
-				object_scope = "",
-				object_scope_with_border = "",
-
-				-- Motions (jump to respective border line; if not present - body line)
-				goto_top = "[[",
-				goto_bottom = "]]",
-			},
-		},
-		init = function()
-			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
-				callback = function()
-					vim.b.miniindentscope_disable = true
-				end,
-			})
-		end,
-		config = function(_, opts)
-			require("mini.indentscope").setup(opts)
-		end,
+		init = require("editor.indentscope").init,
+		config = require("editor.indentscope").config,
 	},
 
 	-- ui
@@ -132,6 +113,13 @@ M.plugins = {
 
 	-- cmp
 	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+		},
+		config = require("editor.luasnippet"),
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		version = false, -- last release is way too old
 		event = "InsertEnter",
@@ -142,15 +130,7 @@ M.plugins = {
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lua",
 		},
-	},
-
-	-- snippets
-	{
-		"L3MON4D3/LuaSnip",
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-		},
-		opts = {},
+		config = require("editor.nvim-cmp"),
 	},
 
 	-- lsp
@@ -177,6 +157,7 @@ M.plugins = {
 		version = false, -- last release is way too old and doesn't work on Windows
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
+		config = require("editor.treesitter"),
 	},
 	{ "p00f/nvim-ts-rainbow" }, -- rainbow brasket for treesitter extension
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },

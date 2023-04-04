@@ -1,6 +1,6 @@
 require("core")
 require("plugins-setup")
-require("editor")
+-- require("editor")
 require("lsp")
 require("ui")
 require("tools")

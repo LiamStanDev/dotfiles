@@ -1,23 +1,41 @@
-local status_indent_blankline, indent_blankline = pcall(require, "indent_blankline")
-if not status_indent_blankline then
-	print("indent_blankline not found")
-	return
+return function()
+	require("indent_blankline").setup({
+		enabled = true,
+		buftype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "nofile" },
+		filetype_exclude = {
+			"help",
+			"startify",
+			"dashboard",
+			"lazy",
+			"neogitstatus",
+			"TelescopePrompt",
+			"gitcommit",
+			"NvimTree",
+			"neo-tree",
+			"log",
+			"Trouble",
+			"txt",
+			"text",
+			"alpha",
+		},
+		use_treesitter = true,
+		show_current_context = false,
+		context_patterns = {
+			"^if",
+			"^table",
+			"block",
+			"class",
+			"for",
+			"function",
+			"if_statement",
+			"import",
+			"list_literal",
+			"method",
+			"selector",
+			"type",
+			"var",
+			"while",
+		},
+		space_char_blankline = " ",
+	})
 end
-indent_blankline.setup({
-	enabled = true,
-	buftype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
-	filetype_exclude = {
-		"help",
-		"startify",
-		"dashboard",
-		"lazy",
-		"neogitstatus",
-		"NvimTree",
-		"neo-tree",
-		"Trouble",
-		"text",
-		"alpha",
-	},
-	use_treesitter = true,
-	show_current_context = false,
-})
