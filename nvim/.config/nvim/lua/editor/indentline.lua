@@ -17,6 +17,7 @@ return function()
 			"txt",
 			"text",
 			"alpha",
+			"toggleterm",
 		},
 		use_treesitter = true,
 		show_current_context = false,

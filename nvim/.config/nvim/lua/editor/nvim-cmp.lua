@@ -45,7 +45,7 @@ return function()
 		active = true,
 		snippet = {
 			expand = function(args)
-				require("luasnippet").lsp_expand(args.body) -- For `luasnip` users.
+				require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 			end,
 		},
 		mapping = cmp.mapping.preset.insert({
