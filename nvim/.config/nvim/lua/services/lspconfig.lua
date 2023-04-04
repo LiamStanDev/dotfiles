@@ -33,8 +33,6 @@ return function()
 		vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
 
 		-- add some plugin
-		require("nvim-navic").attach(client, bufnr)
-		vim.g.navic_silence = true
 
 		require("illuminate").on_attach(client)
 
@@ -93,7 +91,8 @@ return function()
 		update_in_insert = false,
 		underline = true, -- underline for diagnostic
 		severity_sort = true,
-		float = { -- the diagnostic window
+		float = {
+			-- the diagnostic window
 			focusable = true,
 			style = "minimal",
 			border = "rounded",

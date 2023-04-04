@@ -27,14 +27,18 @@ M.plugins = {
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
 	-- comment
-	{ "numToStr/Comment.nvim", event = "VeryLazy", config = require("editor.comment") },
+	{ "numToStr/Comment.nvim", event = { "BufNewFile", "BufReadPre" }, config = require("editor.comment") },
 
 	-- auto autopairs
-	{ "windwp/nvim-autopairs", event = "VeryLazy", config = require("editor.autopairs") },
-	{ "m4xshen/autoclose.nvim", event = "VeryLazy", config = require("editor.autoclose") },
+	{ "windwp/nvim-autopairs", event = "InsertEnter", config = require("editor.autopairs") },
+	-- { "m4xshen/autoclose.nvim", event = "InsertEnter", config = require("editor.autoclose") },
 
 	-- for text highlight
-	{ "RRethy/vim-illuminate", event = "VeryLazy", config = require("editor.illuminate") },
+	{
+		"RRethy/vim-illuminate",
+		event = { "CursorHold", "CursorHoldI" },
+		config = require("editor.illuminate"),
+	},
 
 	-- indnet line
 	{
@@ -79,10 +83,12 @@ M.plugins = {
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
 		config = require("editor.treesitter"),
+		dependencies = {
+			-- { "p00f/nvim-ts-rainbow" }, -- rainbow brasket for treesitter extension
+			{ "JoosepAlviste/nvim-ts-context-commentstring" },
+			{ "windwp/nvim-ts-autotag", config = require("editor.autotag") },
+		},
 	},
-	{ "p00f/nvim-ts-rainbow" }, -- rainbow brasket for treesitter extension
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
-	{ "windwp/nvim-ts-autotag" },
 
 	-- services installer
 	{ "williamboman/mason.nvim", event = "VeryLazy", config = require("services.mason") },
@@ -113,7 +119,7 @@ M.plugins = {
 	-- dap
 	{
 		"rcarriga/nvim-dap-ui",
-		event = { "BufReadPost", "BufNewFile" },
+		event = "VeryLazy",
 		dependencies = {
 			"mfussenegger/nvim-dap",
 			"jay-babu/mason-nvim-dap.nvim",
@@ -190,12 +196,12 @@ M.plugins = {
 	-- { "rcarriga/nvim-notify", event="VeryLazy", config = require("ui.nvim-tree") },
 
 	-- file naviagtor bar
-	{
-		"SmiteshP/nvim-navic", -- for top nav bar
-		event = { "BufReadPost", "BufNewFile" },
-		dependencies = "neovim/nvim-lspconfig",
-		config = require("ui.navic"),
-	},
+	-- {
+	-- 	"SmiteshP/nvim-navic", -- for top nav bar
+	-- 	event = { "BufReadPost", "BufNewFile" },
+	-- 	dependencies = "neovim/nvim-lspconfig",
+	-- 	config = require("ui.navic"),
+	-- },
 
 	-- for outline
 	-- { "simrat39/symbols-outline.nvim" },
@@ -217,6 +223,7 @@ M.plugins = {
 
 	{
 		"ggandor/leap.nvim",
+		event = { "BufReadPost", "BufAdd", "BufNewFile" },
 		config = function()
 			require("leap").add_default_mappings()
 		end,
@@ -236,7 +243,13 @@ M.plugins = {
 	},
 
 	-- git
-	{ "lewis6991/gitsigns.nvim", config = require("tools.gitsigns") },
+	{ "lewis6991/gitsigns.nvim", event = "VeryLazy", config = require("tools.gitsigns") },
+	{
+		"sindrets/diffview.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = require("tools.diffview"),
+	},
 }
 
 return M
