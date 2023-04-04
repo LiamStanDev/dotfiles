@@ -103,7 +103,7 @@ return function()
 		},
 	})
 
-	-- ui
+	-- ui(handle by noice.nvim)
 	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 	-- 	border = "rounded",
 	-- })
