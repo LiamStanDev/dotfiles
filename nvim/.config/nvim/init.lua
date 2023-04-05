@@ -5,7 +5,7 @@ g_configs.colorscheme = "onedark"
 -- whether to see navigator bar in the top
 g_configs.navigator_on = false
 -- set the logo. see ./lua/ui/style/header.lua
-g_configs.dashboard_logo = "Astronaut"
+g_configs.dashboard_logo = "AstronautSmall"
 
 -- setup all plugin
 require("plugins-setup")
