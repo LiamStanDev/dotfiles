@@ -5,8 +5,14 @@ local M = {
 		icons_enabled = true,
 		globalstatus = true,
 		theme = "auto",
-		component_separators = { left = "", right = "" },
+		-- theme = {
+		-- 	normal = { c = { fg = "#bbc2cf", bg = "#202328" } },
+		-- 	inactive = { c = { fg = "#bbc2cf", bg = "#202328" } },
+		-- },
+		-- component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
+		component_separators = "",
+		-- section_separators = "",
 		disabled_filetypes = {
 			statusline = { "alpha" },
 			winbar = {},

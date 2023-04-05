@@ -1,40 +1,4 @@
--- util function
-local function env_cleanup(venv)
-	if string.find(venv, "/") then
-		local final_venv = venv
-		for w in venv:gmatch("([^/]+)") do
-			final_venv = w
-		end
-		venv = final_venv
-	end
-	return venv
-end
-
-local function make_unique_list(list)
-	local temp_talbe = {}
-	for i, value in ipairs(list) do
-		temp_talbe[value] = i
-	end
-	local unique_list = {}
-	for key, value in pairs(temp_talbe) do
-		table.insert(unique_list, { key = key, index = value })
-	end
-	table.sort(unique_list, function(a, b)
-		return a.index < b.index
-	end)
-	return unique_list
-end
-
-local function env_cleanup(venv)
-	if string.find(venv, "/") then
-		local final_venv = venv
-		for w in venv:gmatch("([^/]+)") do
-			final_venv = w
-		end
-		venv = final_venv
-	end
-	return venv
-end
+local utils = require("ui.lualine.utils")
 
 -- setup component
 local component = {
@@ -45,7 +9,7 @@ local component = {
 				if venv then
 					local icons = require("nvim-web-devicons")
 					local py_icon, _ = icons.get_icon(".py")
-					return string.format(" " .. py_icon .. " (%s)", env_cleanup(venv))
+					return string.format(" " .. py_icon .. " (%s)", utils.env_cleanup(venv))
 				end
 			end
 			return ""
