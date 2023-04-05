@@ -4,10 +4,13 @@ return function()
 		print("alpha not found")
 		return
 	end
-
+	local logo_name = require("core").dashboard_logo
+	local logos = require("ui.style.header")
+	if logos[logo_name] == nil then
+		logo_name = "LiamVimVer3"
+	end
 	local dashboard = require("alpha.themes.dashboard")
-	-- change the dashboard here !!!
-	dashboard.section.header.val = require("ui.style.header").LiamVimVer3
+	dashboard.section.header.val = logos[logo_name]
 
 	dashboard.section.buttons.val = {
 		dashboard.button("f", "  Find File", "<CMD>Telescope find_files<CR>"),
