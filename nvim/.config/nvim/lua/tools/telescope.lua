@@ -10,6 +10,7 @@ return function()
 					["<C-j>"] = actions.move_selection_next,
 					["<C-k>"] = actions.move_selection_previous,
 				},
+				n = { ["q"] = require("telescope.actions").close },
 			},
 			vimgrep_arguments = {
 				"rg",
@@ -34,28 +35,23 @@ return function()
 				"%.mp4",
 				"%.zip",
 			},
+			prompt_prefix = "   ",
+			selection_caret = "  ",
+			entry_prefix = "  ",
+			initial_mode = "insert",
+			winblend = 0, -- transparency
+			path_display = { "truncate" },
+			color_devicons = true,
 		},
 		pickers = {
 			find_files = {
 				hidden = true,
 			},
 			live_grep = {
-				--@usage don't include the filename in the search results
 				only_sort_text = true,
 			},
 			grep_string = {
 				only_sort_text = true,
-			},
-			buffers = {
-				initial_mode = "normal",
-				mappings = {
-					i = {
-						["<C-d>"] = actions.delete_buffer,
-					},
-					n = {
-						["dd"] = actions.delete_buffer,
-					},
-				},
 			},
 			planets = {
 				show_pluto = true,
