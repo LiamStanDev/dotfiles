@@ -209,6 +209,7 @@ return function()
 			b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 			c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 			f = { "<cmd>Telescope find_files<cr>", "Find File" },
+			n = { "<cmd>Telescope notify<cr>", "Notify History" },
 			h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 			H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
 			M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },

@@ -193,7 +193,7 @@ M.plugins = {
 		},
 		config = require("ui.noice"),
 	},
-	-- { "rcarriga/nvim-notify", event="VeryLazy", config = require("ui.nvim-tree") },
+	{ "rcarriga/nvim-notify", event = "VeryLazy", config = require("ui.notify") },
 
 	-- file naviagtor bar
 	-- {
