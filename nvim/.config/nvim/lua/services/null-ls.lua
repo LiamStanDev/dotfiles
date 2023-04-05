@@ -1,26 +1,23 @@
 return function()
-	local servers = {
-		"prettier",
-		"black",
-		"stylua",
-		"beautysh",
-		"csharpier",
-		"eslint",
-		--"cspell", -- so annoying
-		--"flake8",
-		--"mypy",
-	}
+	local servers = require("core").null_ls_servers
 
 	require("mason-null-ls").setup({
 		ensure_installed = servers,
 		automatic_installation = true,
 	})
+	local sources = {}
+	for _, server in ipairs(servers) do
+		local formatter_ok, formatter = pcall(require, "null-ls.builtins.formatting." .. server)
+		if formatter_ok then
+			table.insert(sources, formatter)
+		end
 
-	require("mason-null-ls").setup_handlers({
-		function(source_name, methods)
-			require("mason-null-ls.automatic_setup")(source_name, methods)
-		end,
+		local linter_ok, linter = pcall(require, "null-ls.builtins.diagnostics." .. server)
+		if linter_ok then
+			table.insert(sources, linter)
+		end
+	end
+	require("null-ls").setup({
+		sources = sources,
 	})
-
-	require("null-ls").setup()
 end

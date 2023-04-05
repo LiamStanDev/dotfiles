@@ -1,18 +1,6 @@
 return function()
 	-- add servers
-	local servers = {
-		"tsserver",
-		"omnisharp",
-		"html",
-		"jsonls",
-		"lua_ls",
-		"cssls",
-		--"pyright",
-		"pylsp",
-		--"jedi_language_server",
-		"bashls",
-	}
-
+	local servers = require("core").lsp_servers
 	-- connected mason and lspconfig
 	require("mason-lspconfig").setup({
 		ensure_installed = servers,
@@ -57,7 +45,7 @@ return function()
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities) -- add to cmp
 
 	-- auto register lsp service
-	for _, server in pairs(servers) do
+	for _, server in ipairs(servers) do
 		local opts = {
 			capabilities = capabilities,
 			on_attach = on_attach,
