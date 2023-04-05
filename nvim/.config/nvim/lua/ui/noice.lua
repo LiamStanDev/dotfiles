@@ -3,9 +3,25 @@ return function()
 		lsp = {
 			progress = {
 				enabled = true,
-				format = "", -- remove default
-				format_done = "lsp_progress_done",
-				throttle = 1000 / 30, -- frequency to update lsp progress message
+				format = {
+					-- {
+					-- 	"{progress} ",
+					-- 	key = "progress.percentage",
+					-- 	contents = {
+					-- 		{ "{data.progress.message} " },
+					-- 	},
+					-- },
+					-- "({data.progress.percentage}%) ",
+					{ "{spinner} ", hl_group = "NoiceLspProgressSpinner" },
+					{ "{data.progress.title} ", hl_group = "NoiceLspProgressTitle" },
+					{ "{data.progress.message} ", hl_group = "NoiceLspProgressClient" },
+				},
+				format_done = {
+					{ "✔ ", hl_group = "NoiceLspProgressSpinner" },
+					{ "{data.progress.title} ", hl_group = "NoiceLspProgressTitle" },
+					{ "{data.progress.message} ", hl_group = "NoiceLspProgressClient" },
+				},
+				throttle = 1000 / 60, -- frequency to update lsp progress message
 				view = "mini",
 			},
 			-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -36,6 +52,7 @@ return function()
 				},
 				border = { style = "rounded" },
 				win_options = { winblend = 0 },
+				size = "auto",
 			},
 		},
 	})
