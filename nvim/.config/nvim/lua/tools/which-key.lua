@@ -103,6 +103,7 @@ return function()
 		},
 		d = {
 			name = "Debug",
+			k = { "<Cmd>lua require('dapui').eval()<CR>", "Evaluate Expression" },
 			t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
 			l = { "<cmd>:Telescope dap list_breakpoints<cr>", "List Breakpoints" },
 			b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
