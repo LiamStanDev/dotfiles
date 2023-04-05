@@ -2,7 +2,21 @@ local M = {}
 
 M.init = function()
 	vim.api.nvim_create_autocmd("FileType", {
-		pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+		pattern = {
+			"help",
+			"alpha",
+			"dashboard",
+			"neo-tree",
+			"Trouble",
+			"lazy",
+			"mason",
+			"dapui_scopes",
+			"dapui_breakpooints",
+			"dapui_stacks",
+			"dapui_watches",
+			"dapui_repl",
+			"dapui_console",
+		},
 		callback = function()
 			vim.b.miniindentscope_disable = true
 		end,
