@@ -195,14 +195,6 @@ M.plugins = {
 	},
 	{ "rcarriga/nvim-notify", event = "VeryLazy", config = require("ui.notify") },
 
-	-- file naviagtor bar
-	-- {
-	-- 	"SmiteshP/nvim-navic", -- for top nav bar
-	-- 	event = { "BufReadPost", "BufNewFile" },
-	-- 	dependencies = "neovim/nvim-lspconfig",
-	-- 	config = require("ui.navic"),
-	-- },
-
 	-- for outline
 	-- { "simrat39/symbols-outline.nvim" },
 
