@@ -16,6 +16,7 @@ M.init = function()
 			"dapui_watches",
 			"dapui_repl",
 			"dapui_console",
+			"toggleterm",
 		},
 		callback = function()
 			vim.b.miniindentscope_disable = true

@@ -229,13 +229,14 @@ return function()
 		t = {
 			name = "Toggle Term",
 			g = { "<cmd>LazyGit<CR>", "Lazygit" },
-			b = { "<cmd>lua _BTOP_TOGGLE()<CR>", "Btop" },
+			-- b = { "<cmd>lua _BTOP_TOGGLE()<CR>", "Btop" },
 			n = { "<cmd>lua _NODE_TOGGLE()<CR>", "node" },
 			q = { "<cmd>1 ToggleTerm<CR>", "terminal 1" },
 			w = { "<cmd>2 ToggleTerm<CR>", "terminal 2" },
 			e = { "<cmd>3 ToggleTerm<CR>", "terminal 3" },
 			r = { "<cmd>4 ToggleTerm<CR>", "terminal 4" },
 			t = { "<cmd>5 ToggleTerm direction=tab<CR>", "tab terminal" },
+			b = { "<cmd>6 ToggleTerm direction=horizontal<CR>", "bottom terminal" },
 		},
 	}
 

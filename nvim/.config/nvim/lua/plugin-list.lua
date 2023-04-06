@@ -22,6 +22,12 @@ M.plugins = {
 			vim.g.gruvbox_material_transparent_background = 1
 		end,
 	},
+	{
+		"savq/melange-nvim",
+	},
+	{
+		"morhetz/gruvbox",
+	},
 
 	-- uitl plugins
 	{ "nvim-lua/plenary.nvim", lazy = true },
