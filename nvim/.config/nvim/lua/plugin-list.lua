@@ -248,6 +248,16 @@ M.plugins = {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = require("tools.diffview"),
 	},
+
+	-- markdown preview
+	{
+		"iamcco/markdown-preview.nvim",
+		build = "cd app && npm install",
+		config = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" }, -- load at markdown file type
+	},
 }
 
 return M
