@@ -8,7 +8,7 @@ g_configs.colorscheme = "onedark"
 g_configs.navigator_on = false
 
 -- set the logo. see ./lua/ui/style/header.lua
-g_configs.dashboard_logo = "AstronautSmall"
+g_configs.dashboard_logo = "aksdjaskd"
 
 -- register lsp server for auto completion
 g_configs.lsp_servers = {
