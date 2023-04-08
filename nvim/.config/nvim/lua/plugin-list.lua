@@ -162,7 +162,7 @@ M.plugins = {
 	{ "folke/which-key.nvim", event = "VeryLazy", config = require("tools.which-key") },
 
 	-- file explorers
-	-- { "nvim-tree/nvim-tree.lua", event = "VeryLazy" },
+	-- { "nvim-tree/nvim-tree.lua", event = "VeryLazy", config = require("ui.nvim-tree") },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		event = "VeryLazy",

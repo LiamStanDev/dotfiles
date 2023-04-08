@@ -144,20 +144,17 @@ return function()
 		},
 		nesting_rules = {},
 		filesystem = {
+			find_by_full_path_words = false,
+			bind_to_cwd = false,
 			filtered_items = {
 				visible = false, -- when true, they will just be displayed differently than normal items
 				hide_dotfiles = false,
 				hide_gitignored = false,
 				hide_hidden = false, -- only works on Windows for hidden files/directories
-				hide_by_name = { ".git", "__pycache__", "mypy_cache", "obj", ".DS_Store" },
-				hide_by_pattern = {
-					"node_modules",
-					"\\.cache",
-					"*/__pycache__",
-					"*/.DS_Store",
-				},
+				hide_by_name = { ".git", ".vscode" },
+				hide_by_pattern = require("core").filter_files,
 				always_show = {},
-				never_show = {},
+				never_show = { ".DS_Store" },
 				never_show_by_pattern = {},
 			},
 			follow_current_file = true, -- This will find and focus the file in the active buffer every
@@ -216,4 +213,5 @@ return function()
 	})
 
 	vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+	--vim.comd([[BufEnter * <cmd>Neotree reveal<cr>]])
 end

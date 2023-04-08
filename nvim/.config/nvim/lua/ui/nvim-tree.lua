@@ -1,7 +1,6 @@
 return function()
 	vim.g.loaded_netrw = 1
 	vim.g.loaded_netrwPlugin = 1
-
 	-- empty setup using defaults
 	require("nvim-tree").setup({
 		auto_reload_on_write = false,
@@ -86,13 +85,13 @@ return function()
 						symlink_open = "",
 					},
 					git = {
-						unstaged = "",
-						staged = "S",
 						unmerged = "",
 						renamed = "➜",
-						untracked = "U",
 						deleted = "",
+						untracked = "",
 						ignored = "◌",
+						unstaged = "",
+						staged = "",
 					},
 				},
 			},
@@ -123,7 +122,7 @@ return function()
 			dotfiles = false,
 			git_clean = false,
 			no_buffer = false,
-			custom = { "node_modules", "\\.cache", "^.git$", "obj", ".DS_Store" },
+			custom = require("core").filter_files,
 			exclude = {},
 		},
 		filesystem_watchers = {

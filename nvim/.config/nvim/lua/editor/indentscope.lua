@@ -17,6 +17,7 @@ M.init = function()
 			"dapui_repl",
 			"dapui_console",
 			"toggleterm",
+			"NvimTree",
 		},
 		callback = function()
 			vim.b.miniindentscope_disable = true

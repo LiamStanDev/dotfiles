@@ -10,6 +10,16 @@ g_configs.navigator_on = false
 -- set the logo. see ./lua/ui/style/header.lua
 g_configs.dashboard_logo = "AstronautSmall"
 
+-- file filter for explorer
+g_configs.filter_files = {
+	"node_modules",
+	"\\.cache",
+	"^.git$",
+	"obj",
+	".DS_Store",
+	"^.vscode$",
+}
+
 -- register lsp server for auto completion
 g_configs.lsp_servers = {
 	"tsserver",
@@ -33,6 +43,7 @@ g_configs.null_ls_servers = {
 	--"cspell", -- so annoying
 	--"flake8",
 	--"mypy",
+	"xmlformat",
 }
 
 -- register debuger server

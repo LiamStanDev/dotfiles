@@ -94,6 +94,7 @@ return function()
 		},
 		["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 		["e"] = { "<cmd>Neotree toggle<CR>", "Explorer" },
+		-- ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
 		[";"] = { ":e $MYVIMRC<CR>", "configuration" },
 		["m"] = { "<Plug>MarkdownPreviewToggle", "Markdown Preview" },
 		b = {
