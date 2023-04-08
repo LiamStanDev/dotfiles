@@ -13,11 +13,10 @@ g_configs.dashboard_logo = "AstronautSmall"
 -- file filter for explorer
 g_configs.filter_files = {
 	"node_modules",
-	"\\.cache",
-	"^.git$",
+	".git",
 	"obj",
 	".DS_Store",
-	"^.vscode$",
+	".vscode",
 }
 
 -- register lsp server for auto completion
