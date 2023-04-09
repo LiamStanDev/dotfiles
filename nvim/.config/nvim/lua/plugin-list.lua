@@ -155,7 +155,7 @@ M.plugins = {
 		"glepnir/lspsaga.nvim",
 		event = "LspAttach",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = require("services.lspsaga"),
+		config = require("ui.lspsaga"),
 	},
 
 	-- keymap ui
