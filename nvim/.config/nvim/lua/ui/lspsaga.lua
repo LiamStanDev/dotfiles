@@ -60,7 +60,7 @@ return function()
 	keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 	--keymap("n", "gl", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
 	keymap("n", "gb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
-	keymap("n", "gh", "<cmd>Lspsaga hover_doc ++keep<CR>")
+	keymap("n", "gh", "<cmd>Lspsaga hover_doc<CR>")
 	-- Go to type definition
 	-- keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 end

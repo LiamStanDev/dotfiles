@@ -23,6 +23,17 @@ return function()
 		-- add some plugin
 
 		require("illuminate").on_attach(client)
+		require("lsp_signature").on_attach({ -- plugin for parameter hint
+			bind = true,
+			handler_opts = {
+				border = "rounded",
+			},
+			hint_enable = false,
+		}, bufnr)
+
+		vim.keymap.set({ "n" }, "<Leader>k", function()
+			vim.lsp.buf.signature_help()
+		end, { silent = true, noremap = true, desc = "toggle signature" })
 
 		-- add some capabilities filters
 		if client.name == "lua_ls" then
@@ -72,11 +83,11 @@ return function()
 	end
 
 	vim.diagnostic.config({
-		virtual_text = { spacing = 4, prefix = "●" }, -- show diagnostic after your code
+		virtual_text = { spacing = 2, prefix = "●" }, -- show diagnostic after your code
 		signs = {
 			active = signs, -- show signs
 		},
-		update_in_insert = false,
+		update_in_insert = true,
 		underline = true, -- underline for diagnostic
 		severity_sort = true,
 		float = {
@@ -89,13 +100,4 @@ return function()
 			prefix = "",
 		},
 	})
-
-	-- ui(handle by noice.nvim)
-	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	-- 	border = "rounded",
-	-- })
-
-	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-	-- 	border = "rounded",
-	-- })
 end

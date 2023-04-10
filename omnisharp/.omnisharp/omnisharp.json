@@ -1,5 +1,36 @@
 {
   "RoslynExtensionsOptions": {
-    "enableDecompilationSupport": true
+    "enableDecompilationSupport": true,
+    "documentAnalysisTimeoutMs": 30000,
+    "enableImportCompletion": true,
+    "enableAnalyzersSupport": false,
+    "diagnosticWorkersThreadCount": 8,
+    "inlayHintsOptions": {
+      "enableForParameters": true,
+      "forLiteralParameters": true,
+      "forIndexerParameters": true,
+      "forObjectCreationParameters": true,
+      "forOtherParameters": true,
+      "suppressForParametersThatDifferOnlyBySuffix": false,
+      "suppressForParametersThatMatchMethodIntent": false,
+      "suppressForParametersThatMatchArgumentName": false,
+      "enableForTypes": true,
+      "forImplicitVariableTypes": true,
+      "forLambdaParameterTypes": true,
+      "forImplicitObjectCreation": true
+    }
+  },
+  "fileOptions": {
+    "systemExcludeSearchPatterns": [
+      "**/node_modules/**/*",
+      "**/bin/**/*",
+      "**/obj/**/*"
+    ],
+    "excludeSearchPatterns": []
+  },
+  "RenameOptions": {
+    "RenameInComments": false,
+    "RenameOverloads": false,
+    "RenameInStrings": false
   }
 }

@@ -30,6 +30,22 @@ return function()
 				["vim.lsp.util.stylize_markdown"] = true,
 				["cmp.entry.get_documentation"] = true,
 			},
+			hover = {
+				enabled = false,
+				view = nil, -- when nil, use defaults from documentation
+				opts = {}, -- merged with defaults from documentation
+			},
+			signature = { -- parameter hint
+				enabled = false,
+				auto_open = {
+					enabled = true,
+					trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
+					luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
+					throttle = 50, -- Debounce lsp signature help request by 50ms
+				},
+				view = nil, -- when nil, use defaults from documentation
+				opts = {}, -- merged with defaults from documentation
+			},
 		},
 		-- you can enable a preset for easier configuration
 		presets = {

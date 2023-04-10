@@ -107,6 +107,7 @@ M.plugins = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"Hoffs/omnisharp-extended-lsp.nvim", -- for decompile csharp
+			"ray-x/lsp_signature.nvim",
 		},
 		config = require("services.lspconfig"),
 	},
