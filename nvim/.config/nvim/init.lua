@@ -20,8 +20,9 @@ g_configs.filter_files = {
 }
 
 -- register lsp server for auto completion
-g_configs.lsp_servers = {
+g_configs.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nvim
 	"tsserver",
+	"tailwindcss",
 	"omnisharp",
 	"html",
 	"jsonls",

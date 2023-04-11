@@ -36,8 +36,8 @@ M.plugins = {
 	{ "numToStr/Comment.nvim", event = { "BufNewFile", "BufReadPre" }, config = require("editor.comment") },
 
 	-- auto autopairs
-	{ "windwp/nvim-autopairs", event = "InsertEnter", config = require("editor.autopairs") },
-	-- { "m4xshen/autoclose.nvim", event = "InsertEnter", config = require("editor.autoclose") },
+	-- { "windwp/nvim-autopairs", event = "InsertEnter", config = require("editor.autopairs") },
+	{ "m4xshen/autoclose.nvim", event = "InsertEnter", config = require("editor.autoclose") },
 
 	-- for text highlight
 	{

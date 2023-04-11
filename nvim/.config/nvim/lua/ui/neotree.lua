@@ -150,11 +150,11 @@ return function()
 				visible = false, -- when true, they will just be displayed differently than normal items
 				hide_dotfiles = false,
 				hide_gitignored = false,
-				hide_hidden = false, -- only works on Windows for hidden files/directories
+				hide_hidden = false, -- only works on windows for hidden files/directories
 				hide_by_name = require("core").filter_files,
-				hide_by_pattern = {},
+				-- hide_by_pattern = require("core").filter_files_pattern,
 				always_show = {},
-				-- never_show = { ".DS_Store" },
+				-- never_show = { ".ds_store" },
 				never_show_by_pattern = {},
 			},
 			follow_current_file = true, -- This will find and focus the file in the active buffer every
