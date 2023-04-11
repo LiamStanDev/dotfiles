@@ -213,10 +213,17 @@ M.plugins = {
 	{ "kdheepak/lazygit.nvim" }, --toggle term with lazygit extension
 
 	--color show
+	-- {
+	-- 	"norcalli/nvim-colorizer.lua",
+	-- 	config = function()
+	-- 		require("colorizer").setup()
+	-- 	end,
+	-- },
 	{
-		"norcalli/nvim-colorizer.lua",
+		"NvChad/nvim-colorizer.lua", -- integrated with tailwind
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
-			require("colorizer").setup()
+			require("ui.colorizer")
 		end,
 	},
 
