@@ -28,9 +28,23 @@ M.config = function()
 	require("mason-nvim-dap").setup({
 		ensure_installed = server,
 		automatic_installation = true,
-		automatic_setup = true,
+		handlers = {
+			function(config)
+				require("mason-nvim-dap").default_setup(config)
+			end,
+			-- python = function(config)
+			-- 	config.adapters = {
+			-- 		type = "executable",
+			-- 		command = "/usr/bin/python3",
+			-- 		args = {
+			-- 			"-m",
+			-- 			"debugpy.adapter",
+			-- 		},
+			-- 	}
+			-- 	require("mason-nvim-dap").default_setup(config) -- don't forget this!
+			-- end,
+		},
 	})
-	require("mason-nvim-dap").setup_handlers({})
 
 	require("dapui").setup({
 		-- auto_open = true, -- because I set up on the which-key

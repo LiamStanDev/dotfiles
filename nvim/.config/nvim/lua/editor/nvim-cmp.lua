@@ -59,17 +59,17 @@ return function()
 		}),
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
-			format = function(entry, vim_item)
+			format = function(entry, item)
 				-- Kind icons
-				vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+				item.kind = string.format("%s", kind_icons[item.kind])
 				-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-				vim_item.menu = ({
+				item.menu = ({
 					nvim_lsp = "(LSP)",
 					luasnip = "(Snippet)",
 					buffer = "(Buffer)",
 					path = "(Path)",
 				})[entry.source.name]
-				return vim_item
+				return require("tailwindcss-colorizer-cmp").formatter(entry, item)
 			end,
 		},
 		sources = {

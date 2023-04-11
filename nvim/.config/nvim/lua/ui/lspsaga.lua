@@ -43,6 +43,13 @@ return function()
 			confirm = "<CR>",
 			in_select = true,
 		},
+		lightbulb = {
+			enable = false,
+			enable_in_insert = true,
+			sign = true,
+			sign_priority = 40,
+			virtual_text = true,
+		},
 	})
 	local keymap = vim.keymap.set
 	-- C-t: go back

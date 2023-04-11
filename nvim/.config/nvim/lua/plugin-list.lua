@@ -78,6 +78,14 @@ M.plugins = {
 				},
 				config = require("editor.luasnippet"),
 			},
+			{
+				"roobert/tailwindcss-colorizer-cmp.nvim",
+				config = function()
+					require("tailwindcss-colorizer-cmp").setup({
+						color_square_width = 2,
+					})
+				end,
+			},
 		},
 		config = require("editor.nvim-cmp"),
 	},
