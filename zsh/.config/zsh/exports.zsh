@@ -23,3 +23,5 @@ export PATH="$HOME/.local/bin:$PATH"
 # yarn path
 # npm config set prefix "$HOME/.npm-global" # set the npm for the system first time
 export PATH="$HOME/.npm-global/bin:$PATH"
+# rust evn
+export PATH="$HOME/.cargo/bin:$PATH"
