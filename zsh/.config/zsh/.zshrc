@@ -71,4 +71,4 @@ conda deactivate
 
 
 # auto show
-# neofetch
+neofetch

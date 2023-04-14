@@ -14,7 +14,10 @@ alias vim='nvim'
 alias v="nvim"
 
 # lazygit
-alias lg="lazygit"
+alias lzg="lazygit"
+
+#lazy docker
+alias lzd="lazydocker"
 
 # dotnet CLI
 alias dotnet-w="dotnet watch --no-hot-reload --project"
