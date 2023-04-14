@@ -5,7 +5,7 @@ local g_configs = require("core")
 g_configs.colorscheme = "onedark"
 
 -- whether to see navigator bar in the top
-g_configs.navigator_on = false
+g_configs.navigator_on = true
 
 -- set the logo. see ./lua/ui/style/header.lua
 g_configs.dashboard_logo = "AstronautSmall"
@@ -55,6 +55,7 @@ g_configs.null_ls_servers = {
 	"xmlformat",
 	"rustfmt", -- rust formatter
 	"clippy", -- rust linter
+	"prismaFmt",
 }
 
 -- register debuger server

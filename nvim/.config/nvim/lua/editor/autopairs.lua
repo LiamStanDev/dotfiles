@@ -1,12 +1,27 @@
 return function()
 	require("nvim-autopairs").setup({
-		check_ts = true, -- enable treesitter
+		active = true,
+		on_config_done = nil,
+		map_char = {
+			all = "(",
+			tex = "{",
+		},
+		enable_check_bracket_line = false,
+		check_ts = true,
 		ts_config = {
 			lua = { "string", "source" },
 			javascript = { "string", "template_string" },
 			java = false,
 		},
 		disable_filetype = { "TelescopePrompt", "spectre_panel" },
+		ignored_next_char = string.gsub([[ [%w%%%'%[%"%.] ]], "%s+", ""),
+		enable_moveright = true,
+		disable_in_macro = false,
+		enable_afterquote = true,
+		map_bs = true,
+		map_c_w = false,
+		disable_in_visualblock = false,
+		---@usage  change default fast_wrap
 		fast_wrap = {
 			map = "<M-e>",
 			chars = { "{", "[", "(", '"', "'" },
@@ -15,8 +30,8 @@ return function()
 			end_key = "$",
 			keys = "qwertyuiopzxcvbnmasdfghjkl",
 			check_comma = true,
-			highlight = "PmenuSel",
-			highlight_grey = "LineNr",
+			highlight = "Search",
+			highlight_grey = "Comment",
 		},
 	})
 

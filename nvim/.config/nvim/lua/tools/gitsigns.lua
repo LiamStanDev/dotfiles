@@ -1,11 +1,5 @@
 return function()
-	local stauts_gitsigns, gitsigns = pcall(require, "gitsigns")
-	if not stauts_gitsigns then
-		print("gitsigns not found")
-		return
-	end
-
-	gitsigns.setup({
+	require("gitsigns").setup({
 		signs = {
 			add = { text = "+" },
 			change = { text = "~" },

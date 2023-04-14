@@ -36,8 +36,8 @@ M.plugins = {
 	{ "numToStr/Comment.nvim", event = { "BufNewFile", "BufReadPre" }, config = require("editor.comment") },
 
 	-- -- auto autopairs
-	-- { "windwp/nvim-autopairs", event = "InsertEnter", config = require("editor.autopairs") },
-	{ "m4xshen/autoclose.nvim", event = "InsertEnter", config = require("editor.autoclose") },
+	{ "windwp/nvim-autopairs", event = "InsertEnter", config = require("editor.autopairs") },
+	-- { "m4xshen/autoclose.nvim", event = "InsertEnter", config = require("editor.autoclose") },
 
 	-- for text highlight
 	{
@@ -273,6 +273,16 @@ M.plugins = {
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 		ft = { "markdown" }, -- load at markdown file type
+	},
+
+	-- live-server
+	{
+		"aurum77/live-server.nvim",
+		build = function()
+			require("live_server.util").install()
+		end,
+		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+		config = require("tools.live-server"),
 	},
 }
 

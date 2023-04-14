@@ -14,8 +14,8 @@ local insert_mode = {
 
 local normal_mode = {
 	-- Quick Curser
-	["<S-j>"] = "5j",
-	["<S-k>"] = "5k",
+	["<S-j>"] = "10j",
+	["<S-k>"] = "10k",
 	-- Better window movement
 	["<C-h>"] = "<C-w>h",
 	["<C-j>"] = "<C-w>j",

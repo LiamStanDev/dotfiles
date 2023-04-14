@@ -98,10 +98,9 @@ return function()
 		[";"] = { ":e $MYVIMRC<CR>", "configuration" },
 		["m"] = { "<Plug>MarkdownPreviewToggle", "Markdown Preview" },
 		b = {
-			name = "Buffers",
-			j = { "<cmd>BufferLinePick<cr>", "Jump" },
-			f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-			h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
+			name = "Browser show",
+			m = { "<Plug>MarkdownPreviewToggle", "Markdown Preview" },
+			l = { "<Cmd>LiveServer<CR>" },
 		},
 		d = {
 			name = "Debug",
