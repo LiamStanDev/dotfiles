@@ -32,6 +32,12 @@ g_configs.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig
 	"cssls",
 	"pylsp", -- python lsp
 	"bashls",
+	"dockerls",
+	"docker_compose_language_service",
+	-- "yamlls",
+	"taplo", -- toml lsp
+	"lemminx", -- xml lsp
+	"prismals",
 }
 
 -- register formatting and diagnostics server
@@ -40,8 +46,9 @@ g_configs.null_ls_servers = {
 	"black", -- python formatter
 	"stylua", -- lua formatter
 	"beautysh", -- bash formatter
-	"csharpier", -- csharp formatter
-	"eslint", -- js, ts linter
+	-- "csharpier", -- csharp formatter
+	-- "eslint", -- js, ts linter
+	"eslint_d",
 	--"cspell", -- so annoying
 	--"flake8",
 	--"mypy",
@@ -52,9 +59,10 @@ g_configs.null_ls_servers = {
 
 -- register debuger server
 g_configs.dap_servers = {
-	"coreclr", -- csharp
+	-- "coreclr", -- csharp
 	"python",
 	"codelldb",
+	"node2",
 }
 
 -- setup all plugin
