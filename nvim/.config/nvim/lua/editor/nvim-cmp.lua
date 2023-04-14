@@ -76,7 +76,7 @@ return function()
 			format = function(entry, item)
 				-- Kind icons
 				item.kind = string.format("%s", kind_icons[item.kind])
-				-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+				-- item.kind = string.format('%s %s', kind_icons[item.kind], item.kind) -- This concatonates the icons with the name of the item kind
 				if entry.completion_item.detail ~= nil and entry.completion_item ~= "" then
 					item.menu = entry.completion_item.detail
 				else
@@ -87,6 +87,7 @@ return function()
 						path = "(Path)",
 					})[entry.source.name]
 				end
+
 				return require("tailwindcss-colorizer-cmp").formatter(entry, item)
 			end,
 		},
@@ -101,9 +102,6 @@ return function()
 			select = false,
 		},
 		window = {
-			-- documentation = {
-			-- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			-- },
 			completion = require("cmp.config.window").bordered(),
 			documentation = require("cmp.config.window").bordered(),
 		},
