@@ -2,3 +2,4 @@
 **/.zcompdump
 **/lazy-lock.json
 **/.DS_Store
+nvim/.config/nvim/live-server
