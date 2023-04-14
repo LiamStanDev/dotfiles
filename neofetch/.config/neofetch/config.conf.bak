@@ -2,13 +2,43 @@
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
 
-info "\e[31m" users
-    info "\e[32m" kernel
-    info "\e[33m" uptime
-    info "\e[34m" packages
-    info "\e[35m" wm
-    info "\e[32m" shell
-    info "\e[33m" memory
+    prin "$(color 1)┌─────────────────────────────────────────────────┐"
+    info "${c3} ​ ​  " title
+    prin "$(color 1)└─────────────────────────────────────────────────┘"
+    
+    prin "$(color 1)   $(color 2)    $(color 3)    $(color 4)    $(color 5)    $(color 6)    $(color 7)    $(color 8)    \n \n $(color 9) \n   $(color 10)    $(color 11)    $(color 12)    $(color 13)    $(color 14)    $(color 15)    $(color 16)    "
+
+    prin "$(color 1)┌─────────────────────────────────────────────────┐"
+    
+    prin "${c1} OS" # os
+    info "${c1}│ ├ " distro
+    info "${c1}│ ├ " kernel
+    info "${c1}│ ├ " packages
+    info "${c1}│ └ " shell
+    
+    prin"│"
+    
+    prin "${c2} DE/WM" # wm
+    info "${c2}│ ├ " theme
+    # info "${c2}│ ├ " icons
+    info "${c2}│ └ " term
+
+    prin"│"
+    
+    prin "${c3} PC"
+    info "${c3}│ ├ " cpu
+    info "${c3}│ ├ " gpu
+    info "${c3}│ ├ " memory
+    info "${c3}│ ├󰋊 " disk
+    info "${c3}│ ├ " uptime
+    info "${c3}│ └ " resolution
+    prin "$(color 1)└─────────────────────────────────────────────────┘"
+
+    echo
+
+    prin "$(color 1)   $(color 2)    $(color 3)    $(color 4)    $(color 5)    $(color 6)    $(color 7)    $(color 8)    \n \n $(color 9) \n   $(color 10)    $(color 11)    $(color 12)    $(color 13)    $(color 14)    $(color 15)    $(color 16)    "
+    
+    
 }
 
 ##--------- Title
@@ -659,8 +689,9 @@ image_backend="kitty"
 #       In ascii mode, distro ascii art will be used and in an image mode, your
 #       wallpaper will be used.
 # need to install imagemagic
-# image_source="${HOME}/Pictures/images/avatar.jpg"
-# image_source="${HOME}/Pictures/Wallpapers/smile.jpg"
+#image_source="${HOME}/.config/neofetch/images/profile.jpg"
+#image_source="/home/liam/.config/neofetch/avatar.jpg"
+image_source="${HOME}/Pictures/Wallpapers/smile.jpg"
 
 ##--------- Ascii Options
 
@@ -710,7 +741,7 @@ image_backend="kitty"
 #       Slackware, SunOS, LinuxLite, OpenSUSE, Raspbian,
 #       postmarketOS, and Void have a smaller logo variant.
 #       Use '{distro name}_small' to use the small variants.
-ascii_distro="arch_small"
+# ascii_distro="auto"
 
 # Ascii Colors
 #
@@ -721,8 +752,7 @@ ascii_distro="arch_small"
 # Example:
 # ascii_colors=(distro)      - Ascii is colored based on Distro colors.
 # ascii_colors=(4 6 1 8 8 6) - Ascii is colored using these colors.
-# ascii_colors=(1 2 3 4 5 6 7 8)
-ascii_colors=(distro)
+ascii_colors=(1 2 3 4 5 6 7 8)
 
 # Bold ascii logo
 # Whether or not to bold the ascii logo.
@@ -776,15 +806,14 @@ crop_offset="center"
 # Values:  'auto', '00px', '00%', 'none'
 # Flags:   --image_size
 #          --size
-# image_size="40%"
-image_size="auto"
+image_size="40%"
 
 # Gap between image and text
 #
 # Default: '3'
 # Values:  'num', '-num'
 # Flag:    --gap
-gap=5
+gap=2
 
 # Image offsets
 # Only works with the w3m backend.
