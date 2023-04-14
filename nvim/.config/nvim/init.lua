@@ -23,7 +23,9 @@ g_configs.filter_files = {
 g_configs.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nvim
 	"tsserver",
 	"tailwindcss",
-	"omnisharp",
+	-- "omnisharp",
+	-- "csharp_ls",
+	"rust_analyzer",
 	"html",
 	"jsonls",
 	"lua_ls",
@@ -44,12 +46,15 @@ g_configs.null_ls_servers = {
 	--"flake8",
 	--"mypy",
 	"xmlformat",
+	"rustfmt", -- rust formatter
+	"clippy", -- rust linter
 }
 
 -- register debuger server
 g_configs.dap_servers = {
 	"coreclr", -- csharp
 	"python",
+	"codelldb",
 }
 
 -- setup all plugin

@@ -29,13 +29,13 @@ M.plugins = {
 		"morhetz/gruvbox",
 	},
 
-	-- uitl plugins
+	-- -- uitl plugins
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
-	-- comment
+	-- -- comment
 	{ "numToStr/Comment.nvim", event = { "BufNewFile", "BufReadPre" }, config = require("editor.comment") },
 
-	-- auto autopairs
+	-- -- auto autopairs
 	-- { "windwp/nvim-autopairs", event = "InsertEnter", config = require("editor.autopairs") },
 	{ "m4xshen/autoclose.nvim", event = "InsertEnter", config = require("editor.autoclose") },
 
@@ -46,7 +46,7 @@ M.plugins = {
 		config = require("editor.illuminate"),
 	},
 
-	-- indnet line
+	-- -- indnet line
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = { "BufReadPost", "BufNewFile" },
@@ -90,7 +90,7 @@ M.plugins = {
 		config = require("editor.nvim-cmp"),
 	},
 
-	-- treesitter
+	-- -- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		version = false, -- last release is way too old and doesn't work on Windows
@@ -189,7 +189,7 @@ M.plugins = {
 	{ "nvim-lualine/lualine.nvim", event = "VeryLazy", config = require("ui.lualine") },
 
 	-- buffer tab
-	{ "akinsho/bufferline.nvim", event = "VeryLazy", config = require("ui.bufferline") },
+	{ "akinsho/bufferline.nvim", config = require("ui.bufferline") },
 	{ "moll/vim-bbye" }, -- can delete buffers (close files)
 
 	-- for select and input ui
@@ -211,7 +211,7 @@ M.plugins = {
 	{ "rcarriga/nvim-notify", event = "VeryLazy", config = require("ui.notify") },
 
 	-- for outline
-	-- { "simrat39/symbols-outline.nvim" },
+	{ "simrat39/symbols-outline.nvim" },
 
 	-- transparent theme
 	-- "xiyaowong/transparent.nvim",

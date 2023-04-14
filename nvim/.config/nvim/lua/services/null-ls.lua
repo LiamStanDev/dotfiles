@@ -8,7 +8,7 @@ return function()
 	local sources = {}
 	for _, server in ipairs(servers) do
 		local formatter_ok, formatter = pcall(require, "null-ls.builtins.formatting." .. server)
-		if formatter_ok then
+		if formatter_ok and server ~= "eslint" then
 			table.insert(sources, formatter)
 		end
 
