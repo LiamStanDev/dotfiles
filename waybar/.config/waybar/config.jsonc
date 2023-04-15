@@ -5,22 +5,27 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "height": 50,
+  "height": 40,
   "modules-left": [
-    "clock",
-    // "custom/weather",
-    "wlr/workspaces"
+    "custom/launcher",
+    "cpu",
+    "memory",
+    "wlr/workspaces",
+    "custom/weather"
   ],
   "modules-center": ["hyprland/window"],
   "modules-right": [
-    "custom/updates",
+    "tray",
+    // "custom/updates",
     "network",
     "bluetooth",
-    "temperature",
-    "battery",
     "pulseaudio",
     "pulseaudio#microphone",
-    "tray"
+    "backlight",
+    "battery",
+    "clock",
+    "custom/lock",
+    "custom/power-menu"
   ],
   "hyprland/window": {
     "format": "{}"
@@ -55,14 +60,6 @@
     "interval": 7200,
     "format": " {}"
   },
-  "custom/weather": {
-    //shows the current weather and forecast
-    "tooltip": true,
-    "format": "{}",
-    "interval": 30,
-    "exec": "~/.config/waybar/scripts/waybar-wttr.py",
-    "return-type": "json"
-  },
   "tray": {
     "icon-size": 18,
     "spacing": 10
@@ -70,14 +67,6 @@
   "clock": {
     "format": "{:  %I:%M %p    %a, %b %e}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["", "", ""],
-    "on-scroll-up": "brightnessctl set 1%+",
-    "on-scroll-down": "brightnessctl set 1%-",
-    "min-length": 6
   },
   "battery": {
     "states": {
@@ -124,15 +113,6 @@
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C "
   },
-  "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "  {signalStrength}%",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
-  },
   "bluetooth": {
     "format": " {status}",
     "format-disabled": "", // an empty format will hide the module
@@ -140,5 +120,61 @@
     "tooltip-format": "{device_alias}",
     "tooltip-format-connected": " {device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}"
+  },
+  "cpu": {
+    "interval": 10,
+    "format": " {}%",
+    "max-length": 10,
+    "on-click": ""
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {}%",
+    "format-alt": " {used:0.1f}GB",
+    "max-length": 10
+  },
+  "backlight": {
+    "device": "eDP-1",
+    "format": "{icon}",
+    "tooltip-format": "{percent}",
+    "format-icons": ["󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "]
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-linked": "{ifname} (No IP) ",
+    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
+    "format-wifi": "{icon}",
+    "format-ethernet": " {ipaddr}",
+    "format-disconnected": "睊",
+    "tooltip-format": "{essid}",
+    "on-click": "~/.config/waybar/scripts/network/rofi-network-manager.sh",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+  },
+  "custom/weather": {
+    "exec": "python3 ~/.config/waybar/scripts/weather.py",
+    "restart-interval": 300,
+    "return-type": "json"
+  },
+  "custom/lock": {
+    "tooltip": false,
+    "on-click": "swaylock --clock --indicator --screenshots --effect-scale 0.4 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr '%a %e.%m.%Y' --timestr '%k:%M'",
+    "format": ""
+  },
+  "custom/spotify": {
+    "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+    "format": " {}",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-double-click-right": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+  "custom/power-menu": {
+    "format": " ⏻ ",
+    //"on-click": "bash ~/.config/waybar/scripts/power-menu/powermenu.sh &"
+    "on-click": "wlogout --protocol layer-shell -b 5 -T 400 -B 400"
+  },
+  "custom/launcher": {
+    "format": "",
+    "on-click": "rofi -show drun &"
   }
 }
