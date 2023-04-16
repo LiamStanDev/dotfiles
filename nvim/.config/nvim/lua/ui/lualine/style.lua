@@ -51,6 +51,7 @@ local M = {
 		lualine_b = {},
 		lualine_c = {
 			component.spaces,
+			component.python_env,
 			{
 				"filetype",
 				icon_only = true,
@@ -66,7 +67,6 @@ local M = {
 				separator = { left = "", right = " " },
 				color = { bg = "#2a2c3f" },
 			},
-			component.python_env,
 			component.branch,
 			component.diff,
 		},
