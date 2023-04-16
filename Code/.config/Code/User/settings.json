@@ -1,0 +1,213 @@
+{
+  "window.titleBarStyle": "custom",
+  "window.dialogStyle": "custom",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "left",
+  "workbench.list.smoothScrolling": true,
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontSize": 12,
+  "editor.lineHeight": 24,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.rulers": [],
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "line",
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "off",
+  "editor.wordWrapColumn": 120,
+  "editor.largeFileOptimizations": false,
+  "editor.suggestSelection": "first",
+  "editor.accessibilitySupport": "off",
+  "editor.snippetSuggestions": "bottom",
+  "editor.guides.bracketPairs": true,
+  "editor.mouseWheelZoom": true,
+  "editor.formatOnPaste": false,
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.smoothScrolling": true,
+  "editor.formatOnType": true,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "files.autoSave": "off",
+  "files.autoGuessEncoding": true,
+  "debug.showBreakpointsInOverviewRuler": false,
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+  "terminal.integrated.fontWeight": "bold",
+
+  "workbench.editorAssociations": {
+    "*.class": "default"
+  },
+  "editor.acceptSuggestionOnCommitCharacter": true,
+
+  "liveServer.settings.CustomBrowser": "chrome",
+
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "csharpextensions.privateMemberPrefix": "_",
+  "omnisharp.enableImportCompletion": true,
+  "csharp.inlayHints.parameters.forLiteralParameters": true,
+  "csharp.inlayHints.parameters.forObjectCreationParameters": true,
+  "csharp.inlayHints.parameters.forOtherParameters": true,
+  "omnisharp.enableRoslynAnalyzers": true,
+  "omnisharp.sdkPath": "/usr/lib64/dotnet/sdk/7.0.103",
+  "omnisharp.dotnetPath": "/usr/bin/dotnet",
+  "omnisharp.organizeImportsOnFormat": true,
+
+  "workbench.preferredDarkColorTheme": "One Dark Pro",
+
+  "git.autofetch": true,
+  "csharpextensions.useFileScopedNamespace": true,
+  "csharpextensions.useThisForCtorAssignments": false,
+  "files.exclude": {
+    "**/obj": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "**/node_modules": true
+  },
+  "prettier.arrowParens": "avoid",
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.tabSize": 4
+  },
+  "gitlens.hovers.currentLine.over": "line",
+
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // // let p use the yanked register, not the delete register.
+    // {
+    //   "before": ["p"],
+    //   "after": ["\"", "0", "p"]
+    // },
+    {
+      "before": ["z", "z"],
+      "after": [],
+      "commands": ["editor.toggleFold"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "_"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "after": [],
+      "commands": ["workbench.action.files.saveAll"]
+    },
+    {
+      "before": ["u"],
+      "after": [],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "after": [],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["<leader>", "d", "t"],
+      "after": [],
+      "commands": ["editor.debug.action.toggleBreakpoint"]
+    },
+    {
+      "before": ["<leader>", "d", "s"],
+      "after": [],
+      "commands": ["workbench.action.debug.start"]
+    },
+    {
+      "before": ["<leader>", "d", "x"],
+      "after": [],
+      "commands": ["workbench.action.debug.stop"]
+    },
+    {
+      "before": ["<leader>", "d", "c"],
+      "after": [],
+      "commands": ["workbench.action.debug.continue"]
+    },
+    {
+      "before": ["<leader>", "d", "i"],
+      "after": [],
+      "commands": ["workbench.action.debug.stepInto"]
+    },
+    {
+      "before": ["<leader>", "d", "o"],
+      "after": [],
+      "commands": ["workbench.action.debug.stepOver"]
+    },
+    {
+      "before": ["<leader>", "d", "I"],
+      "after": [],
+      "commands": ["workbench.action.debug.stepOut"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["i"],
+      "after": ["<Esc>", "i"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "_"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "after": [],
+      "commands": ["editor.action.commentLine"]
+    }
+  ],
+  "vim.camelCaseMotion.enable": true,
+  "vim.cursorStylePerMode.visual": "block-outline",
+  "vim.commandLineModeKeyBindingsNonRecursive": [],
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "_"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false,
+    "<C-i>": false,
+    "<C-.>": false
+  },
+  "explorer.compactFolders": false,
+  "workbench.editor.untitled.hint": "hidden",
+  "editor.minimap.enabled": false,
+  // for auto close tag don't close the generic of typescript
+  // the closing tag only use for .tsx file
+  "auto-close-tag.activationOnLanguage": ["html", "xml", "javascript", "javascriptreact", "typescriptreact"],
+  "prettier.printWidth": 9999,
+  "prettier.proseWrap": "never",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "window.zoomLevel": -1
+}
