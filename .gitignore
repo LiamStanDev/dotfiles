@@ -3,3 +3,4 @@
 **/lazy-lock.json
 **/.DS_Store
 nvim/.config/nvim/live-server
+lazygit/.config/lazygit/state.yml
