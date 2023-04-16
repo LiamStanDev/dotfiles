@@ -1,6 +1,7 @@
 # macOS
 if [[ $OSTYPE =~ ^darwin ]]; then
     export PATH="/opt/homebrew/bin:$PATH"
+    export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
 # for the system varaible

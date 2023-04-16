@@ -26,6 +26,6 @@ gui:
   showIcons: true
 
 disableStartupPopups: true
-notARepository: "skip" # one of: 'prompt' | 'create' | 'skip'
+notARepository: "prompt" # one of: 'prompt' | 'create' | 'skip'
 os:
   editCommand: "nvim"
