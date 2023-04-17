@@ -4,3 +4,4 @@
 **/.DS_Store
 nvim/.config/nvim/live-server
 lazygit/.config/lazygit/state.yml
+zsh/.config/zsh/API_Keys.zsh
