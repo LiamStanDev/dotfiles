@@ -26,3 +26,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 # rust evn
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# secret api keys
+plug "$HOME/.config/zsh/API_Keys.zsh"
