@@ -284,6 +284,29 @@ M.plugins = {
 		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
 		config = require("tools.live-server"),
 	},
+
+	-- chatGPT
+	{
+		"Bryley/neoai.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		-- cmd = {
+		-- 	"NeoAI",
+		-- 	"NeoAIOpen",
+		-- 	"NeoAIClose",
+		-- 	"NeoAIToggle",
+		-- 	"NeoAIContext",
+		-- 	"NeoAIContextOpen",
+		-- 	"NeoAIContextClose",
+		-- 	"NeoAIInject",
+		-- 	"NeoAIInjectCode",
+		-- 	"NeoAIInjectContext",
+		-- 	"NeoAIInjectContextCode",
+		-- },
+		event = { "BufReadPost", "BufNewFile" },
+		config = require("tools.neoai"),
+	},
 }
 
 return M
