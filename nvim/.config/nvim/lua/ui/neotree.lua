@@ -21,6 +21,8 @@ return function()
 	vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 	require("neo-tree").setup({
+		use_libuv_file_watcher = true, -- not need to be manually refreshed
+		follow_current_file = true,
 		close_if_last_window = false,
 		popup_border_style = "rounded",
 		enable_git_status = true,

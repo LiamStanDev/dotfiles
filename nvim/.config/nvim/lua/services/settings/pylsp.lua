@@ -1,6 +1,9 @@
 return {
 	settings = {
 		pylsp = {
+			-- auto completion root is the first directory with __init__.py
+			-- so the "./src" directory shouldn't have __init__.py if you don't
+			-- import like "import src.your.modeule"
 			plugins = {
 				-- style checking
 				pycodestyle = {

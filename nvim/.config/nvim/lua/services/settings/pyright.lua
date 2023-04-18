@@ -2,8 +2,8 @@ return {
 	settings = {
 		python = {
 			analysis = {
-				typeCheckingMode = "strict",
-				-- diagnosticMode = "workspace",
+				-- typeCheckingMode = "strict",
+				diagnosticMode = "workspace",
 				autoSearchPaths = true, -- find "src" if no execution environments in config file
 				inlayHints = {
 					variableTypes = true,
@@ -11,6 +11,7 @@ return {
 				},
 				logLevel = "Information",
 				autoImportCompletions = true,
+				useLibraryCodeForTypes = true,
 			},
 		},
 	},

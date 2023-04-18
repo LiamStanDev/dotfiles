@@ -30,6 +30,7 @@ g_configs.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig
 	"jsonls",
 	"lua_ls",
 	"cssls",
+	-- "pyright",
 	"pylsp", -- python lsp
 	"bashls",
 	"dockerls",
