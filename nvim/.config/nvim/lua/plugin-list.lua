@@ -134,7 +134,7 @@ M.plugins = {
 	-- dap
 	{
 		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
+		lazy = true,
 		dependencies = {
 			"jay-babu/mason-nvim-dap.nvim",
 		},
@@ -299,19 +299,6 @@ M.plugins = {
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
-		-- cmd = {
-		-- 	"NeoAI",
-		-- 	"NeoAIOpen",
-		-- 	"NeoAIClose",
-		-- 	"NeoAIToggle",
-		-- 	"NeoAIContext",
-		-- 	"NeoAIContextOpen",
-		-- 	"NeoAIContextClose",
-		-- 	"NeoAIInject",
-		-- 	"NeoAIInjectCode",
-		-- 	"NeoAIInjectContext",
-		-- 	"NeoAIInjectContextCode",
-		-- },
 		event = { "BufReadPost", "BufNewFile" },
 		config = require("tools.neoai"),
 	},
