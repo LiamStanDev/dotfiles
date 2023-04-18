@@ -47,10 +47,8 @@ g_configs.null_ls_servers = {
 	"black", -- python formatter
 	"stylua", -- lua formatter
 	"beautysh", -- bash formatter
-	-- "csharpier", -- csharp formatter
-	-- "eslint", -- js, ts linter
+	"csharpier", -- csharp formatter
 	"eslint_d",
-	--"cspell", -- so annoying
 	--"flake8",
 	--"mypy",
 	"xmlformat",
@@ -61,7 +59,7 @@ g_configs.null_ls_servers = {
 
 -- register debuger server
 g_configs.dap_servers = {
-	-- "coreclr", -- csharp
+	"coreclr", -- csharp
 	"python",
 	"codelldb",
 	"node2",

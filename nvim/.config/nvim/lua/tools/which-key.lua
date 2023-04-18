@@ -118,9 +118,8 @@ return function()
 			O = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
 			p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
 			r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-			s = { "<cmd>lua require'dap'.continue()<CR><cmd>lua require('dapui').open({reset = true})<CR>", "Start" },
-			x = { "<cmd>lua require'dap'.close()<CR><cmd>lua require('dapui').close()<CR>", "Quit" },
-			-- U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
+			s = { "<cmd>lua require'dap'.continue()<CR>", "Start" },
+			U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 		},
 		-- p = {
 		-- 	name = "Plugins",

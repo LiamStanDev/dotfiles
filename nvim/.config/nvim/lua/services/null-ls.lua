@@ -12,17 +12,14 @@ return function()
 
 		if formatter_ok and server ~= "eslint" and server ~= "eslint_d" then -- remove eslint formatter
 			-- see: https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md
+			local formatter_set = formatter
+
 			if server == "prettier" then
-				table.insert(
-					sources,
-					formatter.with({
-						extra_filetypes = { "toml" },
-						extra_args = { "--tab-width", 2, "--single-quote", false },
-					})
-				)
-			else
-				table.insert(sources, formatter)
+				formatter_set = formatter.with({
+					extra_filetypes = { "toml" },
+				})
 			end
+			table.insert(sources, formatter_set)
 		end
 
 		-- linter

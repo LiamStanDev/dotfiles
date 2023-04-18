@@ -37,7 +37,7 @@ return function()
 			},
 		},
 		rename = {
-			quit = "q",
+			quit = "<C-c>",
 			exec = "<CR>",
 			mark = "x",
 			confirm = "<CR>",

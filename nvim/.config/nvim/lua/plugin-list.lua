@@ -133,14 +133,22 @@ M.plugins = {
 
 	-- dap
 	{
+		"mfussenegger/nvim-dap",
+		event = "VeryLazy",
+		dependencies = {
+			"jay-babu/mason-nvim-dap.nvim",
+		},
+		init = require("services.dap").init,
+		config = require("services.dap").config,
+	},
+	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
 		dependencies = {
 			"mfussenegger/nvim-dap",
 			"jay-babu/mason-nvim-dap.nvim",
 		},
-		init = require("services.dap").init,
-		config = require("services.dap").config,
+		config = require("ui.dapui"),
 	},
 
 	-- utils
@@ -161,7 +169,7 @@ M.plugins = {
 
 	-- lsp ui
 	{
-		"glepnir/lspsaga.nvim",
+		"nvimdev/lspsaga.nvim",
 		event = "LspAttach",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = require("ui.lspsaga"),
