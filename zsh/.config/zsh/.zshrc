@@ -16,9 +16,6 @@ plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 # plug "zap-zsh/zap-prompt"
 
-# setting local binary path
-export PATH="$HOME/.local/bin":$PATH
-
 
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete()
@@ -69,6 +66,9 @@ conda config --set changeps1 False
 conda deactivate
 # <<< conda initialize <<<
 
+# remove vi mode, except esc
+bindkey -v
+bindkey '^[' vi-cmd-mode
 
 # auto show
 neofetch
