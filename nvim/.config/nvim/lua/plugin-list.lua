@@ -114,7 +114,8 @@ M.plugins = {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			"Hoffs/omnisharp-extended-lsp.nvim", -- for decompile csharp
+			"Hoffs/omnisharp-extended-lsp.nvim", -- for omnisharp decompile
+			"Decodetalkers/csharpls-extended-lsp.nvim", -- for charp_ls decompile
 			"ray-x/lsp_signature.nvim",
 		},
 		config = require("services.lspconfig"),

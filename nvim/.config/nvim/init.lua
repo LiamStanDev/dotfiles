@@ -23,22 +23,20 @@ g_configs.filter_files = {
 g_configs.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nvim
 	"tsserver",
 	"tailwindcss",
-	-- "omnisharp",
-	-- "csharp_ls",
+	"csharp_ls",
 	"rust_analyzer",
 	"html",
 	"jsonls",
 	"lua_ls",
 	"cssls",
-	-- "pyright",
 	"pylsp", -- python lsp
 	"bashls",
 	"dockerls",
 	"docker_compose_language_service",
-	-- "yamlls",
 	"taplo", -- toml lsp
 	"lemminx", -- xml lsp
 	"prismals",
+	"gopls",
 }
 
 -- register formatting and diagnostics server
@@ -51,10 +49,10 @@ g_configs.null_ls_servers = {
 	"eslint_d",
 	--"flake8",
 	--"mypy",
-	"xmlformat",
 	"rustfmt", -- rust formatter
 	"clippy", -- rust linter
 	"prismaFmt",
+	"gofmt",
 }
 
 -- register debuger server
