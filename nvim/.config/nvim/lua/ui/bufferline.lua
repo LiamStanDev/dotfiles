@@ -60,6 +60,7 @@ return function()
 					padding = 1,
 				},
 			},
+			color_icons = true, -- whether or not to add the filetype icon highlights
 			show_buffer_icons = true,
 			show_buffer_close_icons = true,
 			show_close_icon = true,

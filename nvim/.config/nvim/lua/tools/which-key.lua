@@ -171,9 +171,7 @@ return function()
 			p = { "<cmd>Lspsaga peek_definition<CR>", "Peek Definition" },
 			b = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "Buffer Diagnostics" },
 			w = { "<cmd>Lspsaga show_workspace_diagnostics<cr>", "Workspace Diagnostics" },
-			x = { "<cmd>LspStop<cr>", "Lsp Stop" },
-			s = { "<cmd>LspStart<cr>", "Lsp Start" },
-			R = { "<cmd>lua require('cmp').setup{}<cr>", "Cmp Restart" },
+			R = { "<cmd>LspRestart<Cr>", "Lsp Restart" },
 			j = {
 				"<cmd>Lspsaga diagnostic_jump_next<cr>",
 				"Next Diagnostic",
