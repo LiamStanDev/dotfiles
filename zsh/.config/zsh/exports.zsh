@@ -15,6 +15,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init zsh)"
 
+# rust env
+export PATH="$HOME/.cargo/env:$PATH"
+
 # dotnet sdk path
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$DOTNET_ROOT:$PATH
