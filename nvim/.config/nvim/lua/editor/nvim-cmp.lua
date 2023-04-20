@@ -1,43 +1,50 @@
 return function()
 	local cmp = require("cmp")
-
 	--   פּ ﯟ   some other good icons
 	local kind_icons = {
-		Array = " ",
-		Boolean = " ",
-		Class = " ",
-		Color = " ",
-		Constant = " ",
-		Constructor = " ",
-		Copilot = " ",
-		Enum = " ",
-		EnumMember = " ",
-		Event = " ",
-		Field = " ",
-		File = " ",
-		Folder = " ",
-		Function = " ",
-		Interface = " ",
-		Key = " ",
-		Keyword = " ",
-		Method = " ",
-		Module = " ",
-		Namespace = " ",
-		Null = " ",
-		Number = " ",
-		Object = " ",
-		Operator = " ",
-		Package = " ",
-		Property = " ",
-		Reference = " ",
-		Snippet = " ",
-		String = " ",
-		Struct = " ",
-		Text = " ",
-		TypeParameter = " ",
-		Unit = " ",
-		Value = " ",
-		Variable = " ",
+		Namespace = "",
+		Text = "",
+		Method = "",
+		Function = "",
+		Constructor = "",
+		Field = "ﰠ",
+		Variable = "",
+		Class = "ﴯ",
+		Interface = "",
+		Module = "",
+		Property = "ﰠ",
+		Unit = "塞",
+		Value = "",
+		Enum = "",
+		Keyword = "",
+		Snippet = "",
+		Color = "",
+		File = "",
+		Reference = "",
+		Folder = "",
+		EnumMember = "",
+		Constant = "",
+		Struct = "פּ",
+		Event = "",
+		Operator = "",
+		TypeParameter = "",
+		Table = "",
+		Object = "",
+		Tag = "",
+		Array = "[]",
+		Boolean = "",
+		Number = "",
+		Null = "ﳠ",
+		String = "",
+		Calendar = "",
+		Watch = "",
+		Package = "",
+		Copilot = "",
+	}
+
+	local border_opt = {
+		border = "rounded", -- single, rounded
+		winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
 	}
 
 	-- find more here: https://www.nerdfonts.com/cheat-sheet
@@ -59,7 +66,6 @@ return function()
 		}),
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
-			max_width = 0,
 			source_names = {
 				nvim_lsp = "(LSP)",
 				emoji = "(Emoji)",
@@ -102,12 +108,24 @@ return function()
 			select = false,
 		},
 		window = {
-			completion = require("cmp.config.window").bordered(),
-			documentation = require("cmp.config.window").bordered(),
+			completion = require("cmp.config.window").bordered(border_opt),
+			documentation = require("cmp.config.window").bordered(border_opt),
 		},
 		experimental = {
 			ghost_text = false,
 			native_menu = false,
+		},
+	})
+	-- nvim dap-cmp
+	require("cmp").setup({
+		enabled = function()
+			return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+		end,
+	})
+
+	require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+		sources = {
+			{ name = "dap" },
 		},
 	})
 end

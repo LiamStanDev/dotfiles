@@ -83,7 +83,7 @@ return function()
 	telescope.load_extension("media_files")
 	telescope.load_extension("fzf")
 	telescope.load_extension("project")
-	telescope.load_extension("dap")
+	-- telescope.load_extension("dap")
 	telescope.load_extension("notify")
 	-- for lazygit
 	vim.cmd([[

@@ -1,7 +1,6 @@
 return function()
 	local dapui = require("dapui")
 	dapui.setup({
-		-- auto_open = true, -- because I set up on the which-key
 		icons = { expanded = "", collapsed = "", circular = "" },
 		mappings = {
 			-- Use a table to apply multiple mappings
@@ -12,9 +11,6 @@ return function()
 			repl = "r",
 			toggle = "t",
 		},
-		-- Use this to override mappings for specific elements
-		element_mappings = {},
-		expand_lines = true,
 		layouts = {
 			{
 				elements = {
@@ -27,12 +23,12 @@ return function()
 						size = 0.15,
 					},
 					{
-						id = "watches",
-						size = 0.25,
-					},
-					{
 						id = "stacks",
 						size = 0.2,
+					},
+					{
+						id = "watches",
+						size = 0.25,
 					},
 				},
 				position = "right",
@@ -51,21 +47,6 @@ return function()
 				},
 				position = "bottom",
 				size = 10,
-			},
-		},
-		controls = {
-			enabled = true,
-			-- Display controls in this element
-			element = "repl",
-			icons = {
-				pause = "",
-				play = "",
-				step_into = "",
-				step_over = "",
-				step_out = "",
-				step_back = "",
-				run_last = "",
-				terminate = "",
 			},
 		},
 		floating = {

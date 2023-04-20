@@ -2,35 +2,12 @@ return function()
 	local which_key = require("which-key")
 
 	which_key.setup({
-		plugins = {
-			marks = false, -- shows a list of your marks on ' and `
-			registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-			spelling = {
-				enabled = true,
-				suggestions = 20,
-			}, -- use which-key for spelling hints
-			-- the presets plugin, adds help for a bunch of default keybindings in Neovim
-			-- No actual key bindings are created
-			presets = {
-				operators = false, -- adds help for operators like d, y, ...
-				motions = false, -- adds help for motions
-				text_objects = false, -- help for text objects triggered after entering an operator
-				windows = false, -- default bindings on <c-w>
-				nav = false, -- misc bindings to work with windows
-				z = false, -- bindings for folds, spelling and others prefixed with z
-				g = false, -- bindings for prefixed with g
-			},
+		icons = {
+			breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+			separator = "  ", -- symbol used between a key and it's label
+			group = "+", -- symbol prepended to a group
 		},
-		-- add operators that will trigger motion and text object completion
-		-- to enable all native operators, set the preset / operators plugin above
 		operators = { gc = "Comments" },
-		key_labels = {
-			-- override the label used to display some keys. It doesn't effect WK in any other way.
-			-- For example:
-			-- ["<space>"] = "SPC",
-			-- ["<cr>"] = "RET",
-			-- ["<tab>"] = "TAB",
-		},
 		popup_mappings = {
 			scroll_down = "<c-d>", -- binding to scroll down inside the popup
 			scroll_up = "<c-u>", -- binding to scroll up inside the popup
@@ -40,7 +17,7 @@ return function()
 			position = "bottom", -- bottom, top
 			margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
 			padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-			winblend = 0,
+			winblend = 10,
 		},
 		layout = {
 			height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -55,14 +32,10 @@ return function()
 		triggers = "auto", -- automatically setup triggers
 		-- triggers = {"<leader>"} -- or specify a list manually
 		triggers_blacklist = {
-			-- list of mode / prefixes that should never be hooked by WhichKey
-			-- this is mostly relevant for key maps that start with a native binding
-			-- most people should not need to change this
 			i = { "j", "k" },
 			v = { "j", "k" },
 		},
-		-- disable the WhichKey popup for certain buf types and file types.
-		-- Disabled by deafult for Telescope
+
 		disable = {
 			buftypes = {},
 			filetypes = { "TelescopePrompt" },
@@ -109,9 +82,8 @@ return function()
 			l = { "<cmd>:Telescope dap list_breakpoints<cr>", "List Breakpoints" },
 			b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
 			c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-			-- C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
 			C = { "<cmd>:Telescope dap configurations<cr>", "Run To Cursor" },
-			d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+			q = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
 			g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
 			i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
 			o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
@@ -121,17 +93,17 @@ return function()
 			s = { "<cmd>lua require'dap'.continue()<CR>", "Start" },
 			U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 		},
-		-- p = {
-		-- 	name = "Plugins",
-		-- 	i = { "<cmd>Lazy install<cr>", "Install" },
-		-- 	s = { "<cmd>Lazy sync<cr>", "Sync" },
-		-- 	S = { "<cmd>Lazy clear<cr>", "Status" },
-		-- 	c = { "<cmd>Lazy clean<cr>", "Clean" },
-		-- 	u = { "<cmd>Lazy update<cr>", "Update" },
-		-- 	p = { "<cmd>Lazy profile<cr>", "Profile" },
-		-- 	l = { "<cmd>Lazy log<cr>", "Log" },
-		-- 	d = { "<cmd>Lazy debug<cr>", "Debug" },
-		-- },
+		p = {
+			name = "Plugins",
+			i = { "<cmd>Lazy install<cr>", "Install" },
+			s = { "<cmd>Lazy sync<cr>", "Sync" },
+			S = { "<cmd>Lazy clear<cr>", "Status" },
+			c = { "<cmd>Lazy clean<cr>", "Clean" },
+			u = { "<cmd>Lazy update<cr>", "Update" },
+			p = { "<cmd>Lazy profile<cr>", "Profile" },
+			l = { "<cmd>Lazy log<cr>", "Log" },
+			d = { "<cmd>Lazy debug<cr>", "Debug" },
+		},
 		g = {
 			name = "Git",
 			g = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<CR>", "Lazygit Chooser" },
@@ -139,26 +111,19 @@ return function()
 			k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
 			l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 			-- p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-			-- r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+			r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 			-- R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 			-- s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 			-- u = {
 			-- 	"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
 			-- 	"Undo Stage Hunk",
 			-- },
-			-- o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-			-- b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-			-- c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-			-- C = {
-			-- 	"<cmd>Telescope git_bcommits<cr>",
-			-- 	"Checkout commit(for current file)",
-			-- },
 			d = {
 				"<cmd>DiffviewOpen<cr>",
 				"Git Diff Open",
 			},
 
-			x = {
+			q = {
 				"<cmd>tabclose<cr>",
 				"Git Diff Close",
 			},
@@ -229,8 +194,6 @@ return function()
 		t = {
 			name = "Toggle Term",
 			g = { "<cmd>LazyGit<CR>", "Lazygit" },
-			-- b = { "<cmd>lua _BTOP_TOGGLE()<CR>", "Btop" },
-			n = { "<cmd>lua _NODE_TOGGLE()<CR>", "node" },
 			q = { "<cmd>1 ToggleTerm<CR>", "terminal 1" },
 			w = { "<cmd>2 ToggleTerm<CR>", "terminal 2" },
 			e = { "<cmd>3 ToggleTerm<CR>", "terminal 3" },

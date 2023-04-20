@@ -37,7 +37,6 @@ M.plugins = {
 
 	-- -- auto autopairs
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = require("editor.autopairs") },
-	-- { "m4xshen/autoclose.nvim", event = "InsertEnter", config = require("editor.autoclose") },
 
 	-- for text highlight
 	{
@@ -71,6 +70,7 @@ M.plugins = {
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lua",
+			"rcarriga/cmp-dap",
 			{
 				"L3MON4D3/LuaSnip",
 				dependencies = {
@@ -135,9 +135,10 @@ M.plugins = {
 	-- dap
 	{
 		"mfussenegger/nvim-dap",
-		lazy = true,
+		event = "VeryLazy",
 		dependencies = {
 			"jay-babu/mason-nvim-dap.nvim",
+			"theHamsta/nvim-dap-virtual-text",
 		},
 		init = require("services.dap").init,
 		config = require("services.dap").config,
@@ -230,12 +231,6 @@ M.plugins = {
 	{ "kdheepak/lazygit.nvim" }, --toggle term with lazygit extension
 
 	--color show
-	-- {
-	-- 	"norcalli/nvim-colorizer.lua",
-	-- 	config = function()
-	-- 		require("colorizer").setup()
-	-- 	end,
-	-- },
 	{
 		"NvChad/nvim-colorizer.lua", -- integrated with tailwind
 		event = { "BufReadPost", "BufNewFile" },

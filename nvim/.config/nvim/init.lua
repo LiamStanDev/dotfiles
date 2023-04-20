@@ -10,11 +10,9 @@ g_configs.navigator_on = true
 -- set the logo. see ./lua/ui/style/header.lua
 g_configs.dashboard_logo = "AstronautSmall"
 
--- file filter for explorer
+-- file filter for explorer(only for dotfiles)
 g_configs.filter_files = {
-	"node_modules",
 	".git",
-	"obj",
 	".DS_Store",
 	".vscode",
 }
@@ -23,7 +21,8 @@ g_configs.filter_files = {
 g_configs.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nvim
 	"tsserver",
 	"tailwindcss",
-	"csharp_ls",
+	"omnisharp",
+	-- "csharp_ls",
 	"rust_analyzer",
 	"html",
 	"jsonls",
@@ -47,8 +46,6 @@ g_configs.null_ls_servers = {
 	"beautysh", -- bash formatter
 	"csharpier", -- csharp formatter
 	"eslint_d",
-	--"flake8",
-	--"mypy",
 	"rustfmt", -- rust formatter
 	"clippy", -- rust linter
 	"prismaFmt",
@@ -60,12 +57,12 @@ g_configs.dap_servers = {
 	"coreclr", -- csharp
 	"python",
 	"codelldb",
-	"node2",
 }
 
 -- setup all plugin
 require("plugins-setup")
 
+-- for neovide
 if vim.g.neovide then
 	vim.g.neovide_input_use_logo = false -- true on macOS
 	vim.g.neovide_input_macos_alt_is_meta = true

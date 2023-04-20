@@ -13,7 +13,6 @@ return function()
 		local opts = { noremap = true, silent = true }
 		local keymap = vim.api.nvim_buf_set_keymap
 		keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-		-- keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
 		-- Format
 		vim.cmd([[command! Format execute "lua vim.lsp.buf.format({ async = true })" ]]) -- Format command
@@ -21,9 +20,9 @@ return function()
 		vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
 
 		-- add some plugin
-
 		require("illuminate").on_attach(client)
-		require("lsp_signature").on_attach({ -- plugin for parameter hint
+		require("lsp_signature").on_attach({
+			-- plugin for parameter hint
 			bind = true,
 			handler_opts = {
 				border = "rounded",
@@ -35,27 +34,33 @@ return function()
 			vim.lsp.buf.signature_help()
 		end, { silent = true, noremap = true, desc = "toggle signature" })
 
-		-- add some capabilities filters
-		if client.name == "lua_ls" then
-			client.server_capabilities.documentFormattingProvider = false
-		end
-		if client.name == "tsserver" then
-			client.server_capabilities.documentFormattingProvider = false
-		end
-		if client.name == "pyright" then
-			client.server_capabilities.documentFormattingProvider = false
-		end
-		if client.name == "pylsp" then
-			client.server_capabilities.documentFormattingProvider = false
-		end
-		if client.name == "gopls" then
-			client.server_capabilities.documentFormattingProvider = false
+		-- remove server formatter
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
+		if client.name == "omnisharp" then
+			client.server_capabilities.semanticTokensProvider = nil
 		end
 	end
-
 	-- capabilities
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities.textDocument.completion.completionItem.snippetSupport = true
+	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities) -- add to cmp
+	capabilities.textDocument.completion.completionItem = {
+		documentationFormat = { "markdown", "plaintext" },
+		snippetSupport = true,
+		preselectSupport = true,
+		insertReplaceSupport = true,
+		labelDetailsSupport = true,
+		deprecatedSupport = true,
+		commitCharactersSupport = true,
+		tagSupport = { valueSet = { 1 } },
+		resolveSupport = {
+			properties = {
+				"documentation",
+				"detail",
+				"additionalTextEdits",
+			},
+		},
+	}
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities) -- add to cmp
 
 	-- auto register lsp service
@@ -67,7 +72,7 @@ return function()
 		-- find ./setting
 		local require_ok, conf_opts = pcall(require, "services.settings." .. server) -- for the settings folder
 		if require_ok then
-			opts = vim.tbl_deep_extend("force", conf_opts, opts) -- merge two table with force mode.
+			opts = vim.tbl_deep_extend("force", conf_opts, opts)
 		end
 
 		require("lspconfig")[server].setup(opts)
