@@ -33,10 +33,11 @@ return function()
 		vim.keymap.set({ "n" }, "<Leader>k", function()
 			vim.lsp.buf.signature_help()
 		end, { silent = true, noremap = true, desc = "toggle signature" })
-
 		-- remove server formatter
-		client.server_capabilities.documentFormattingProvider = false
-		client.server_capabilities.documentRangeFormattingProvider = false
+		if client.name ~= "lemminx" then
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
+		end
 		if client.name == "omnisharp" then
 			client.server_capabilities.semanticTokensProvider = nil
 		end

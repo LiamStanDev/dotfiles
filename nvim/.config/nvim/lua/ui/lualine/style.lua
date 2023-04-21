@@ -15,34 +15,7 @@ local M = {
 			winbar = {},
 		},
 		always_divide_middle = true,
-		-- ignore_focus = {},
-		-- always_divide_middle = true,
-		-- refresh = {
-		-- 	statusline = 1000,
-		-- 	tabline = 1000,
-		-- 	winbar = 1000,
-		-- },
 	},
-	-- sections = {
-	-- 	lualine_a = { "mode" },
-	-- 	lualine_b = { "branch", component.python_env },
-	-- 	lualine_c = { "diff" },
-	-- 	lualine_x = {
-	-- 		"diagnostics",
-	-- 		--component.lsp,
-	-- 		component.lsp_progess,
-	-- 		"encoding",
-	-- 		"fileformat",
-	-- 		"filetype",
-	-- 	},
-	-- 	lualine_y = { "progress" },
-	-- 	lualine_z = {
-	-- 		function()
-	-- 			return " " .. os.date("%R")
-	-- 		end,
-	-- 	},
-	-- 	-- lualine_z = { "location" },
-	-- },
 	sections = {
 		lualine_a = {
 			component.custom_icons,
@@ -90,7 +63,14 @@ local M = {
 				color = { bg = "#ECD3A0", fg = "#000000" },
 				padding = 0.3,
 			},
-			"progress",
+			{
+				"filetype",
+				icon_only = false,
+				colored = true,
+				padding = 1,
+				-- color = { bg = "#2a2c3f" },
+				-- separator = { left = "", right = " " },
+			},
 			{
 				function()
 					return ""
@@ -99,7 +79,8 @@ local M = {
 				color = { bg = "#86AAEC", fg = "#000000" },
 				padding = 0.1,
 			},
-			component.location,
+			"progress",
+			-- component.location,
 		},
 		lualine_y = {},
 		lualine_z = {},
