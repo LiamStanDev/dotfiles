@@ -4,6 +4,11 @@ if [[ $OSTYPE =~ ^darwin ]]; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
+# linux
+if [[ $OSTYPE =~ ^linux ]]; then
+    plug "$HOME/.config/zsh/enviroment.zsh"
+fi
+
 # for the system varaible
 export PATH="/usr/bin:/usr/sbin:/usr/local/bin:$PATH"
 # setting local binary path
