@@ -5,8 +5,9 @@
     "custom/launcher",
     "cpu",
     "memory",
-    "wlr/workspaces",
-    "custom/weather"
+    "custom/weather",
+    "wlr/workspaces"
+    // "wlr/taskbar"
   ],
   "modules-right": [
     "tray",
@@ -20,12 +21,23 @@
     "custom/power-menu"
   ],
   "wlr/workspaces": {
+    "all-outputs": true,
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
       "active": " 󰮯",
       "default": ""
     }
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}{name}",
+    "icon-size": 16,
+    "all-outputs": true,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    // "on-click-middle": "close",
+    "ignore-list": ["wofi", "rofi"]
   },
   "hyprland/window": {
     "format": "{}"
@@ -127,16 +139,15 @@
   },
   "custom/lock": {
     "tooltip": false,
-    "on-click": "swaylock --clock --indicator --screenshots --effect-scale 0.4 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr '%a %e.%m.%Y' --timestr '%k:%M'",
+    "on-click": "swaylock &",
     "format": ""
   },
   "custom/power-menu": {
     "format": " ⏻ ",
-    //"on-click": "bash ~/.config/waybar/scripts/power-menu/powermenu.sh &"
     "on-click": "wlogout --protocol layer-shell -b 5 -T 400 -B 400"
   },
   "custom/launcher": {
     "format": "",
-    "on-click": "rofi -show drun &"
+    "on-click": "pkill rofi || rofi -show drun &"
   }
 }
