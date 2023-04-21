@@ -3,20 +3,7 @@ return function()
 		highlight = { enable = true },
 		indent = { enable = true }, -- put the curser to the right indent
 		autotag = { enable = true }, -- auto tag extension
-		ensure_installed = {
-			"json",
-			"javascript",
-			"tsx",
-			"html",
-			"css",
-			"markdown",
-			"bash",
-			"lua",
-			"vim",
-			"dockerfile",
-			"gitignore",
-			"c_sharp",
-		},
+		ensure_installed = require("core").code_hight_servers,
 		auto_install = true,
 		disable = function(_, buf)
 			local max_filesize = 100 * 1024 -- 100 KB

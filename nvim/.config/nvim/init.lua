@@ -16,7 +16,21 @@ g_configs.filter_files = {
 	".DS_Store",
 	".vscode",
 }
-
+g_configs.code_hight_servers = {
+	"json",
+	"javascript",
+	"tsx",
+	"html",
+	"css",
+	"markdown",
+	"markdown_inline",
+	"bash",
+	"lua",
+	"vim",
+	"dockerfile",
+	"gitignore",
+	"c_sharp",
+}
 -- register lsp server for auto completion
 g_configs.lsp_servers = { -- see https://github.com/williamboman/mason-lspconfig.nvim
 	"tsserver",

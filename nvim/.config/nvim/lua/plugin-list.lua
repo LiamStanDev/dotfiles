@@ -3,7 +3,7 @@ local M = {}
 M.plugins = {
 	-- colorscheme
 	{ "olimorris/onedarkpro.nvim", opts = { options = { transparency = true } } },
-	{ "folke/tokyonight.nvim" },
+	{ "folke/tokyonight.nvim", opts = { transparent = true } },
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",

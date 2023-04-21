@@ -54,7 +54,8 @@ return function()
 	local keymap = vim.keymap.set
 	-- C-t: go back
 	keymap("n", "gD", "<cmd>Lspsaga peek_definition<CR>")
-	keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
+	-- keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
+	keymap("n", "gd", "<cmd>Lspsaga lsp_finder<CR>")
 	-- Go to definition
 	-- keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
