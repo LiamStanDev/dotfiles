@@ -9,11 +9,11 @@ return function()
 			TRACE = "✎",
 			WARN = "",
 		},
-		level = vim.log.levels.WARN,
+		level = vim.log.levels.TRACE,
 		minimum_width = 25,
 		render = "compact",
 		stages = "fade",
-		timeout = 1000,
+		timeout = 3000,
 		top_down = true,
 	})
 end
