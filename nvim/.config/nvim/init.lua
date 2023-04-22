@@ -2,7 +2,7 @@
 local g_configs = require("core")
 
 -- set color theme here
-g_configs.colorscheme = "onedark"
+g_configs.colorscheme = "tokyonight-night"
 
 -- whether to see navigator bar in the top
 g_configs.navigator_on = true
