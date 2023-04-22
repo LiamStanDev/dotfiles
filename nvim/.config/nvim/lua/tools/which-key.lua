@@ -53,7 +53,8 @@ return function()
 	}
 	local mappings = {
 		-- [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
-		["w"] = { "<cmd>w!<CR>", "Save" }, -- Format command is from lsp/handler
+		["w"] = { "<cmd>silent! w!<CR>", "Save" }, -- Format command is from lsp/handler
+        W = {"<cmd>silent! wa!<CR>", "Save all"},
 		["q"] = { "<cmd>confirm q<CR>", "Quit" },
 		-- ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 		["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
