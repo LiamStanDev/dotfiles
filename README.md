@@ -60,7 +60,7 @@ stow --ignore=".git, .assets" */ # Everything except .gitignore, .git folder, ad
 ### For only my neovim setting
 
 ```bash
-git clone https://github.com/Liam-Lin0107/dotfiles.git ~/
+git clone --recursive https://github.com/Liam-Lin0107/dotfiles.git ~/
 cd ~/dotfiles
 rm -rf .git # remove my git you can use yours.
 stow nvim # only nvim.
