@@ -3,6 +3,8 @@ export NO_AT_BRIDGE=1
 export SDL_VIDEODRIVER=wayland
 export _JAVA_AWT_WM_NONREPARENTING=wayland
 export GDK_BACKEND="wayland,x11"
+# conda
+export CONDA_AUTO_ACTIVATE_BASE=true
 # XDG
 export XDG_CURRENT_DESKTOP=Hyprland
 export XDG_SESSION_DESKTOP=Hyprland
