@@ -13,27 +13,27 @@ $cmd_duration\
 add_newline = false 
 
 [conda]
-format = ' [ $environment](#FDD36A) '
+format = ' [ $environment](#f1d8a5) '
 
 # Prompt symbols 
 [character]
-success_symbol = "[](#e0af68 bold)"
-error_symbol = "[](#AD685A)"
-vicmd_symbol = "[](#DD8F6E)"
+success_symbol = "[](#B3C99C bold)"
+error_symbol = "[](#dd6777)"
+vicmd_symbol = "[](#F7F5EB)"
 
 [directory]
-format = "[]($style)[ ](bg:#393646 fg:#e0af68)[$path](bg:#312C2E fg:#F4EEE0 bold)[ ]($style)"
+format = "[]($style)[ ](bg:#393646 fg:#f1d8a5)[$path](bg:#393646 fg:#FEFAE0 bold)[ ]($style)"
 style = "bg:none fg:#393646"
 truncation_length = 1
 truncate_to_repo=false
 
 [git_branch]
-format = "[]($style)[[ ](bg:#393646 fg:#e0af68 bold)$branch](bg:#393646 fg:#e0af68 )[ ]($style)"
+format = "[]($style)[[ ](bg:#393646 fg:#B3C99C bold)$branch](bg:#393646 fg:#FEFAE0)[ ]($style)"
 style = "bg:none fg:#393646"
 
 [git_status]
 # $all status$ahead_behind
-format = "[]($style)[$all_status$ahead_behind](bg:#312C2E fg:#F4EEE0)[ ]($style)"
+format = "[]($style)[$all_status$ahead_behind](bg:#312C2E fg:#b4befe)[ ]($style)"
 style = "bg:none fg:#393646"
 conflicted = "="
 ahead =	"⇡${count}"
@@ -50,6 +50,6 @@ deleted = "${count}"
 [cmd_duration]
 min_time = 1
 # duration & style 
-format = "[]($style)[[神](bg:#393646 fg:#F4EEE0 bold)$duration](bg:#393646 fg:#F4EEE0)[ ]($style)"
+format = "[]($style)[[神](bg:#393646 fg:#b4befe bold)$duration](bg:#393646 fg:#b4befe)[ ]($style)"
 disabled = false
 style = "bg:none fg:#393646"
