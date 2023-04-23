@@ -62,13 +62,8 @@ if [[ $OSTYPE =~ ^darwin  ]]; then
     fi
 fi
 unset __conda_setup
-conda config --set changeps1 False
-conda deactivate
+conda config --set changeps1 False # for starship
 # <<< conda initialize <<<
-
-# remove vi mode, except esc
-bindkey -v
-bindkey '^[' vi-cmd-mode
 
 # auto show
 neofetch
