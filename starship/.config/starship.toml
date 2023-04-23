@@ -3,11 +3,11 @@ format="""
 $conda\
 $directory\
 $git_branch\
+$git_status\
 $character\
 """
 
 right_format = """
-$git_status\
 $cmd_duration\
 """
 add_newline = false 
@@ -22,13 +22,13 @@ error_symbol = "[](#AD685A)"
 vicmd_symbol = "[](#DD8F6E)"
 
 [directory]
-format = "[]($style)[ ](bg:#312C2E fg:#DD8F6E)[$path](bg:#312C2E fg:#83A598 bold)[ ]($style)"
+format = "[]($style)[ ](bg:#312C2E fg:#e0af68)[$path](bg:#312C2E fg:#c8d3f5 bold)[ ]($style)"
 style = "bg:none fg:#312C2E"
 truncation_length = 1
 truncate_to_repo=false
 
 [git_branch]
-format = "[]($style)[[ ](bg:#312C2E fg:#8EC07C bold)$branch](bg:#312C2E fg:#83A598)[ ]($style)"
+format = "[]($style)[[ ](bg:#312C2E fg:#c8d3f5 bold)$branch](bg:#312C2E fg:#b4befe)[ ]($style)"
 style = "bg:none fg:#312C2E"
 
 [git_status]
@@ -50,6 +50,6 @@ deleted = "${count}"
 [cmd_duration]
 min_time = 1
 # duration & style 
-format = "[]($style)[[神](bg:#312C2E fg:#eba0ac bold)$duration](bg:#312C2E fg:#BBC3DF)[ ]($style)"
+format = "[]($style)[[神](bg:#312C2E fg:#b4befe bold)$duration](bg:#312C2E fg:#BBC3DF)[ ]($style)"
 disabled = false
 style = "bg:none fg:#312C2E"
