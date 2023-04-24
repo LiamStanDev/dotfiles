@@ -66,4 +66,4 @@ conda config --set changeps1 False # for starship
 # <<< conda initialize <<<
 
 # auto show
-neofetch
+# neofetch
