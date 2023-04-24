@@ -30,10 +30,8 @@ export PATH=$DOTNET_ROOT:$PATH
 # dotnet tool
 export PATH="$HOME/.dotnet/tools:$PATH"
 
-
-# yarn path
-# npm config set prefix "$HOME/.npm-global" # set the npm for the system first time
-export PATH="$HOME/.npm-global/bin:$PATH"
+# npm install global path
+export NPM_CONFIG_PREFIX=~/.npm-global
 # rust evn
 export PATH="$HOME/.cargo/bin:$PATH"
 
