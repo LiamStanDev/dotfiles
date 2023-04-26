@@ -5,7 +5,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
   "workbench.list.smoothScrolling": true,
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "Cascadia Code",
   "editor.fontSize": 12,
   "editor.lineHeight": 24,
   "editor.tabSize": 2,
@@ -32,7 +32,7 @@
   "files.autoGuessEncoding": true,
   "debug.showBreakpointsInOverviewRuler": false,
   "terminal.integrated.fontSize": 12,
-  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+  "terminal.integrated.fontFamily": "Cascadia Code",
   "terminal.integrated.fontWeight": "bold",
 
   "workbench.editorAssociations": {
@@ -76,6 +76,7 @@
     "editor.defaultFormatter": "ms-dotnettools.csharp",
     "editor.tabSize": 4
   },
+  "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
 
   "vim.leader": "<space>",
@@ -202,12 +203,18 @@
   "editor.minimap.enabled": false,
   // for auto close tag don't close the generic of typescript
   // the closing tag only use for .tsx file
-  "auto-close-tag.activationOnLanguage": ["html", "xml", "javascript", "javascriptreact", "typescriptreact"],
+  "auto-close-tag.activationOnLanguage": [
+    "html",
+    "xml",
+    "javascript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
   "prettier.printWidth": 9999,
   "prettier.proseWrap": "never",
   "[python]": {
     "editor.formatOnType": true
   },
-  "css.lint.unknownAtRules": "ignore",
-  "window.zoomLevel": -1
+  "window.zoomLevel": 1,
+  "css.lint.unknownAtRules": "ignore"
 }
