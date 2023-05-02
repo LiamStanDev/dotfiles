@@ -48,7 +48,7 @@ Copy the following command in your terminal.
 ### Add hyprland and others
 
 ```bash
-git clone --recursive https://github.com/Liam-Lin0107/dotfiles.git ~/
+git clone --recursive https://github.com/Liam-Lin0107/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 rm -rf .git # remove my git you can use yours.
 paru -S --needed - < packages.txt
@@ -65,10 +65,10 @@ sudo cp -r ./.assets/sddm-themes/10-theme.conf /etc/sddm.conf.d
 
 ```
 
-### Add neovim setting
+### Add only neovim setting
 
 ```bash
-git clone --recursive https://github.com/Liam-Lin0107/dotfiles.git ~/
+git clone --recursive https://github.com/Liam-Lin0107/nvim.git ~/.config/nvim
 cd ~/dotfiles
 rm -rf .git # remove my git you can use yours.
 stow nvim # only nvim.
