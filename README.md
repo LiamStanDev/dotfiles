@@ -55,14 +55,26 @@ paru -S --needed - < packages.txt
 stow --ignore=".git, .assets, .gitignore, .gitmodules, .package, README.md" */ # Everything except .gitignore, .git folder, and etc.
 ```
 
-### Add sddm theme
+### Add sddm, gtk themes.
 
 ```bash
 # add sddm theme
+cd ~/dotfiles/.assets/sddm-themes
+tar -xzvf sugar-candy.tar.gz
 sudo cp -r ./.assets/sddm-themes/sugar-candy /usr/share/sddm/themes/
 # them create a directory in /etc/sddm.conf.d if not exist
 sudo cp -r ./.assets/sddm-themes/10-theme.conf /etc/sddm.conf.d
+```
 
+```bash
+# add gtk theme
+cd ~/dotfiles/.assets/gtk-theme
+tar -xzvf Arc-Dark.tar.gz
+sudo cp -r ./.assets/gtk-theme/Arc-Dark ~/.local/share/themes/
+# them create a directory in /etc/sddm.conf.d if not exist
+cd ~/dotfiles/.assets/gtk-icon
+tar -xzvf kora.tar.gz
+sudo cp -r ./.assets/gtk-icon/kora ~/.local/share/icons/
 ```
 
 ### Add only neovim setting
