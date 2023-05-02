@@ -14,8 +14,8 @@ This is my configuaration in linux and macOS for daily usage.
 
 ## Screenshot
 
-![Alt text](./.assets/screenshot-float.png?raw=true)
-![Alt text](./.assets/screenshot-tile.png?raw=true)
+![Alt text](./.assets/screenshots/screenshot-float.png?raw=true)
+![Alt text](./.assets/screenshots/screenshot-tile.png?raw=true)
 
 ## Requirements
 
@@ -45,17 +45,27 @@ brew install starship
 
 Copy the following command in your terminal.
 
-### For Everything
+### Add hyprland and others
 
 ```bash
-git clone https://github.com/Liam-Lin0107/dotfiles.git ~/
+git clone --recursive https://github.com/Liam-Lin0107/dotfiles.git ~/
 cd ~/dotfiles
 rm -rf .git # remove my git you can use yours.
 paru -S --needed - < packages.txt
 stow --ignore=".git, .assets, .gitignore, .gitmodules, .package, README.md" */ # Everything except .gitignore, .git folder, and etc.
 ```
 
-### For only my neovim setting
+### Add sddm theme
+
+```bash
+# add sddm theme
+sudo cp -r ./.assets/sddm-themes/sugar-candy /usr/share/sddm/themes/
+# them create a directory in /etc/sddm.conf.d if not exist
+sudo cp -r ./.assets/sddm-themes/10-theme.conf /etc/sddm.conf.d
+
+```
+
+### Add neovim setting
 
 ```bash
 git clone --recursive https://github.com/Liam-Lin0107/dotfiles.git ~/
