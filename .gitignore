@@ -6,3 +6,4 @@ nvim/.config/nvim/live-server
 lazygit/.config/lazygit/state.yml
 zsh/.config/zsh/API_Keys.zsh
 zsh/.config/zsh/API_KEYS.zsh
+gtk/.config/gtk-3.0/bookmarks
