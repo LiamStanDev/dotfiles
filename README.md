@@ -8,17 +8,14 @@ This is my configuaration in linux and macOS for daily usage.
 - **Terminal**: kitty
 - **Git GUI**: lazygit
 - **Topbar**: Waybar
-- **App Launcher**: Wofi
+- **App Launcher**: Rofi
 - **File Manager**: Thunar
 - **Editor**: Neovim, Vscode
 
 ## Screenshot
 
-![Alt text](./.assets/Screenshot-dashboard.png?raw=true "Neovim")
-![Alt text](./.assets/Screenshot-coding.png?raw=true)
-![Alt text](./.assets/Screenshot-terminal.png?raw=true)
-![Alt text](./.assets/Screenshot-toggleterm.png?raw=true)
-![Alt text](./.assets/Screenshot-btop.png?raw=true "Btop")
+![Alt text](./.assets/screenshot-float.png?raw=true)
+![Alt text](./.assets/screenshot-tile.png?raw=true)
 
 ## Requirements
 
@@ -54,7 +51,8 @@ Copy the following command in your terminal.
 git clone https://github.com/Liam-Lin0107/dotfiles.git ~/
 cd ~/dotfiles
 rm -rf .git # remove my git you can use yours.
-stow --ignore=".git, .assets" */ # Everything except .gitignore, .git folder, adn etc.
+paru -S --needed - < packages.txt
+stow --ignore=".git, .assets, .gitignore, .gitmodules, .package, README.md" */ # Everything except .gitignore, .git folder, and etc.
 ```
 
 ### For only my neovim setting
