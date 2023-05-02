@@ -197,7 +197,7 @@ window#waybar.hidden {
 }
 
 #clock {
-  color: #8a909e;
+  color: #fffffc;
   font-family: Iosevka Nerd Font;
   font-weight: bold;
   margin-top: 7px;
@@ -254,7 +254,7 @@ label:focus {
 }
 
 #custom-spotify {
-  color: #abb2bf;
+  color: #7bae7f;
 }
 
 #custom-weather {

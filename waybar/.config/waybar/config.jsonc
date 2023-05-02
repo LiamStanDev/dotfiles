@@ -3,20 +3,21 @@
   "layer": "top", // Waybar at top layer
   "modules-left": [
     "custom/launcher",
+    "clock",
     "cpu",
     "memory",
-    "custom/weather",
-    "wlr/workspaces"
+    "custom/weather"
     // "wlr/taskbar"
   ],
+  "modules-center": ["wlr/workspaces"],
   "modules-right": [
     "tray",
-    "network",
+    // "network",
+    "custom/spotify",
     "pulseaudio",
     "pulseaudio#microphone",
     "backlight",
     "battery",
-    "clock",
     "custom/lock",
     "custom/power-menu"
   ],
@@ -43,7 +44,12 @@
     "format": "{}"
   },
   "tray": {
-    "spacing": 10
+    "spacing": 10,
+    "filter": [
+      {
+        "class": "nm-applet"
+      }
+    ]
   },
   "clock": {
     "format": "{:%H:%M}",
@@ -68,17 +74,17 @@
     "tooltip-format": "{percent}",
     "format-icons": ["󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "]
   },
-  "network": {
-    /* "format-wifi": "直", */
-    "format-linked": "{ifname} (No IP) ",
-    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
-    "format-wifi": "{icon}",
-    "format-ethernet": " {ipaddr}",
-    "format-disconnected": "睊",
-    "tooltip-format": "{essid}",
-    "on-click": "~/.config/waybar/scripts/network/rofi-network-manager.sh",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
-  },
+  // "network": {
+  //   /* "format-wifi": "直", */
+  //   "format-linked": "{ifname} (No IP) ",
+  //   "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
+  //   "format-wifi": "{icon}",
+  //   "format-ethernet": " {ipaddr}",
+  //   "format-disconnected": "睊",
+  //   "tooltip-format": "{essid}",
+  //   "on-click": "~/.config/waybar/scripts/network/rofi-network-manager.sh",
+  //   "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+  // },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "tooltip": false,
@@ -148,6 +154,6 @@
   },
   "custom/launcher": {
     "format": "",
-    "on-click": "pkill rofi || rofi -show drun &"
+    "on-click": "pkill rofi || rofi -show drun -theme ~/.config/rofi/launchers/type-3/style-3.rasi  &"
   }
 }
