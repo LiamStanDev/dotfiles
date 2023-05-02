@@ -1,16 +1,16 @@
-# My Dotfiles
+# My Dotfiles 👑
 
 This is my configuaration in linux and macOS for daily usage.
 
-- **Operating System**: Archlinux, MacOS
-- **Window Manager**: Hyprland
-- **Shell**: Zsh with Zap and Starship
+- **Operating System 💻**: Archlinux, MacOS
+- **Window Manager 🪟**: Hyprland
+- **Shell 🌟**: Zsh with Zap and Starship
 - **Terminal**: kitty
-- **Git GUI**: lazygit
-- **Topbar**: Waybar
-- **App Launcher**: Rofi
-- **File Manager**: Thunar
-- **Editor**: Neovim, Vscode
+- **Git GUI ☑️**: lazygit
+- **Topbar 💈**: Waybar
+- **App Launcher 🚗**: Rofi
+- **File Manager 💼**: Thunar
+- **Editor 📰**: Neovim, Vscode
 
 ## Screenshot
 
