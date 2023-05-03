@@ -6,7 +6,7 @@
   "workbench.sideBar.location": "left",
   "workbench.list.smoothScrolling": true,
   "editor.fontFamily": "Cascadia Code",
-  "editor.fontSize": 12,
+  "editor.fontSize": 13,
   "editor.lineHeight": 24,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
@@ -31,8 +31,8 @@
   "files.autoSave": "off",
   "files.autoGuessEncoding": true,
   "debug.showBreakpointsInOverviewRuler": false,
-  "terminal.integrated.fontSize": 12,
-  "terminal.integrated.fontFamily": "Cascadia Code",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "Hack Bold Nerd Font Complete Mono",
   "terminal.integrated.fontWeight": "bold",
 
   "workbench.editorAssociations": {
@@ -203,18 +203,12 @@
   "editor.minimap.enabled": false,
   // for auto close tag don't close the generic of typescript
   // the closing tag only use for .tsx file
-  "auto-close-tag.activationOnLanguage": [
-    "html",
-    "xml",
-    "javascript",
-    "javascriptreact",
-    "typescriptreact"
-  ],
+  "auto-close-tag.activationOnLanguage": ["html", "xml", "javascript", "javascriptreact", "typescriptreact"],
   "prettier.printWidth": 9999,
   "prettier.proseWrap": "never",
   "[python]": {
     "editor.formatOnType": true
   },
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 1.2,
   "css.lint.unknownAtRules": "ignore"
 }
