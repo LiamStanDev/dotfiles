@@ -11,8 +11,12 @@ fi
 
 # for the system varaible
 export PATH="/usr/bin:/usr/sbin:/usr/local/bin:$PATH"
+
 # setting local binary path
 export PATH="$HOME/.local/bin:$PATH"
+
+# miniconda
+export PATH="/home/liam/.local/share/miniconda3/bin:$PATH"
 
 # oh-my-posh
 # eval "$(oh-my-posh --init --shell zsh --config $HOME/.config/oh-my-posh/liam.omp.json)"

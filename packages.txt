@@ -69,7 +69,6 @@ polkit-gnome 0.105-10
 postman-bin 10.13.0-1
 procs 0.14.0-1
 pulsemixer 1.5.1-4
-python-conda 23.1.0-1
 python-pip 23.1.2-1
 ripgrep 13.0.0-3
 rofi 1.7.5-1

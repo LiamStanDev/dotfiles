@@ -35,20 +35,26 @@ _dotnet_zsh_complete()
 
 compdef _dotnet_zsh_complete dotnet
 
+
+#
+# auto show
+# neofetch
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if [[ $OSTYPE =~ ^linux ]]; then
-    __conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+     __conda_setup="$('/home/liam/.local/share/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
     else
-        if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-            . "/usr/etc/profile.d/conda.sh"
+        if [ -f "/home/liam/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/liam/.local/share/miniconda3/etc/profile.d/conda.sh"
         else
-            export PATH="/usr/bin:$PATH"
+            export PATH="/home/liam/.local/share/miniconda3/bin:$PATH"
         fi
     fi
 fi
+
 if [[ $OSTYPE =~ ^darwin  ]]; then
     __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
@@ -63,7 +69,4 @@ if [[ $OSTYPE =~ ^darwin  ]]; then
 fi
 unset __conda_setup
 conda config --set changeps1 False # for starship
-# <<< conda initialize <<<
-
-# auto show
-# neofetch
+ # <<< conda initialize <<<
