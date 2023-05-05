@@ -4,20 +4,20 @@
   "modules-left": [
     "custom/launcher",
     "clock",
-    "cpu",
-    "memory",
-    "custom/weather"
-    // "wlr/taskbar"
+    "custom/weather",
+    "wlr/workspaces"
   ],
-  "modules-center": ["wlr/workspaces"],
+  "modules-center": ["custom/spotify"],
+
   "modules-right": [
     "tray",
-    // "network",
-    "custom/spotify",
+    "network",
     "pulseaudio",
-    // "pulseaudio#microphone",
+    "pulseaudio#microphone",
     "backlight",
     "battery",
+    "cpu",
+    "memory",
     "custom/lock",
     "custom/power-menu"
   ],
@@ -40,56 +40,59 @@
     // "on-click-middle": "close",
     "ignore-list": ["wofi", "rofi"]
   },
+
   "hyprland/window": {
     "format": "{}"
   },
+
   "tray": {
-    "spacing": 10,
-    "filter": [
-      {
-        "class": "nm-applet"
-      }
-    ]
+    "spacing": 10
   },
+
   "clock": {
     "format": "{:%H:%M}",
-    "format-alt": "{:%b %d %Y}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    // "format-alt": "{:%b %d %Y}",
+    "on-click": "bash ~/.config/eww/calendar/toggle-calendar.sh"
   },
+
   "cpu": {
-    "interval": 10,
-    "format": " {}%",
-    "max-length": 10,
-    "on-click": ""
+    "format": "{icon}",
+    // "format-icons": ["󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "bash ~/.config/eww/resources/toggle-resouces.sh",
+    "tooltip": false
   },
+
   "memory": {
-    "interval": 30,
-    "format": " {}%",
-    "format-alt": " {used:0.1f}GB",
-    "max-length": 10
+    "format": "{icon}",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "bash ~/.config/eww/resources/toggle-resouces.sh",
+    "tooltip": false
   },
+
   "backlight": {
     "device": "eDP-1",
     "format": "{icon}",
     "tooltip-format": "{percent}",
     "format-icons": ["󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "]
   },
-  // "network": {
-  //   /* "format-wifi": "直", */
-  //   "format-linked": "{ifname} (No IP) ",
-  //   "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
-  //   "format-wifi": "{icon}",
-  //   "format-ethernet": " {ipaddr}",
-  //   "format-disconnected": "睊",
-  //   "tooltip-format": "{essid}",
-  //   "on-click": "~/.config/waybar/scripts/network/rofi-network-manager.sh",
-  //   "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
-  // },
+  "network": {
+    /* "format-wifi": "直", */
+    // "format-linked": "{ifname} (No IP) ",
+    // "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "睊",
+    "tooltip-format": "{essid}",
+    "on-click": "nm-connection-editor",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+  },
+
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}",
     "tooltip": false,
-    "format-muted": " Muted",
-    "on-click": "pamixer -t",
+    "format-muted": "󰸈",
+    "on-click": "bash ~/.config/eww/audio/toggle-audio.sh",
     "on-scroll-up": "pamixer -i 5",
     "on-scroll-down": "pamixer -d 5",
     "scroll-step": 5,
@@ -103,15 +106,16 @@
       "default": ["", "", ""]
     }
   },
-  // "pulseaudio#microphone": {
-  //   "format": "{format_source}",
-  //   "format-source": " {volume}%",
-  //   "format-source-muted": " Muted",
-  //   "on-click": "pamixer --default-source -t",
-  //   "on-scroll-up": "pamixer --default-source -i 5",
-  //   "on-scroll-down": "pamixer --default-source -d 5",
-  //   "scroll-step": 5
-  // },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+    "scroll-step": 5
+  },
   "battery": {
     "bat": "BAT0",
     "adapter": "ADP0",
@@ -130,28 +134,31 @@
     "format-full": "ﮣ",
     "format-icons": ["󱊡", "󱊢", "󱊣"]
   },
+
   "custom/weather": {
-    "exec": "python3 ~/.config/waybar/scripts/weather.py",
-    "restart-interval": 300,
-    "return-type": "json"
+    "exec": "bash ~/.config/eww/scripts/weather-info.sh --icon",
+    "on-click": "bash ~/.config/eww/weather/toggle-weather.sh",
+    "restart-interval": 300
   },
+
   "custom/spotify": {
-    "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+    "exec": "bash ~/.config/eww/scripts/music-info.sh --song",
     "format": " {}",
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "on-double-click-right": "playerctl next",
-    "on-scroll-down": "playerctl previous"
+    "on-click": "bash ~/.config/eww/music/toggle-music.sh",
+    "restart-interval": 1
   },
+
   "custom/lock": {
     "tooltip": false,
     "on-click": "swaylock &",
     "format": ""
   },
+
   "custom/power-menu": {
     "format": " ⏻ ",
     "on-click": "wlogout --protocol layer-shell -b 5 -T 400 -B 400"
   },
+
   "custom/launcher": {
     "format": "",
     "on-click": "pkill rofi || rofi -show drun -theme ~/.config/rofi/launchers/type-3/style-3.rasi  &"

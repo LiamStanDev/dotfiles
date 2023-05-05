@@ -1,6 +1,6 @@
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Material Design Icons, JetBrainsMono Nerd Font, Iosevka Nerd Font;
+  /* font-family: "Cascadia Code"; */
+  font-family: "Cascadia Code";
   font-size: 15px;
   font-weight: bold;
 }
@@ -12,9 +12,9 @@ window#waybar {
   transition-duration: 0.5s;
 }
 
-window#waybar.hidden {
-  opacity: 1;
-}
+/* window#waybar.hidden { */
+/*   opacity: 1; */
+/* } */
 
 #window {
   color: #64727d;
@@ -33,15 +33,6 @@ window#waybar.hidden {
 #custom-launcher,
 #custom-spotify,
 #custom-weather,
-#custom-weather.severe,
-#custom-weather.sunnyDay,
-#custom-weather.clearNight,
-#custom-weather.cloudyFoggyDay,
-#custom-weather.cloudyFoggyNight,
-#custom-weather.rainyDay,
-#custom-weather.rainyNight,
-#custom-weather.showyIcyDay,
-#custom-weather.snowyIcyNight,
 #custom-weather.default {
   color: #e5e5e5;
   border-radius: 6px;
@@ -125,10 +116,10 @@ window#waybar.hidden {
   padding-left: 9px;
 }
 
-#pulseaudio.muted {
-  color: #fb958b;
-  padding-left: 9px;
-}
+/* #pulseaudio.muted { */
+/*   color: #fb958b; */
+/*   padding-left: 9px; */
+/* } */
 
 #backlight {
   color: #8a909e;
@@ -197,8 +188,8 @@ window#waybar.hidden {
 }
 
 #clock {
-  color: #9da2ab;
-  font-family: Iosevka Nerd Font;
+  color: #abb2bf;
+  font-size: 16px;
   font-weight: bold;
   margin-top: 7px;
   margin-bottom: 7px;
@@ -214,14 +205,14 @@ window#waybar.hidden {
 }
 
 tooltip {
-  font-family: Iosevka Nerd Font;
+  background: #1e1e2e;
   border-radius: 15px;
-  padding: 15px;
-  background-color: #1f232b;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #11111b;
 }
 
 tooltip label {
-  font-family: Iosevka Nerd Font;
   padding: 5px;
 }
 
@@ -258,37 +249,5 @@ label:focus {
 }
 
 #custom-weather {
-  font-family: Iosevka Nerd Font;
-  color: #8a909e;
-}
-
-#custom-weather.severe {
-  color: #eb937d;
-}
-
-#custom-weather.sunnyDay {
-  color: #c2ca76;
-}
-
-#custom-weather.clearNight {
   color: #cad3f5;
-}
-
-#custom-weather.cloudyFoggyDay,
-#custom-weather.cloudyFoggyNight {
-  color: #c2ddda;
-}
-
-#custom-weather.rainyDay,
-#custom-weather.rainyNight {
-  color: #5aaca5;
-}
-
-#custom-weather.showyIcyDay,
-#custom-weather.snowyIcyNight {
-  color: #d6e7e5;
-}
-
-#custom-weather.default {
-  color: #dbd9d8;
 }
