@@ -1,0 +1,38 @@
+;; ** Var **
+(defpoll CPU_USAGE :interval "1s" `bash ~/.config/eww/scripts/sys-info.sh --cpu`)
+(defpoll MEM_USAGE :interval "1s" `bash ~/.config/eww/scripts/sys-info.sh --mem`)
+(defpoll DISK_USAGE :interval "1s" `bash ~/.config/eww/scripts/sys-info.sh --disk`)
+
+;; ** Widgets **
+;; resources
+(defwidget resources [] 
+		(box :class "winbox"
+			(centerbox :orientation "h"
+				(box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+					(box :class "res_circle" :orientation "v" :valign "center" :halign "center"
+						(circular-progress :class "res_cpu" :value CPU_USAGE :thickness 5
+							(label :class "res_circle_small" :text "CPU")))
+					(label :class "res_text" :valign "end" :halign "center" :text "${CPU_USAGE}%"))
+				(box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+					(box :class "res_circle" :orientation "v" :valign "center" :halign "center"
+						(circular-progress :class "res_mem" :value MEM_USAGE :thickness 5
+							(label :class "res_circle_small" :text "MEMORY")))
+					(label :class "res_text" :valign "end" :halign "center" :text "${MEM_USAGE}%"))
+				(box :class "res_box" :orientation "v" :valign "center" :halign "center" :spacing 15 :space-evenly "false"
+					(box :class "res_circle" :orientation "v" :valign "center" :halign "center"
+						(circular-progress :class "res_disk" :value DISK_USAGE :thickness 5
+							(label :class "res_circle_small" :text "DISK")))
+					(label :class "res_text" :valign "end" :halign "center" :text "${DISK_USAGE}%")))))
+
+
+;; ** Windows **
+;; resources
+(defwindow resources
+           :monitor 0
+           :geometry (geometry ;;:x "2450px"
+                               ;;:y "0px"
+                               :width "480px"
+                               :height "200px"
+                               :anchor "top right")
+           :stacking "fg"
+(resources))

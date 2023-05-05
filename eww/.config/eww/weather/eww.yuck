@@ -1,0 +1,29 @@
+(defpoll ICON :interval "15m" `bash ~/.config/eww/scripts/weather-info.sh --icon`)
+(defpoll STAT :interval "15m" `bash ~/.config/eww/scripts/weather-info.sh --stat`)
+(defpoll TEMP :interval "15m" `bash ~/.config/eww/scripts/weather-info.sh --temp`)
+(defpoll HEX :interval "15m" `bash ~/.config/eww/scripts/weather-info.sh --hex`)
+(defpoll QUOTE :interval "15m" `bash ~/.config/eww/scripts/weather-info.sh --quote`)
+(defpoll QUOTE2 :interval "15m" `bash ~/.config/eww/scripts/weather-info.sh --quote2`)
+
+
+(defwidget weather [] 
+	(box :class "genwin" 
+		(box :orientation "v" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false" 
+			(box :orientation "h" :vexpand "false" :hexpand "false" 
+				(label :class "iconweather" :halign "start" :style "color: ${HEX};" :text ICON)
+				(label :class "label_temp" :halign "end" :text TEMP))
+			(box :orientation "v" :spacing 10 :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false" 
+				(label :class "label_stat" :text STAT)
+				(label :class "label_quote" :text QUOTE)
+				(label :class "label_quote" :text QUOTE2)))))
+
+(defwindow weather 
+        :stacking "fg" 
+        :monitor 0
+        
+	    :geometry (geometry 
+            :width 400
+            :height 300
+            :anchor "top left"
+        )
+					(weather))

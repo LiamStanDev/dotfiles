@@ -1,0 +1,115 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                           Variables                                        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Time
+(defpoll TIME :interval "5s" `date +\"%I:%M %p\"`)
+(defpoll DATE :interval "5s" `date +\"%A, %B %d\"`)
+;; Weather vars
+(defpoll ICON :interval "1s" `bash ~/.config/eww/scripts/weather-info.sh --icon`)
+(defpoll TEMP :interval "1s" `bash ~/.config/eww/scripts/weather-info.sh --temp`)
+(defpoll HEX :interval "1s" `bash ~/.config/eww/scripts/weather-info.sh --hex`)
+;; Music vars
+(defpoll SONG :interval "1s" `bash ~/.config/eww/scripts/music-info.sh --song`)
+(defpoll ARTIST :interval "1s" `bash ~/.config/eww/scripts/music-info.sh --artist`)
+(defpoll COVER :interval "1s" `bash ~/.config/eww/scripts/music-info.sh --cover`)
+(defpoll STATUS :interval "1s" `bash ~/.config/eww/scripts/music-info.sh --status`)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                           Widgets                                          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; launch
+(defwidget search [] 
+		(box :class "box-left"
+			(box :orientation "h" :spacing 10 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+				(button :style "background-image: url('../images/icons/launch.png')" :class "genicon" :onclick "bash ~/.config/eww/scripts/search.sh --full")
+        )))
+
+;; apps
+(defwidget apps [] 
+		(box :class "box-left"
+			(box :orientation "h" :spacing 15 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+				(button :style "background-image: url('../images/icons/apps/terminal.png');" :class "appicon" :onclick "bash ~/.config/eww/scripts/apps.sh --kitty")
+				(button :style "background-image: url('../images/icons/apps/firefox.png');" :class "appicon" :onclick "bash ~/.config/eww/scripts/apps.sh --browser")
+				(button :style "background-image: url('../images/icons/apps/files.png');" :class "appicon" :onclick "bash ~/.config/eww/scripts/apps.sh --files")
+				(button :style "background-image: url('../images/icons/apps/discord.png');" :class "appicon" :onclick "bash ~/.config/eww/scripts/apps.sh --discord")
+				(button :style "background-image: url('../images/icons/apps/telegram.png');" :class "appicon" :onclick "bash ~/.config/eww/scripts/apps.sh --mail"))))
+
+;; weather
+(defwidget weather [] 
+		(box :class "box-left"
+			(box :class "clockbox" :orientation "v" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false"
+				(label :class "time" :halign "start" :wrap "true" :limit-width 25 :text TIME)
+				(label :class "date" :halign "start" :wrap "true" :limit-width 25 :text DATE))
+			(box :class "weatherbox" :orientation "h" :spacing 0 :valign "center" :halign "end" :space-evenly "false" :vexpand "false" :hexpand "false"
+				(label :class "weathericon" :style "color: ${HEX};" :text ICON)
+				(label :class "weathertemp" :text TEMP))))
+
+;; music
+(defwidget music [] 
+		(box :class "box-left" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+			(box :orientation "h" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false"
+				(box :class "album_art" :vexpand "false" :hexpand "false" :style "background-image: url('${COVER}');")
+				(box :class "musicbox" :orientation "v" :spacing 0 :valign "center" :halign "start" :space-evenly "false" :vexpand "false" :hexpand "false"
+					(label :class "song" :halign "start" :wrap "false" :limit-width 20 :text SONG)
+					(label :class "artist" :halign "start" :wrap "false" :limit-width 20 :text ARTIST)))
+			(box :class "musicbuttons" :orientation "h" :spacing 10 :valign "center" :halign "end" :space-evenly "true" :vexpand "false" :hexpand "false"
+				(button :class "btn_prev" :onclick "bash ~/.config/eww/scripts/music-info.sh --prev" "玲")
+				(button :class "btn_play" :onclick "bash ~/.config/eww/scripts/music-info.sh --toggle" STATUS)
+				(button :class "btn_next" :onclick "bash ~/.config/eww/scripts/music-info.sh --next" "怜"))))
+
+;; combine
+(defwidget left []
+	(box :orientation "h" 
+		 :space-evenly false  
+         :halign "start"
+		 :class "right_modules"
+    (search)
+    (apps)
+    ))
+
+(defwidget center []
+	(box :orientation "h" :spacing 200
+		 :space-evenly false  
+         :halign "center"
+		 :class "center_modules"
+    (weather)
+    (music)
+    ))
+
+
+(defwidget right [] 
+	(box :orientation "h" 
+		 :space-evenly false  
+         :halign "end"
+		 :class "left_modules"
+
+    (search)
+    (apps)
+         ))
+
+
+(defwidget bar []
+  (box :class "bar" :space-evenly true
+       :orientation "h"
+    (left)
+    (center)
+    (right)))
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                           Windows                                          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; search
+(defwindow topbar
+           :monitor 0
+           :geometry (geometry :x "20px"
+                               :y "5px"
+                               :width "95%"
+                               :height "50px"
+                               :anchor "top center")
+           :stacking "bg"
+           :exclusive true
+           :focusable false
+    (bar)
+)

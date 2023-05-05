@@ -1,0 +1,112 @@
+/** Global **/
+* {
+  all: unset;
+  font-family: feather;
+  font-family: "JetBrains Mono";
+}
+
+/** Bar **/
+.bar {
+  background-color: #1c1d27;
+  border-radius: 16px;
+}
+.box-left {
+  margin-left: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #252733;
+  border-radius: 16px;
+}
+
+/** Icons **/
+.genicon {
+  background-repeat: no-repeat;
+  background-size: 20px;
+  min-height: 20px;
+  min-width: 20px;
+}
+.appicon {
+  background-repeat: no-repeat;
+  background-size: 40px;
+  min-height: 40px;
+  min-width: 40px;
+}
+.workspace {
+  background-color: #c04364;
+  color: #ffffff;
+  border: 2px solid #161616;
+  border-radius: 16px;
+  font-size: 14px;
+  padding: 0px 6px 0px 6px;
+  margin: -2px 0px 0px 0px;
+  font-weight: bold;
+}
+
+/** Clock **/
+.clockbox {
+  margin: 0px 0px 0px 15px;
+}
+.time {
+  font-size: 14px;
+  font-weight: bold;
+}
+.date {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/** Weather **/
+.weatherbox {
+  margin: 0px 0px 0px -90px;
+}
+.weathericon {
+  font-family: Iosevka Nerd Font;
+  font-size: 32px;
+  font-weight: normal;
+}
+.weathertemp {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0px 0px 0px -5px;
+}
+
+/** Music **/
+.album_art {
+  background-repeat: no-repeat;
+  background-size: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+.musicbox {
+  margin: 0px 0px 0px 5px;
+}
+
+.song {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.artist {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn_prev {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: normal;
+}
+.btn_play {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn_next {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: normal;
+  padding-left: 10px;
+}
