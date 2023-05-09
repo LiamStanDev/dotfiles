@@ -9,14 +9,19 @@ gui:
       - blue
     selectedLineBgColor:
       - default # set to `default` to have no background colour
+      - bold
     selectedRangeBgColor:
       - default
+      - bold
     cherryPickedCommitBgColor:
       - cyan
+      - bold
     cherryPickedCommitFgColor:
       - blue
+      - bold
     unstagedChangesColor:
       - red
+      - bold
 
   showFileTree: true # for rendering changes files in a tree format
   showListFooter: false # for seeing the '5 of 20' message in list panels
