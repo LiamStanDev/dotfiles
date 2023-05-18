@@ -40,4 +40,4 @@ export NPM_CONFIG_PREFIX=~/.npm-global
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # secret api keys
-plug "$HOME/.config/zsh/API_Keys.zsh"
+plug "$HOME/.config/zsh/api-keys.zsh"
