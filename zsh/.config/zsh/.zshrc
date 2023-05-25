@@ -14,59 +14,10 @@ plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
-# plug "zap-zsh/zap-prompt"
 
+# for specific app
+plug "$HOME/.config/zsh/conda-setup.zsh"
+plug "$HOME/.config/zsh/dotnet-setup.zsh"
 
-# zsh parameter completion for the dotnet CLI
-_dotnet_zsh_complete()
-{
-    local completions=("$(dotnet complete "$words")")
-
-    # If the completion list is empty, just continue with filename selection
-    if [ -z "$completions" ]
-    then
-        _arguments '*::arguments: _normal'
-        return
-    fi
-
-    # This is not a variable assignment, don't remove spaces!
-    _values = "${(ps:\n:)completions}"
-}
-
-compdef _dotnet_zsh_complete dotnet
-
-
-#
 # auto show
 # neofetch
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if [[ $OSTYPE =~ ^linux ]]; then
-     __conda_setup="$('/home/liam/.local/share/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/home/liam/.local/share/miniconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/liam/.local/share/miniconda3/etc/profile.d/conda.sh"
-        else
-            export PATH="/home/liam/.local/share/miniconda3/bin:$PATH"
-        fi
-    fi
-fi
-
-if [[ $OSTYPE =~ ^darwin  ]]; then
-    __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-            . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-        else
-            export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
-        fi
-    fi
-fi
-unset __conda_setup
-conda config --set changeps1 False # for starship
- # <<< conda initialize <<<
