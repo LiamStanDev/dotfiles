@@ -8,10 +8,10 @@ gui:
     optionsTextColor:
       - blue
     selectedLineBgColor:
-      - default # set to `default` to have no background colour
+      - "#333333" # set to `default` to have no background colour
       - bold
     selectedRangeBgColor:
-      - default
+      - "#2B2D42"
       - bold
     cherryPickedCommitBgColor:
       - cyan
@@ -22,6 +22,8 @@ gui:
     unstagedChangesColor:
       - red
       - bold
+    defaultFgColor:
+      - white
 
   showFileTree: true # for rendering changes files in a tree format
   showListFooter: false # for seeing the '5 of 20' message in list panels
