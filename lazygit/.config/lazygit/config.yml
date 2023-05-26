@@ -33,4 +33,4 @@ gui:
 disableStartupPopups: true
 notARepository: "prompt" # one of: 'prompt' | 'create' | 'skip'
 os:
-  editCommand: "nvim"
+  editPreset: "nvim"
