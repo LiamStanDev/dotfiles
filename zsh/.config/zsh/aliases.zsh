@@ -28,3 +28,5 @@ alias dotnet-r='dotnet run --project'
 alias dotnet-b='dotnet build'
 # logoff
 # alias logoff="gnome-session-quit" # need to change by the user name
+
+source "$HOME/.config/zsh/scripts/fzf-utils.sh"
