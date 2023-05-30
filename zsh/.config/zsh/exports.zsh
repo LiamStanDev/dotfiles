@@ -40,5 +40,8 @@ export NPM_CONFIG_PREFIX=~/.npm-global
 # rust evn
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# nvim mason exe path
+export PAHT="$HOME/.local/share/nvim/mason/bin:$PATH"
+
 # secret api keys
 plug "$HOME/.config/zsh/api-keys.zsh"
