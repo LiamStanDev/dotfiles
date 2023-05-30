@@ -18,6 +18,7 @@ alias v="nvim"
 
 # tmux
 alias t="tmux"
+alias tn="tmux new -s"
 alias td="tmux detach"
 alias ta="tmux attach -t"
 
