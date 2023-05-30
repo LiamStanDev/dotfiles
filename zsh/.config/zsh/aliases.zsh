@@ -16,6 +16,11 @@ alias nv="nvim"
 alias vim='nvim'
 alias v="nvim"
 
+# tmux
+alias t="tmux"
+alias td="tmux detach"
+alias ta="tmux attach -t"
+
 # lazygit
 alias lzg="lazygit"
 
