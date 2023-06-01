@@ -21,6 +21,7 @@ alias t="tmux"
 alias tn="tmux new -s"
 alias td="tmux detach"
 alias ta="tmux attach -t"
+alias tk="tmux kill-session -t"
 
 # lazygit
 alias lzg="lazygit"
@@ -32,6 +33,7 @@ alias lzd="lazydocker"
 alias dotnet-w="dotnet watch --no-hot-reload --project"
 alias dotnet-r='dotnet run --project'
 alias dotnet-b='dotnet build'
+
 # logoff
 # alias logoff="gnome-session-quit" # need to change by the user name
 
