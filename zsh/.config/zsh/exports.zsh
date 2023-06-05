@@ -2,6 +2,10 @@
 if [[ $OSTYPE =~ ^darwin ]]; then
     export PATH="/opt/homebrew/bin:$PATH"
     export XDG_CONFIG_HOME="$HOME/.config"
+    # for macOS deamon connection problem
+    # do following command first
+    # sudo ln -s ~/Library/Containers/com.docker.docker/Data/docker.raw.sock /var/run/docker.sock
+    export DOCKER_HOST="unix:///var/run/docker.sock"
 fi
 
 # linux
