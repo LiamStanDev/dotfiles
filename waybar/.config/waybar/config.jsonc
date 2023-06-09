@@ -117,8 +117,8 @@
     "scroll-step": 5
   },
   "battery": {
-    "bat": "BAT0",
-    "adapter": "ADP0",
+    // "bat": "BAT0",
+    // "adapter": "ADP0",
     "interval": 60,
     "states": {
       "warning": 30,
