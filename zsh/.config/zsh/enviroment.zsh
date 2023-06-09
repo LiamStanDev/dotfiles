@@ -25,7 +25,3 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-# default app
-export EDITOR="nvim"
-export TERMINAL="kitty"
-export BROWSER="firefox"

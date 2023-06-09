@@ -1,33 +1,33 @@
 # macOS
 if [[ $OSTYPE =~ ^darwin ]]; then
-    export PATH="/opt/homebrew/bin:$PATH"
-    export XDG_CONFIG_HOME="$HOME/.config"
-    # for macOS deamon connection problem
-    # do following command first
-    # sudo ln -s ~/Library/Containers/com.docker.docker/Data/docker.raw.sock /var/run/docker.sock
-    export DOCKER_HOST="unix:///var/run/docker.sock"
+    source "$HOME/.config/zsh/macos-export.zsh"
 fi
 
 # linux
 if [[ $OSTYPE =~ ^linux ]]; then
-    plug "$HOME/.config/zsh/enviroment.zsh"
-    # nvim
-    export PATH="$HOME/.local/nvim-linux64/bin:$PATH"
-    # miniconda
-    export PATH="$HOME/.local/share/miniconda3/bin:$PATH"
+    source "$HOME/.config/zsh/linux-export.zsh"
 fi
+
+# default app
+export EDITOR="nvim"
+export TERMINAL="kitty"
+export BROWSER="firefox"
 
 # for the system varaible
 export PATH="/usr/bin:/usr/sbin:/usr/local/bin:$PATH"
 
-# setting local binary path
-export PATH="$HOME/.local/bin:$PATH"
+# npm install global path
+export NPM_CONFIG_PREFIX=~/.npm-global
 
 # oh-my-posh
 # eval "$(oh-my-posh --init --shell zsh --config $HOME/.config/oh-my-posh/liam.omp.json)"
-# srarship prop
+
+# srarship prop (need locale UTF8)
 export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init zsh)"
+
+# setting local binary path
+export PATH="$HOME/.local/bin:$PATH"
 
 # rust env
 export PATH="$HOME/.cargo/env:$PATH"
@@ -39,8 +39,6 @@ export PATH=$DOTNET_ROOT:$PATH
 # dotnet tool
 export PATH="$HOME/.dotnet/tools:$PATH"
 
-# npm install global path
-export NPM_CONFIG_PREFIX=~/.npm-global
 # rust evn
 export PATH="$HOME/.cargo/bin:$PATH"
 
