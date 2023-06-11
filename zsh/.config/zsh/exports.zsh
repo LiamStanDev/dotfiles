@@ -27,23 +27,23 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init zsh)"
 
 # setting local binary path
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 
 # rust env
-export PATH="$HOME/.cargo/env:$PATH"
+export PATH="$PATH:$HOME/.cargo/env"
 
 # dotnet sdk path
 export DOTNET_ROOT=/usr/share/dotnet
-export PATH=$DOTNET_ROOT:$PATH
+export PATH="$PATH:$DOTNET_ROOT"
 
 # dotnet tool
-export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$PATH:$HOME/.dotnet/tools"
 
 # rust evn
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # nvim mason exe path
-export PAHT="$HOME/.local/share/nvim/mason/bin:$PATH"
+export PAHT="$PATH:$HOME/.local/share/nvim/mason/bin"
 
 # secret api keys
 plug "$HOME/.config/zsh/api-keys.zsh"
