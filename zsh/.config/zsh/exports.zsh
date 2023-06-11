@@ -45,5 +45,9 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # nvim mason exe path
 export PAHT="$PATH:$HOME/.local/share/nvim/mason/bin"
 
+# go env
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
 # secret api keys
 plug "$HOME/.config/zsh/api-keys.zsh"
