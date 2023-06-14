@@ -140,7 +140,7 @@ configuration {
     kb-ellipsize: "";
     kb-toggle-case-sensitivity: "";
     kb-toggle-sort: "";
-    kb-cancel: "Escape";
+    kb-cancel: "Escape,Control+c";
     kb-custom-1: "";
     kb-custom-2: "";
     kb-custom-3: "";
