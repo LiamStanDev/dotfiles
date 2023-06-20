@@ -13,7 +13,6 @@ fi
 # neovim
 alias n="nvim"
 alias nv="nvim"
-alias vim='nvim'
 alias v="nvim"
 
 # tmux
