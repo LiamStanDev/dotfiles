@@ -50,5 +50,8 @@ export GOROOT="$HOME/.local/go"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 
+# risc-v toolchain
+export PATH="$PATH:/opt/riscv/bin"
+
 # secret api keys
 plug "$HOME/.config/zsh/api-keys.zsh"
