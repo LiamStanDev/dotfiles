@@ -13,3 +13,4 @@ tmux/.config/tmux/plugins
 .assets/gtk-theme/Arc-Dark
 .assets/sddm-themes/sugar-candy
 .assets/sddm-themes/10-theme.conf
+btop/.config/btop/btop.log
