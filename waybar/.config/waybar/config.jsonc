@@ -49,11 +49,11 @@
     "spacing": 10
   },
 
-  "clock": {
-    "format": "{:%H:%M}",
-    // "format-alt": "{:%b %d %Y}",
-    "on-click": "bash ~/.config/eww/calendar/toggle-calendar.sh"
-  },
+  // "clock": {
+  //   "format": "{:%H:%M}",
+  //   // "format-alt": "{:%b %d %Y}",
+  //   // "on-click": "bash ~/.config/eww/calendar/toggle-calendar.sh"
+  // },
 
   "cpu": {
     "format": "{icon}",
