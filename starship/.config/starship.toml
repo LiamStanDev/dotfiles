@@ -1,8 +1,9 @@
+
 format="""
+ $character\
  $conda\
  $directory\
  $git_branch\
- $character\
  """
 
  right_format = """
@@ -16,9 +17,9 @@ format="""
 
  # Prompt symbols 
  [character]
- success_symbol = "[](#dbcd0b bold)"
- error_symbol = "[](#B98389)"
- vicmd_symbol = "[](#DD8F6E)"
+ success_symbol = "[](#98c379 bold)"
+ error_symbol = "[](#B98389)"
+ vicmd_symbol = "[](#98c379)"
 
  [directory]
  # format = "($style)[ ](fg:#66CED6)[$path](fg:#66CED6 bold)[ ]($style)"

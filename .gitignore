@@ -10,3 +10,6 @@ gtk/.config/gtk-3.0/bookmarks
 Thunar/.config/Thunar/accels.scm
 zsh/.config/zsh/api-keys.zsh
 tmux/.config/tmux/plugins
+.assets/gtk-theme/Arc-Dark
+.assets/sddm-themes/sugar-candy
+.assets/sddm-themes/10-theme.conf
