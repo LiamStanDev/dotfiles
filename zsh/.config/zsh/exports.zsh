@@ -14,7 +14,7 @@ export TERMINAL="kitty"
 export BROWSER="firefox"
 
 # for the system varaible
-export PATH="/usr/bin:/usr/sbin:/usr/local/bin:$PATH"
+export PATH="$PATH:/usr/bin:/usr/sbin:/usr/local/bin"
 
 # npm install global path
 export NPM_CONFIG_PREFIX=~/.npm-global
@@ -41,6 +41,7 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 # rust evn
 export PATH="$PATH:$HOME/.cargo/bin"
+# export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 # nvim mason exe path
 export PAHT="$PATH:$HOME/.local/share/nvim/mason/bin"
@@ -51,7 +52,8 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 
 # risc-v toolchain
-export PATH="$PATH:/opt/riscv/bin"
+export RISCV="$HOME/.local/riscv"
+export PATH="$PATH:$RISCV/tools/bin:$RISCV/qemu/bin"
 
 # secret api keys
 plug "$HOME/.config/zsh/api-keys.zsh"

@@ -17,3 +17,4 @@ else
     fi
 fi
 # <<< conda initialize <<<
+conda activate
