@@ -1,7 +1,7 @@
 ; Const vars
 (defvar FILE_BROWSER "nautilus")
-(defvar RES_WIDTH 1950)
-(defvar RES_HEIGHT 2000)
+(defvar RES_WIDTH 2950)
+(defvar RES_HEIGHT 2160)
 (defvar BG_ZOOM 1.2)
 (defvar OVERVIEW_SCALE 0.18)
 (defvar TASKVIEW_SCALE 0.12)

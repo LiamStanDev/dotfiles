@@ -286,7 +286,7 @@
       :class "batbar"
       :space-evenly false
       (circular-progress ;; macsmc-battery: see /sys/class/power_supply/
-        :value "${EWW_BATTERY['macsmc-battery']['capacity']}"
+        :value "100"
         :class "batbar-circle"
         :thickness 4
         :start-at 75
@@ -355,7 +355,7 @@
       (label :class "sys-menu-charge" :text "${battery.quickicon}"
         :style "${colormode == 'one' ? ('color: ' + coloraccent + ';') : ''}"
       )
-      (label :class "batt-percentage" :text "${EWW_BATTERY["macsmc-battery"].capacity}%"
+      (label :class "batt-percentage" :text "100%"
         :style "${colormode == 'one' ? ('color: ' + coloraccent + ';') : ''}"
       )
         (revealer
