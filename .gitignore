@@ -16,3 +16,5 @@ tmux/.config/tmux/plugins
 btop/.config/btop/btop.log
 eww/.config/eww/eww_covers/cover_art
 eww/.config/eww/scripts/cache/dunst-history.json
+fcitx5/.config/fcitx5/conf/cached_layouts
+fcitx5/.config/fcitx5/conf/notifications.conf
