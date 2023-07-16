@@ -1,0 +1,9 @@
+bookmark = [
+  { key = "ge", path = "/etc" },
+
+  { key = "gh", path = "~/" },
+  { key = "gd", path = "~/Documents" },
+  { key = "gp", path = "~/Pictures" },
+  { key = "gr", path = "~/Documents/repos" },
+  { key = "gc", path = "~/config" },
+]

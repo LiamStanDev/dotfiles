@@ -17,6 +17,9 @@ alias n="nvim"
 alias nv="nvim"
 alias v="nvim"
 
+# joshuto
+alias j="joshuto"
+
 # tmux
 alias t="tmux"
 alias tn="tmux new -s"
