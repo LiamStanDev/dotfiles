@@ -120,21 +120,14 @@ sanitize() {
 
 if [ "$1" = "cover" ]; then
     get_cover
-elif [ "$1" == "name" ]; then
-    lentolimit=41
-    if [ "$2" != "" ]; then
-        lentolimit=$2
-    fi
+elif [ "$1" = "name" ]; then
     echo '{"artist": "", "title": ""}'
     playerctl -F metadata -f '{{title}}\{{artist}}\' 2>/dev/null | while IFS="$(printf '\\')" read -r title artist; do
 
-		# if [[ "$title" == *" - YouTube"* && "$artist" == "" ]]; then
-		# 	continue
-		# elif [[ "$title" == *"YouTube Music" && "$artist" == "" ]]; then
-		# 	continue
-		# fi
-		title=$(scripts/limitlen.py "$title" "$lentolimit")
-		artist=$(scripts/limitlen.py "$artist" "$lentolimit")
+		if [[ "$title" == *" - YouTube"* && "$artist" == "" ]]; then
+			continue
+		fi
+		title=$(scripts/limitlen.py "$title" 41)
 
 		gojq --null-input -r -c \
 			--arg artist "$(sanitize "$artist")" \
@@ -146,14 +139,11 @@ else
 	echo '{"artist": "", "title": "", "status": "", "position": "", "position_time": "", "length": ""}'
     playerctl -F metadata -f '{{title}}\{{artist}}\{{status}}\{{position}}\' 2>/dev/null | while IFS="$(printf '\\')" read -r title artist status position; do
 
-        # if [[ "$title" == *" - YouTube" && "$artist" == "" ]]; then
-        #     continue
-        # elif [[ "$title" == *"YouTube Music" && "$artist" == "" ]]; then
-        #     continue
-        # fi
+        if [[ "$title" == *" - YouTube" && "$artist" == "" ]]; then
+            continue
+        fi
         len=$(playerctl metadata mpris:length)
         title=$(scripts/limitlen.py "$title" 40)
-        artist=$(scripts/limitlen.py "$artist" 40)
 
         gojq --null-input -r -c \
             --arg artist "$(sanitize "$artist")" \

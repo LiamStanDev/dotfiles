@@ -10,26 +10,25 @@
       :space-evenly false
       :class "module-button-pad-center"
       (box
-        :space-evenly false
+        :space-evenly false 
         :class "module-button${music_open ? '-true' : (music_hover ? '-hover' : '')}"
         (revealer ; dummy keep alive
           :reveal false
           :duration "0ms"
           :transition "slideright"
-          ; (label :text "${mcover.image} ${cavajson[0]}")
-          (label :text "${mcover.image}")
+          (label :text "${mcover.image} ${cavajson[0]}")
         )
         (box
           :space-evenly false
           :valign "start"
           ; :class "osu-music-box"
           :class "osu-music-box"
-          ; (image
-            ;   :path "images/svg/beatmaps.svg"
-            ;   :image-width 33
-            ;   :image-height 33
-            ;   :class "osu-music-box-dummy"
-          ; )
+          (image
+          ;   :path "images/svg/beatmaps.svg"
+          ;   :image-width 33
+          ;   :image-height 33
+          ;   :class "osu-music-box-dummy"
+          )
           (overlay
             (box
               :halign "center" :valign "center"
@@ -47,7 +46,7 @@
               :style "
               font-size: 18pt;
               margin-bottom: -1px;
-              color: ${colormode == 'one' ? coloraccent : (mcover.color.colors.color7 == 'null' ? 'white' : mcover.color.colors.color7)};
+              color: ${mcover.color.colors.color7 == 'null' ? 'white' : mcover.color.colors.color7};
               "
               :text "${mplay == 'Playing' ? '' : ''}"
             )
@@ -70,15 +69,15 @@
                 :space-evenly false :orientation "v"
                 :valign "center"
                 :class "music-ctl-revealer"
-                :hexpand "true"
+                :hexpand true
                 (label
                   :class "music-title-bar"
                   :limit-width 50
                   :xalign 0
                   :style "
-                  color: ${colormode == 'one' ? coloraccent : (mcover.color.colors.color7 == 'null' ? 'white' : mcover.color.colors.color7)};
+                  color: ${mcover.color.colors.color7 == 'null' ? 'white' : mcover.color.colors.color7};
                   "
-                  :text {mname.title == '' ? 'Playerctl' : mname.title}
+                  :text "${mname.title == '' ? 'Not playing' : mname.title}"
                 )
                 (revealer
                   :transition "slidedown"
@@ -89,9 +88,9 @@
                     :limit-width 50
                     :xalign 0
                     :style "font-size: 11pt; font-family: 'Torus';
-                    color: ${colormode == 'one' ? coloraccent : (mcover.color.colors.color7 == 'null' ? 'white' : mcover.color.colors.color7)};
+                    color: ${mcover.color.colors.color7 == 'null' ? 'white' : mcover.color.colors.color7};
                     "
-                    :text {mname.artist}
+                    :text "${mname.artist}"
                   )
                 )
               )
@@ -111,8 +110,7 @@
                       font-size: 30pt;
                       color: ${mcover.color.colors.color7 == 'null' ? 'white' : mcover.color.colors.color7};
                       "
-                      :onclick "playerctl previous" 
-                      ""
+                      :onclick "playerctl previous" ""
                     )
                     (button
                       :class "song-button-bar"
