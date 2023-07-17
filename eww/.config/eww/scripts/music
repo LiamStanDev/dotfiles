@@ -136,7 +136,7 @@ elif [ "$1" == "name" ]; then
 		title=$(scripts/limitlen.py "$title" "$lentolimit")
 		artist=$(scripts/limitlen.py "$artist" "$lentolimit")
 
-		gojq --null-input -r -c \
+		jq --null-input -r -c \
 			--arg artist "$(sanitize "$artist")" \
 			--arg title "$(sanitize "$title")" \
 			'{"artist": $artist, "title": $title}'
@@ -155,7 +155,7 @@ else
         title=$(scripts/limitlen.py "$title" 40)
         artist=$(scripts/limitlen.py "$artist" 40)
 
-        gojq --null-input -r -c \
+        jq --null-input -r -c \
             --arg artist "$(sanitize "$artist")" \
             --arg title "$(sanitize "$title")" \
             --arg status "$(get_status "$status")" \
