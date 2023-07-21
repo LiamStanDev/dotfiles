@@ -48,8 +48,7 @@ export PAHT="$PATH:$HOME/.local/share/nvim/mason/bin"
 
 # go env
 export GOROOT="$HOME/.local/go"
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+export PATH="$PATH:$GOROOT/bin:$HOME/go/bin"
 
 # risc-v toolchain
 export RISCV="$HOME/.local/riscv"

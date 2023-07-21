@@ -1,7 +1,7 @@
-@import 'css/colors';
-@import 'css/colorscheme';
-@import 'css/material';
-@import 'images/svg/color.scss';
+@import "css/colors";
+@import "css/colorscheme";
+@import "css/material";
+@import "images/svg/color.scss";
 
 @function tint($color, $percentage) {
   @return mix(rgb(245, 250, 255), $color, $percentage);
@@ -140,24 +140,24 @@ $bg1: $surface0;
   font-family: Material Symbols Rounded;
 }
 
-@import 'css/bottombar';
-@import 'css/bgdecor';
-@import 'css/calendar';
-@import 'css/dashboard';
-@import 'css/dashfs';
-@import 'css/editmode';
-@import 'css/music';
-@import 'css/notification';
-@import 'css/overview';
-@import 'css/osd';
-@import 'css/osettings';
-@import 'css/sidebar';
-@import 'css/supercontext';
-@import 'css/system';
-@import 'css/themer';
-@import 'css/taskbar';
-@import 'css/volume';
-@import 'css/winstuff';
+@import "css/bottombar";
+@import "css/bgdecor";
+@import "css/calendar";
+@import "css/dashboard";
+@import "css/dashfs";
+@import "css/editmode";
+@import "css/music";
+@import "css/notification";
+@import "css/overview";
+@import "css/osd";
+@import "css/osettings";
+@import "css/sidebar";
+@import "css/supercontext";
+@import "css/system";
+@import "css/themer";
+@import "css/taskbar";
+@import "css/volume";
+@import "css/winstuff";
 
 .module-group {
   // background-color: $colorbg;
@@ -173,10 +173,10 @@ $bg1: $surface0;
   margin-right: -1911px;
   margin-left: 8px;
   border-radius: 26px;
-  background-color: mix(shade($colorbarbg, 45%), $primary, 97%); 
-  // background-color: shade($colorbg, 75%); 
-  // background-color: #0B121C;
-  background-image: linear-gradient(135deg, shade($onSecondary, 47%) 18%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 37%, shade($onSecondary, 47%) 37%, shade($onSecondary, 47%) 63%, rgba(0, 0, 0, 0) 63%, rgba(0, 0, 0, 0) 85%, shade($onSecondary, 47%) 85%);
+  background-color: mix(shade($colorbarbg, 45%), $primary, 97%);
+  // background-color: shade($colorbg, 75%);
+  background-color: #0b121c;
+  // background-image: linear-gradient(135deg, shade($onSecondary, 47%) 18%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 37%, shade($onSecondary, 47%) 37%, shade($onSecondary, 47%) 63%, rgba(0, 0, 0, 0) 63%, rgba(0, 0, 0, 0) 85%, shade($onSecondary, 47%) 85%);
 
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
 }
@@ -184,7 +184,17 @@ $bg1: $surface0;
 .bar-bg-only-compact {
   margin-right: -1920px;
   background-color: shade($colorbg, 75%);
-  background-image: linear-gradient(135deg, shade($onSecondary, 47%) 18%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 37%, shade($onSecondary, 47%) 37%, shade($onSecondary, 47%) 63%, rgba(0, 0, 0, 0) 63%, rgba(0, 0, 0, 0) 85%, shade($onSecondary, 47%) 85%);
+  background-image: linear-gradient(
+    135deg,
+    shade($onSecondary, 47%) 18%,
+    rgba(0, 0, 0, 0) 18%,
+    rgba(0, 0, 0, 0) 37%,
+    shade($onSecondary, 47%) 37%,
+    shade($onSecondary, 47%) 63%,
+    rgba(0, 0, 0, 0) 63%,
+    rgba(0, 0, 0, 0) 85%,
+    shade($onSecondary, 47%) 85%
+  );
 }
 
 .bar-normal {
@@ -198,7 +208,7 @@ $bg1: $surface0;
     font-size: 1.2rem;
   }
 
-  font-family: 'Torus';
+  font-family: "Torus";
   // animation-name: flyin-top;
   // animation-duration: 350ms;
   // animation-timing-function: cubic-bezier(0.05, 0.7, 0.1, 1);
@@ -206,7 +216,10 @@ $bg1: $surface0;
 }
 
 .bar-compact {
-  background-color: shade($colorbg, 70%); //because dark background makes colors pop
+  background-color: shade(
+    $colorbg,
+    70%
+  ); //because dark background makes colors pop
   border-bottom: 1px solid $primary;
   min-height: 53px;
   color: $fg;
@@ -215,7 +228,7 @@ $bg1: $surface0;
     font-size: 1.2rem;
   }
 
-  font-family: 'Torus';
+  font-family: "Torus";
 }
 
 tooltip {
@@ -258,7 +271,7 @@ tooltip {
 
 .clock {
   color: $color2;
-  font-family: 'Torus';
+  font-family: "Torus";
   font-size: 12pt;
 }
 
@@ -268,7 +281,7 @@ tooltip {
 
 .minute {
   color: $color2;
-  font-family: 'Torus', 'Material Symbols Rounded';
+  font-family: "Torus", "Material Symbols Rounded";
 }
 
 .timedate-time {
@@ -278,7 +291,7 @@ tooltip {
 }
 
 .date {
-  font-family: 'Torus', 'Material Symbols Rounded';
+  font-family: "Torus", "Material Symbols Rounded";
   color: $color2;
 
   // margin-top: -2px;
@@ -345,7 +358,6 @@ tooltip {
 }
 
 .ws-active-top {
-  
 }
 
 .ws-text {
@@ -427,7 +439,6 @@ tooltip {
 //   background-size: 100%;
 // }
 
-
 .icon,
 .icon,
 .icon-text,
@@ -458,7 +469,11 @@ tooltip {
       // background-image: url('images/svg/settings.svg');
       background-size: 400% auto;
       background-repeat: no-repeat;
-      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 60%, tint($overlay0, 10%) 60%);
+      background-image: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0) 60%,
+        tint($overlay0, 10%) 60%
+      );
       border-radius: 26px;
 
       :active {
@@ -487,7 +502,11 @@ tooltip {
       background-color: $overlay0;
       background-position: 90% 50%;
       background-repeat: no-repeat;
-      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 60%, tint($overlay0, 10%) 60%);
+      background-image: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0) 60%,
+        tint($overlay0, 10%) 60%
+      );
       background-size: 400% auto;
       border-radius: 26px;
     }
@@ -580,7 +599,11 @@ tooltip {
   transition: 500ms cubic-bezier(0.05, 0.7, 0.1, 1);
   border-radius: 26px;
   padding: 0px 5px;
-  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 60%, tint($overlay0, 10%) 60%);
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0) 60%,
+    tint($overlay0, 10%) 60%
+  );
   background-size: 400% auto;
   background-position: 40% 50%;
 }
@@ -589,7 +612,11 @@ tooltip {
   transition: 500ms cubic-bezier(0.05, 0.7, 0.1, 1);
   border-radius: 26px;
   padding: 0px 5px;
-  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 60%, tint($overlay0, 10%) 60%);
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0) 60%,
+    tint($overlay0, 10%) 60%
+  );
   background-size: 400% auto;
   background-color: $overlay0;
   background-position: 60% 50%;
@@ -609,7 +636,11 @@ tooltip {
   border-radius: 26px;
   padding: 0px 5px;
   background-color: $overlay0;
-  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 60%, tint($overlay0, 10%) 60%);
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0) 60%,
+    tint($overlay0, 10%) 60%
+  );
   background-size: 400% auto;
   background-position: 90% 50%;
 }
@@ -618,7 +649,7 @@ tooltip {
   transition: 900ms cubic-bezier(0.05, 0.9, 0.1, 1); // Hyprland default bezier but no overshot
 }
 
-progressbar>trough {
+progressbar > trough {
   min-width: 30px;
 }
 
@@ -636,4 +667,4 @@ progressbar>trough {
 .workspaces-top {
   min-width: 306px;
   min-height: 5px;
-} 
+}

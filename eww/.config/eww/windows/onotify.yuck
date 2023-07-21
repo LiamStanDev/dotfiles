@@ -130,7 +130,7 @@
               (button
                 :class "wifi-arrow-btn"
                 :style "font-family: Material Symbols Rounded;"
-                :onclick "pkill foot || foot sh -c 'sleep 0.01 ; nmtui' &"
+                :onclick "pkill foot || foot sh -c 'sleep 0.1 ; nmtui' &"
                 ""
               )
             )

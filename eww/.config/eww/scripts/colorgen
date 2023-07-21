@@ -92,4 +92,4 @@ printf "$themejson" | gojq -r '.colors.color5' >> 'tmp/_iconcolor.txt'
 printf "$themejson" | gojq -r '.colors.color5' >> 'tmp/_iconcolor.txt'
 
 # beatmappacks tertiary, forum color1, search color3, search color4, tournaments color4
-# 
+#
