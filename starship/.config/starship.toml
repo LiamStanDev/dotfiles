@@ -1,5 +1,7 @@
 
 format="""
+ $username\
+ $hostname
  $conda\
  $directory\
  $git_branch
