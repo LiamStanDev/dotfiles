@@ -25,3 +25,4 @@ eww/.config/eww/tmp/colors_generated.conf
 eww/.config/eww/scripts/cache
 zsh/.config/zsh/.zsh_sessions
 eww/.config/eww/images/icons/linageOS Icons
+sway/.config/sway/config.d
