@@ -33,7 +33,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cargo/env"
 
 # dotnet sdk path
-export DOTNET_ROOT=/usr/share/dotnet
+export DOTNET_ROOT=$HOME/.local/dotnet
 export PATH="$PATH:$DOTNET_ROOT"
 
 # dotnet tool
